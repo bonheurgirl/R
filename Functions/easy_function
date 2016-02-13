@@ -1,0 +1,110 @@
+##paste function into console
+add2<-function(x,y){
+	sum(x + y)
+}
+##then call your function by typing add2(1st number here, 2nd number here)
+
+##example below
+add2(1,1)
+
+
+
+##paste function into console
+sum3<-function(x,y,z){
+	sum(x,y,z)
+}
+##then call your function by typing sum3(1st number here, 2nd number here, 3rd number here)
+##example below
+sum3(1,2,3)
+
+
+
+##more examples
+meanofwhatever<-function(x,...){
+	##when you don't know how many arguments you will place inside your function when you call it
+	mean(x,...)
+}
+
+meanofwhatever(100,100,50,50,25,25)##paste into console
+
+
+multiply2nums<-function(x,y){
+	x*y
+}
+
+
+ stuff2<-function(x,y,z){
+	sum(x + y) * (x*y) * z
+}
+
+changetouppercase<-function(x){
+	toupper(x)
+}
+
+##http://rstudio-pubs-static.s3.amazonaws.com/869_b5887d128f564522926f0f3b21bdb80d.html
+x = 1
+y = 1
+
+simpleFun = function(x, y) {
+    # local y is altered
+    y = y + 5
+    return(x + y)
+}
+z = simpleFun(x, y)
+x
+
+
+anotherFun = function(x) {
+    # here a local variable is created within the function
+    y = y + 5
+    return(x + y)
+}
+z = anotherFun(x)
+x
+
+
+grossPay <- function(hours, pay){
+    round(hours * pay) ##round() function rounds to a whole number    
+}
+##Call your function by typing grossPay(the amount of hours worked goes here, the amount of pay goes here)
+
+
+##http://www.dummies.com/how-to/content/how-to-use-if-statements-in-r.html
+##Here is a very small function, priceCalculator(), that calculates the price you charge to a customer based on the hours of work you did for that customer. The function should take the number of hours (hours) and the price per hour (pph) as input. 
+priceCalculator <- function(hours, pph=40){
+    net.price <- hours * pph
+    round(net.price)
+}
+
+##calling the function by inputting 6 hours worked. both of these below will spit out the same calculation
+> priceCalculator(6)
+[1] 240
+
+> priceCalculator(6, pph=40)
+[1] 240
+
+##here is what happens when you want to change the amount of pph(pay per hour) without having to rewrite your entire function
+> priceCalculator(6,pph=50)
+[1] 300
+
+##Here’s what the priceCalculator does:
+
+##With the function keyword, you define the function.
+
+##Everything between the braces is the body of the function (see Chapter 8).
+
+##Between the parentheses, you specify the arguments hours (without a default value) and pph (with a default value of $40 per hour).
+
+##You calculate the net price by multiplying hours by pph.
+
+##The outcome of the last statement in the body of your function is the returned value. In this case, this is the total price rounded to the dollar.
+
+
+test<-function(x){
+	return(x+2)
+}
+
+test2<-function(x){
+	return(sqrt(x))
+}
+

@@ -1,0 +1,42 @@
+---
+title: "NY Open Data Project"
+author: "Anita Owens"
+date: "December 31, 2015"
+output: html_document
+---
+```{r}
+setwd("/Users/anitaowens/Documents/datasciencecoursera")
+
+```
+load library
+```{r}
+library(ggplot2)
+```
+simple scatterplot with mtcars
+```{r}
+
+data("mtcars")
+# Simple Scatterplot
+attach(mtcars)
+plot(wt, mpg, main="Can your audience understand this scatterplot?", 
+  	xlab="Car Weight ", ylab="Miles Per Gallon ", pch=19)
+
+#add fitlines
+abline(lm(mpg~wt), col="red") # regression line (y~x) 
+lines(lowess(wt,mpg), col="blue") # lowess line (x,y)
+```
+
+scatterplot matrix
+```{r}
+library(lattice)
+# Basic Scatterplot Matrix
+pairs(~mpg+disp+drat+wt,data=mtcars, 
+   main="Can they understand this?")
+```
+NYC Data
+```{r}
+nyc<-data.frame(New_York_City_Leading_Causes_of_Death)
+qplot(nyc$Sex, geom="histogram")
+
+```
+

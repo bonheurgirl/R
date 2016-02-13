@@ -1,0 +1,10 @@
+evaluate <- function(func, dat){
+  func(dat)
+}
+
+evaluate(sum, (2,4,6))
+
+evaluate <- function(func, dat){
+  func(dat)
+}
+

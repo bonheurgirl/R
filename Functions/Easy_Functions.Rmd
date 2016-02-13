@@ -1,0 +1,106 @@
+---
+title: "Easy_Functions"
+output: html_document
+---
+
+```{r}
+add2<-function(x,y){
+	sum(x + y)
+}
+```
+
+
+```{r}
+sum3<-function(x,y,z){
+	sum(x,y,z)
+}
+```
+
+```{r}
+meanofwhatever<-function(x,...){
+	##when you don't know how many arguments you will place inside your function when you call it
+	mean(x,...)
+}
+
+```
+
+```{r}
+multiply2nums<-function(x,y){
+	x*y
+}
+
+```
+
+```{r}
+test<-function(x){
+	return(x+2)
+}
+
+test2<-function(x){
+	return(sqrt(x))
+}
+
+```
+
+
+```{r}
+ stuff2<-function(x,y,z){
+	sum(x + y) * (x*y) * z
+}
+
+```
+
+```{r}
+ changetouppercase<-function(x){
+	toupper(x)
+}
+
+```
+
+```{r}
+x = 1
+y = 1
+
+simpleFun = function(x, y) {
+    # local y is altered
+    y = y + 5
+    return(x + y)
+}
+z = simpleFun(x, y)
+x
+
+```
+
+
+```{r}
+anotherFun = function(x) {
+    # here a local variable is created within the function
+    y = y + 5
+    return(x + y)
+}
+z = anotherFun(x)
+x
+
+```
+
+
+```{r}
+grossPay <- function(hours, pay){
+    round(hours * pay) ##round() function rounds to a whole number    
+}
+
+```
+
+
+```{r}
+priceCalculator <- function(hours, pph=40){
+    net.price <- hours * pph
+    round(net.price)
+}
+
+```
+
+```{r}
+
+```
+

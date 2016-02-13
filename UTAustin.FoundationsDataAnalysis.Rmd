@@ -1,0 +1,77 @@
+---
+title: "EdX"
+author: "Anita Owens"
+date: "February 9, 2016"
+output: html_document
+---
+UTAustinX: UT.7.10x Foundations of Data Analysis - Part 1
+```{r}
+setwd("/Users/anitaowens/Documents/datasciencecoursera")
+install.packages("SDSFoundations")
+library("SDSFoundations")
+bike<-read.csv("BikeData.csv")
+```
+Prepare for the Analysis
+```{r}
+# Find the number of students in the dataset
+table(bike$student)
+#14 students
+
+# Pull out student data into a new dataframe
+student <-bike[bike$student==1,]
+
+# Find how often the students ride, using the new dataframe
+table(student$cyc_freq)
+ #Daily  Less than once a month 
+ #                     8                       0 
+#Several times per month  Several times per week 
+  #                    0                       6 
+
+# Create a vector for the distance variable
+distance <-student$distance
+#[1]  3.25 10.94  9.34  1.25  9.29  2.77  4.84  6.56  0.85  6.07  3.52
+#[12] 13.43  7.19  8.31
+
+# Find average distance ridden
+mean(distance)
+#6.257857
+
+```
+Select the question that will require subsetting the data.
+```{r}
+riders<-BikeData[ which(BikeData$cyc_freq=="Daily"),]
+nrow(riders)
+```
+
+What is the average age of daily riders? 
+```{r}
+mean(riders$age)
+round(mean(riders$age), digits = 1)
+```
+How many of the daily riders are male?
+```{r}
+sum(with(riders, gender=="M"))
+sum(with(riders, gender=="F"))
+```
+What is the average age of the female daily riders? (Round to 1 decimal place)
+```{r}
+female<-riders[ which(riders$gender=="F"),]
+round(mean(female$age), digits = 1)
+```
+ What is the average age of the male daily riders? (Round to 1 decimal place.)
+ 
+```{r}
+male<-riders[ which(riders$gender=="M"),]
+round(mean(male$age), digits = 1)
+```
+ thirty <- bike[bike$age >= 30,]
+ How many daily male riders are age 30 or older?
+ ```{r}
+thirty<-male[male$age >= 30,]
+nrow(thirty)
+```
+is this normal
+```{r}
+
+```
+

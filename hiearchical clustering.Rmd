@@ -1,0 +1,26 @@
+---
+title: "hierarchical clustering"
+author: "Anita Owens"
+date: "January 22, 2016"
+output: html_document
+---
+```{r}
+setwd("/Users/anitaowens/Documents/datasciencecoursera")
+getwd()
+```
+
+Hierchical clustering--example
+```{r}
+set.seed(1234)
+par(mar=c(0,0,0,0))
+x<-rnorm(12, mean = rep(1:3, each =4), sd=.2)
+y<-rnorm(12, mean= rep(c(1,2,1), each = 4), sd=.2)
+plot(x,y, col="blue", pch = 19, cex=2)
+text(x + 0.05, y + 0.05, labels=as.character(1:12))
+```
+calculate the distance between all the points
+```{r}
+dataFrame<-data.frame(x=x, y=y)
+dist(dataFrame)
+```
+

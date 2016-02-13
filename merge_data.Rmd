@@ -1,0 +1,129 @@
+---
+title: "merge_files"
+author: "Anita Owens"
+date: "January 29, 2016"
+output: html_document
+---
+
+```{r}
+setwd("/Users/anitaowens/Documents/datasciencecoursera")
+setwd("/Users/anitaowens/Desktop")
+getwd()
+
+```
+merge multiple files
+```{r}
+
+ ##function
+
+multmerge = function(mypath){
+filenames=list.files(path="/Users/anitaowens/Desktop/sd", full.names=TRUE)
+datalist = lapply(filenames, function(x){read.csv(file=x,header=T)})
+Reduce(function(x,y) {merge(x,y)}, datalist)}
+
+
+
+```
+merging data
+```{r}
+mymergeddata = multmerge("/Users/anitaowens/Desktop/sd")
+```
+try another way
+```{r}
+mydata1 = read.csv(path1, header=T)
+mydata2 = read.csv(path2, header=T)
+
+#Then, merge
+
+myfulldata = merge(mydata1, mydata2)
+
+```
+data
+```{r}
+library(data.table)
+
+oct_dec2014=read.csv("/Users/anitaowens/Desktop/sd/oct_dec2014.csv", header=T)
+
+jul_sep2015=read.csv("/Users/anitaowens/Desktop/sd/jul_sep2015.csv", header=T)
+
+oct_nov2015=read.csv("/Users/anitaowens/Desktop/sd/oct_nov2015.csv", header=T)
+
+tempfile=merge(oct_dec2014, jul_sep2015)
+tempfile2=na.omit(tempfile)
+
+swedems=merge(tempfile,oct_nov2015)
+```
+attempt again
+```{r}
+mydata<-list.files("csv.files", full.names=TRUE)
+complete <- function(directory, id = 1:5){
+	dat <- data.frame()
+	for (i in id) {
+        dat <- rbind(dat, read.csv(csv.files[i]))
+}
+}
+```
+test code
+```{r}
+setwd("target_dir/")
+ 
+file_list <- list.files()
+ 
+for (file in file_list){
+       
+  # if the merged dataset doesn't exist, create it
+  if (!exists("dataset")){
+    dataset <- read.table(file, header=TRUE, sep="\t")
+  }
+   
+  # if the merged dataset does exist, append to it
+  if (exists("dataset")){
+    temp_dataset <-read.table(file, header=TRUE, sep="\t")
+    dataset<-rbind(dataset, temp_dataset)
+    rm(temp_dataset)
+  }
+
+}
+```
+my trial
+```{r}
+setwd("/Users/anitaowens/Documents/datasciencecoursera/csv.files")
+ 
+dataset <- do.call("rbind",lapply(file_list,
+FUN=function(files){read.table(files,
+header=TRUE, sep="\t")}))
+
+
+###put everything into 1 column--not working
+library(plyr)
+file_list <- list.files("/Users/anitaowens/Documents/datasciencecoursera/csv.files")
+dataset <- ldply(file_list, read.table, header=TRUE, sep="\t")
+
+```
+test
+```{r}
+df<-rbind(data1,data2)
+
+library(xlsx)
+write.xlsx(df, "/Users/anitaowens/Documents/datasciencecoursera/csv.files.xlsx")
+```
+http://www.inside-r.org/packages/cran/data.table/docs/rbindlist
+Makes one data.table from a list of many
+Same as do.call("rbind", l) on data.frames, but much faster. See DETAILS for more.
+
+```{r}
+
+hist(df$facebook.shares, col="red")
+
+with(df, plot(date, facebook.shares))
+```
+importing data--csv file
+```{r}
+# first row contains variable names, comma is separator 
+# assign the variable id to row names
+# note the / instead of \ on mswindows systems 
+
+mydata <- read.table("c:/mydata.csv", header=TRUE, 
+  	sep=",", row.names="id")
+```
+

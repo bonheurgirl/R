@@ -1,0 +1,152 @@
+---
+title: "Lattice Plotting System"
+author: "Anita Owens"
+date: "January 14, 2016"
+output: html_document
+---
+#set directory
+```{r}
+setwd("/Users/anitaowens/Documents/datasciencecoursera")
+getwd()
+```
+#load library
+```{r}
+library(lattice)
+```
+Lattice Functions
+
+xyplot: main function for creating scatterplots
+bwplot: box-and-whiskers plots ("boxplots")
+histogram: histograms
+stripplot: like a boxplot but with actual points
+dotplot: plot dots on "violin strings"
+splom: scatterplot matrix, like pairs in base plotting system
+levelplot, countourplot: for plotting "image" data
+
+#lattice formula
+xyplot(y ~ x | f * g, data)
+
+~ is the formula notation
+
+on the left of the ~ is the y-axis variable, on the right of the ~ is the x-axis variable
+
+f and g are conditioning variables--they are optional
+-the * indicates an interaction between 2 variables
+
+the second argument is the data frame or list from which the variables in the formula should be looked up
+
+if no data frame or list is passed, then the parent frame is used
+
+if no other arguments are passed, there are defaults that can be used.
+
+```{r}
+#simple scatterplot
+library(datasets)
+xyplot(Ozone ~ Wind, data=airquality)
+```
+Lattice Behavior
+```{r}
+#load library
+library(lattice)
+
+#nothing happens
+p<-xyplot(Ozone ~ Wind, data=airquality)
+
+#plot appears
+print (p)
+
+#autoprinting feature
+xyplot(Ozone ~ Wind, data=airquality)
+
+library(datasets)
+```
+Lattice Panel Functions
+-lattice functions have a panel function which controls what happens inside each panel plot
+-the lattice package comes with default panel functions, but you can supply your own to customize the panel
+-panel functions receive the x/y coordinates of the data points in their panel (along with any optional arguments)
+```{r}
+set.seed(10)
+x<-rnorm(100)
+f<-rep(0:1, each=50)
+y<-x + f - f * x + rnorm(100, sd=.5)
+f<-factor(f, labels = c("Group 1", "Group 2"))
+
+#plot with 2 panels
+xyplot(y ~ x | f, layout = c(2,1))
+```
+Custom panel function
+```{r}
+xyplot (y ~ x | f, panel = function(x,y,...){
+        panel.xyplot(x,y,...)##first call the default panel function for xyplot
+        panel.abline(h=median(y), lty=2) ##add a horizontal line at the median
+})
+```
+Lattice Panel Functions: Regression Line
+#you can't use base plotting functions in lattice
+```{r}
+xyplot (y ~ x | f, panel = function(x,y,...){
+        panel.xyplot(x,y,...)##first call the default panel function for xyplot
+        panel.lmline(x,y, col=2) ##overlay a simple regression line
+})
+```
+Summary
+
+-the lattice system lets you look at a lot of data at once
+-lattice plots are constructed with a single function call to a core lattice function (e.g. xyplot)
+-aspects like margins and spacing are automatically handled and defaults are usually sufficient
+-the lattice system is ideal for creating conditioning plots where you examine the same kind of plot under many different conditions
+-panel functions can be specified/customized to modify what is plotted in each of the plot panels
+
+SWIRL
+
+Now try running xyplot with the formula Ozone~Wind as the first argument and the second argument data set equal to airquality.
+```{r}
+xyplot(Ozone ~ Wind, data=airquality)
+```
+ Now rerun xyplot with the formula Ozone~Wind as the first argument and the second argument data set equal to
+airquality (use the up arrow to save typing). This time add the arguments col set equal to "red", pch set equal to 8, and main set equal to "Big Apple Data".
+```{r}
+xyplot(Ozone ~ Wind, data=airquality, col="red", pch=8, main= "Big Apple Data")
+```
+ Run xyplot with the formula Ozone~Wind | as.factor(Month) as the first argument and the second argument data set equal to airquality (use the up arrow to save typing). So far, not much is different, right? Add a third argument, layout,
+| set equal to c(5,1).
+
+```{r}
+xyplot(Ozone ~ Wind | as.factor(Month), data=airquality, layout= c(5,1))
+xyplot(Ozone ~ Wind | Month, data=airquality, layout= c(5,1))
+```
+
+```{r}
+p<-xyplot(Ozone~Wind,data=airquality)
+print(p)
+names(p)
+mynames[myfull]
+p[["formula"]]
+p[["x.limits"]]
+```
+
+```{r}
+xyplot(y~x|f, layout=c(2,1))
+
+#the call to pathfile
+source(pathtofile("plot1.R"), local=TRUE)
+
+myedit("plot2.R")
+source(pathtofile("plot2.R"), local=TRUE)
+```
+
+```{r}
+table(diamonds$color, diamonds$cut)
+myedit("myLabels.R")
+source(pathtofile("myLabels.R"), local=TRUE)
+xyplot(price~carat | color*cut, data=diamonds, strip = FALSE, pch=20, xlab = myxlab, ylab = myylab, main=mymain)
+
+#without the strip argument
+xyplot(price~carat | color*cut, data=diamonds, pch=20, xlab = myxlab, ylab = myylab, main=mymain)
+
+```
+
+```{r}
+
+```
+

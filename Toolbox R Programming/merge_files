@@ -1,0 +1,19 @@
+specdata<-list.files("specdata", full.names=TRUE)
+complete <- function(directory, id = 1:332) {
+	dat <- data.frame()
+	for (i in id) {
+        dat <- rbind(dat, read.csv(specdata[i]))
+    }
+
+
+ ##Just read the two data frames into R
+
+
+mydata1 = read.csv(path1, header=T)
+mydata2 = read.csv(path2, header=T)
+
+Then, merge
+
+myfulldata = merge(mydata1, mydata2)
+
+

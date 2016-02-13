@@ -1,0 +1,1046 @@
+---
+title: "Clean.Dta"
+output: html_document
+---
+
+```{r}
+setwd("/Users/anitaowens/Documents/datasciencecoursera")
+```
+Checking for and creating directories
+
+file.exists("directoryName")will check to see if the directory exists.
+
+dir.create("directoryName")will create a directory if it doesn't exist.  Example below:
+
+```{r}
+
+if (!file.exists("data")) {
+        dir.create("data")
+}
+
+```
+Loading the data
+```{r}
+ss06hid <- read.csv("~/Documents/datasciencecoursera/ss06hid.csv", header=TRUE)
+ 
+ View(ss06hid)
+```
+Subsetting the VAL variable
+```{r}
+val_data<-ss06hid[ which(ss06hid$VAL>1,000,000),]
+ 
+val_data<-subset(ss06hid, VAL>=1,000,000, select = c(VAL))
+```
+download plyr package
+count the number of times each variable appears in each row
+```{r}?count
+count(val_data, "VAL")
+
+```
+```{r}
+#Q1.Q2.
+
+factor(ss06hid$FES)
+count(ss06hid, "FES")
+```
+
+Download excel spreadsheet
+```{r}
+#install R package like this
+install.packages("xlsx")
+
+#Q1.Q3.
+xlsfile <- file.path(path.package('gdata'),'xls','DATA.gov_NGAP')
+read.xlsx("DATA.gov_NGAP.xlsx", sheetIndex = 1,header = TRUE)
+
+cameraData<-read.xlsx("DATA.gov_NGAP.xlsx", sheetIndex = 1,header = TRUE)
+
+#from lecture
+colIndex<-2:3
+rowIndex<-1:4
+cameraDataSubset<-read.xlsx("DATA.gov_NGAP.xlsx", sheetIndex = 1, colIndex=colIndex, rowIndex=rowIndex)
+cameraDataSubset
+
+#for quiz
+colIndex<-7:15
+rowIndex<-18:23
+GasDataSubset<-read.xlsx("DATA.gov_NGAP.xlsx", sheetIndex = 1, colIndex=colIndex, rowIndex=rowIndex)
+dat<-GasDataSubset
+ sum(dat$Zip*dat$Ext,na.rm=T) 
+
+```
+Getting data from the internet
+download.file()
+Useful for downloading tab-delimited, csv, and other files
+If you could do this by hand, helps with reproducibility
+```{r}
+fileUrl<-"https://data.baltimorecity.gov/api/views/aqgr-xx9h/rows.csv?accessType=DOWNLOAD"
+download.file(fileURL, destfile="./data/cameras.csv", method= "curl")
+list.files("./data")
+
+read.table()
+#not the best way to read large data sets in read.table()
+
+#imported data set via "import dataset" from enviroment.  can import URL directly.
+CamData <- read.csv("/var/folders/x0/d4958p9j30ndvrzls4lbn0qr0000gn/T//RtmpYX60la/data7da2265cee0")
+View(CamData)
+dateDownloaded<-date()
+
+#instructor example
+cameraData<-read.table("./data/cameras.csv", sep=",", header = TRUE)
+head(cameraData)
+
+#my way.  This way worked when I moved direct downloaded file into data folder.
+cameraData<-read.table("./data/Fixed_Speed_Cameras.csv", sep=",", header = TRUE)
+head(cameraData)
+```
+READING XML using XML package
+```{r}
+library(XML)
+fileUrl<-"http://www.w3schools.com/xml/simple.xml"
+doc<-xmlTreeParse(fileUrl,useInternal=TRUE)
+rootNode<-xmlRoot(doc)
+xmlName(rootNode)
+
+names(rootNode)
+nchar(doc, type = "chars")
+```
+w2q4
+```{r}
+
+library(XML)
+fileUrl<-"http://biostat.jhsph.edu/~jleek/contact.html"
+
+doc2<-htmlTreeParse("http://biostat.jhsph.edu/~jleek/contact.html", useInternalNodes = TRUE)
+rootNode<-xmlRoot(doc2)
+xmlName(rootNode)
+names(rootNode)
+xmlChildren(doc2)
+
+#another method
+html2 <- GET("http://biostat.jhsph.edu/~jleek/contact.html")
+cont = content(html2, as = "text")
+
+```
+
+Directly access parts of the XML document
+```{r}
+#this is the first element in a list
+rootNode[[1]]
+
+#subsetting in an XML document
+rootNode[[1]][[1]]
+```
+Programatically extract parts
+```{r}
+xmlSApply(rootNode,xmlValue)
+
+```
+Q1Q4
+```{r}
+fileUrl<-"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
+doc<-xmlTreeParse(fileUrl,useInternal=TRUE)
+rootNode<-xmlRoot(doc)
+xmlName(rootNode)
+```
+Just discovered R package data.table for reading in large files. If read.csv is taking too long:
+
+install.packages("data.table")
+
+library(data.table)
+
+train <- fread("train.csv")
+
+train<-as.data.frame(train)
+
+Took about 5 minutes compared to 2 hours with read.csv.
+```{r}
+DT<-fread("ss06hid.csv")
+
+#Q1Q5 (similar but not the SEX variable)
+sapply(split(DT$wgtp15,DT$KIT),mean)
+```
+Install mySql
+```{r}
+install.packages("RMySQL")
+
+```
+Connecting and listing database
+```{r}
+ucscDb<-dbConnect(MySQL(),user="genome", host="genome-mysql.cse.ucsc.edu")
+
+result<-dbGetQuery(ucscDb,"show databases;");dbDisconnect(ucscDb);
+
+View(result)
+
+```
+connecting to hg19 and listing tables
+```{r}
+hg19<-dbConnect(MySQL(), user="genome", db="hg19", host="genome-mysql.cse.ucsc.edu")
+
+#this is a list of all the tables that exist in #hg19 database
+#each table corresponds to a different data set
+allTables<-dbListTables(hg19)
+length(allTables)
+
+allTables[1:5]
+```
+get dimensions of a specific table
+```{r}
+#gives us all the column names
+dbListFields(hg19,"affyU133Plus2")
+
+#this tell you how many rows it has
+#hg19 is the name of the database
+#affyU133Plus2 is the name of the table
+dbGetQuery(hg19,"select count(*) from affyU133Plus2")
+
+```
+READ FROM THE TABLE
+```{r}
+
+affyData<-dbReadTable(hg19, "affyU133Plus2")
+head(affyData)
+
+```
+SELECT A SPECIFIC SUBSET
+```{r}
+#this is subsetting 
+query<-dbSendQuery(hg19, "select * from affyU133Plus2 where misMatches between 1 and 3")
+
+affyMis<-fetch(query); quantile(affyMis$misMatches)
+
+
+affyMisSmall<-fetch(query, n=10); dbClearResult(query);
+
+dim(affyMisSmall)
+```
+DON'T FORGET TO CLOSE THE CONNECTION!
+
+```{r}
+dbDisconnect(hg19)
+
+```
+Further Resources
+
+Be careful with mysql commands
+
+
+READING DATA FROM API'S
+(APPLICATION PROGRAMMING INTERFACES)
+
+```{r}
+
+library(httr)
+
+oauth_endpoints("github")
+
+myapp<-oauth_app("github",  key = "3aebf8287d62d381f39a", secret = "fa76549cc15540ed26e316b2a207a3a06ec393ef")
+
+# 3. Get OAuth credentials
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+
+# 4. Use API
+gtoken <- config(token = github_token)
+req <- GET("https://api.github.com/rate_limit", gtoken)
+stop_for_status(req)
+content(req)
+```
+Quiz
+```{r}
+#not right!!!!
+fortdata<-read.fortran("http://www.cpc.ncep.noaa.gov/data/indices/wksst8110.for", as.is = TRUE, colClasses = NA)
+
+data <-read.fortran("http://www.cpc.ncep.noaa.gov/data/indices/wksst8110.for", format=F1.0, as.is = TRUE, colClasses = NA)
+
+
+```
+Q3Q1
+
+Example: download.file(fileURL, destfile="./data/cameras.csv", method= "curl") list.files("./data")
+```{r}
+
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", destfile = "./data/feddata.csv", method= "curl")
+
+list.files("./data")
+
+#adds file to global environment
+feddata<-read.csv("./data/feddata.csv")
+
+
+agricultureLogical<-feddata[ which(feddata$ACR=="3" & feddata$AGS==6),]
+
+View(agricultureLogical)
+```
+Q3Q2
+```{r}
+install.packages("jpeg")
+library(jpeg)
+
+#read sample file of R Logo
+img<-readJPEG(system.file("img", "Rlogo.jpg", package="jpeg"))
+
+# read it also in native format
+img.n <- readJPEG(system.file("img", "Rlogo.jpg", package="jpeg"), TRUE)
+quantile(img.n)
+
+#quantile function of sample file
+quantile(img)
+quantile(img, c(.30, .80))
+
+#downloaded and saved file to directory and renamed to jeff.jpg
+
+#THIS SEEMS TO BE THE RIGHT ANSWER
+img.n1 <- readJPEG("/Users/anitaowens/Documents/datasciencecoursera/jeff.jpg",native=TRUE)
+
+quantile(img.n1)
+quantile(img.n1, c(.30, .80))
+#or
+quantile(img.n1,probs = c(.30,.80))
+```
+Q3Q3
+```{r}
+dir.create("./data")
+dir.exists("./data")
+
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv", destfile = "./data/GDPrank.csv", method= "curl")
+
+list.files("./data")
+
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv ", destfile = "./data/educ.csv", method= "curl")
+
+
+#adds file to global environment
+GDPrank<-read.csv("./data/GDPrank.csv", header = TRUE, na.strings=" ", as.is=TRUE, stringsAsFactors = FALSE)
+
+#adds file to global environment
+educ<-read.csv("./data/educ.csv", header = TRUE, na.strings=" ", as.is=TRUE, stringsAsFactors = FALSE)
+
+myfulldata = merge(GDPrank, educ)
+myfulldata = merge(GDPclean, educ)
+edit(myfulldata)
+
+str(GDPrank)
+str(educ)
+
+
+#remove rows with missing data(does not work on this data set)
+x=GDPrank[complete.cases(GDPrank),]
+
+str(x)
+#list of rows that have missing data
+GDPrank[!complete.cases(GDPrank),]
+
+nacols <- function(GDPrank) {
+    colnames(GDPrank)[unlist(lapply(GDPrank, function(x) any(is.na(x))))]
+}
+
+#reshaping using transpose
+mdata<-t(GDPrank)
+
+mdata[!complete.cases(GDPrank),]
+newdata<-na.omit(GDPrank)
+
+newdata1<-t(newdata)
+
+colnames(newdata1)<-c("Country", "Ranking", "Economy","GDP", "Letter")
+
+newdata1[!complete.cases(newdata1),]
+```
+Getting the data from the web
+
+```{r}
+library(curl)
+if(!file.exists("./data")){dir.create("/.data")}
+fileUrl<-"https://data.baltimorecity.gov/api/views/k5ry-ef3g/rows.csv?accessType=DOWNLOAD"
+download.file(fileUrl,destfile = "./data/restaurants.csv", method="curl")
+restData<-read.csv("./data/restaurants.csv")
+
+head(restData, n=3)
+tail(restData, n=3)
+summary(restData)
+
+#gives you more info about the data frame
+str(restData)
+
+```
+Quantiles of quantitative variable
+
+```{r}
+quantile(restData$councilDistrict,na.rm=TRUE)
+
+#PASSING DIFFERENT PROBABILTIES
+quantile(restData$councilDistrict,probs = c(.5,.75,.9))
+
+```
+Make a table
+```{r}
+#look at specific variables and make a table
+#if any means if there are any missing values, they'll be an added column
+table(restData$zipCode,useNA = "ifany")
+
+```
+2 dimensional tables
+```{r}
+table(restData$councilDistrict,restData$zipCode)
+```
+the next thing is to CHECK FOR MISSING VALUES
+
+```{r}
+#if the sum is = 0, this means there are no missing values
+sum(is.na(restData$councilDistrict))
+
+#if there is any value = n/a it returns false
+any(is.na(restData$councilDistrict))
+
+all(restData$zipCode>0)
+
+```
+Row and column sums (Another thing you might want to do is take sums across colums, rows)
+
+```{r}
+colSums(is.na(restData))
+
+all(colSums(is.na(restData))==0)
+
+```
+VALUES WITH SPECIFIC CHARACTERISTICS
+```{r}
+
+#in other words, do we have any values that are 21212
+table(restData$zipCode %in% c("21212"))
+
+table(restData$zipCode %in% c("21212", "21213"))
+
+#a subset of the data, I want restaurants that appear only in 21212 or 21213
+restData[restData$zipCode %in% c("21212", "21213"),]
+
+#Q3Q4
+table(myfulldata$Income.Group %in% c("High income: nonOECD", "High income: OECD"))
+
+avgGDP<-myfulldata[myfulldata$Income.Group %in% c("High income: nonOECD", "High income: OECD"),]
+
+#calculate the mean (THIS SO WORKS!)
+attach(avgGDP)
+aggdata<-aggregate(avgGDP$Ranking, list(Ranking=avgGDP$Income.Group),mean, na.rm=TRUE)
+print(aggdata)
+detach(avgGDP)
+```
+CROSS TABS
+
+the next thing you want to do is make summaries or cross tabs about the data sets that you observe
+```{r}
+data("UCBAdmissions")
+DF=as.data.frame(UCBAdmissions)
+summary(DF)
+
+#identify where the realtionship exists in this data
+#the left variable ("freq") is the variable that you want displayed in the table and then you can break that down with different sorts of variables (i.e. "gender", "admit")
+xt<-xtabs(Freq ~ Gender +Admit, data=DF)
+xt
+```
+Flat tables
+(one thing you can do is cross tabs for a large number of variables but they are often kind of hard to see.)
+
+```{r}
+#this is multiple tables
+warpbreaks$replicate<-rep(1:9, len=54)
+xt=xtabs(breaks~., data=warpbreaks)
+xt
+
+```
+Size of a data set (next you might want to see the size of a data set)
+
+```{r}
+
+fakeData=rnorm(1e5)
+#object.size tells you how large it is
+object.size(fakeData)
+
+print(object.size(fakeData),units="Mb")
+
+```
+CREATING NEW VARIABLES
+Why create new variables?
+*often the raw data won't have a value you are lookign for
+*you will need to transform the data to get the values you would like
+*usually you will add those values to the data frames you are working with (this is common if you want a variable you will use as a predictor)
+*common variables to create: 1. missingness indicators 2. cutting up quantitative variables 3. applying tansforms
+```{r}
+#CREATING SEQUENCES
+#in the seq function, you give it the minim value and the max value
+#the by function creates the new values increasing each new value by 2
+
+#method1
+s1<-seq(1,10,by=2); s1
+
+#method2
+s2<-seq(1,10,length=3); s2
+
+#method3(creating a new index and looping over the 5 values)
+x<-c(1,3,8,25,100); seq(along=x)
+
+```
+SUBSETTING VARIABLES
+```{r}
+
+restData$nearMe=restData$neighborhood %in% c("Roland Park", "Homeland")
+table(restData$nearMe)
+
+```
+CREATING BINARY VARIABLES
+```{r}
+#an easy way of filtering out values
+restData$zipWrong=ifelse(restData$zipCode <0, TRUE, FALSE)
+table(restData$zipWrong, restData$zipCode<0)
+
+```
+CREATING CATEGORICAL VARIABLES
+
+```{r}
+restData$zipGroups=cut(restData$zipCode, breaks=quantile(restData$zipCode))
+table(restData$zipGroups)
+
+table(restData$zipGroups, restData$zipCode)
+
+#Q3Q4
+mean(myfulldata$Ranking, na.rm=TRUE)
+avgGDP<-myfulldata[ which(myfulldata$Income.Group=="High income: nonOECD" & myfulldata$Income.Group =="High income:OECD")]
+
+```
+EASIER CUTTING
+
+
+```{r}
+library(Hmisc)
+#this breaking them up into quartiles
+restData$zipGroups=cut2(restData$zipCode, g=4)
+table(restData$zipGroups)
+
+library(Hmisc)
+
+avgGDP$Ranking=cut2(avgGDP$Income.Group, g=5)
+table(avgGDP$Income.Group)
+
+#Q3Q5
+myfulldata$Ranking=cut2(myfulldata$Income.Group, g=5)
+table(myfulldata$Income.Group)
+
+myfulldata$Ranking=cut2(myfulldata$Income.Group, g=5)
+table(myfulldata$Income.Group)
+
+
+
+
+#Q3Q5
+quantile(myfulldata$Ranking, na.rm=TRUE)
+table(myfulldata$Ranking,useNA = "ifany")
+table(myfulldata$Ranking,myfulldata$Income.Group)
+frame<-as.data.frame(table(myfulldata$Ranking,myfulldata$Income.Group))
+
+#this is the answer
+newdata <- myfulldata[ which(myfulldata$Ranking <= 38 
+& myfulldata$Income.Group == "Lower middle income"), ]
+
+```
+writing a csv file
+```{r}
+write.csv(myfulldata, file = "myfulldata.csv")
+
+write.csv(myfulldata, file = "myfulldata.csv", row.names=FALSE, na="")
+
+```
+Merging data: merge()
+```{r}
+#Dataset
+
+if(!file.exists("./data")){dir.create("./data")}
+fileUrl1="https://dl.dropboxusercontent.com/u/7710864/data/reviews-apr29.csv"
+fileUrl2="https://dl.dropboxusercontent.com/u/7710864/data/solutions-apr29.csv"
+download.file(fileUrl1,destfile = "./data/reviews.csv", method="curl")
+download.file(fileUrl2,destfile = "./data/solutions.csv", method="curl")
+reviews=read.csv("./data/reviews.csv"); solutions<-read.csv("./data/solutions.csv")
+head(reviews,2)
+head(solutions,2)
+```
+
+```{r}
+#all=true means if there's a value that appears in 1 but not the other, it shoud include another row but with na values for the missing values that are, don't appear in the other data frame.
+mergedData=merge(reviews,solutions, by.x="solution_id",by.y="id",all=TRUE )
+head(mergedData)
+```
+DEFAULT-MERGE ALL COMMON COLUMN NAMES
+```{r}
+intersect(names(solutions), names(reviews))
+mergedData2=merge(reviews,solutions,all=True)
+head(mergedData2)
+```
+USING JOIN IN THE PLYR PACKAGE
+#FASTER BUT LESS FULL FEATURED-DEFAULTS TO LEFT JOIN
+#it can only merge based on a common name between the 2 data sets
+
+```{r}
+df1=data.frame(id=sample(1:10), x=rnorm(10))
+df2=data.frame(id=sample(1:10), y=rnorm(10))
+arrange(join(df1,df2), id)
+
+```
+IF YOU HAVE MULTIPLE DATA FRAMES
+#it's challenging to merge multiple data frames with merge command, use plyr instead if they have a common ID
+```{r}
+df1=data.frame(id=sample(1:10), x=rnorm(10))
+df2=data.frame(id=sample(1:10), y=rnorm(10))
+df2=data.frame(id=sample(1:10), z=rnorm(10))
+dfList=list(df1, df2, df3)
+#merges all based on the common variable
+join_all(dfList)
+
+```
+Read about types of joins in SQL
+
+RESHAPING DATA
+*the goal id tidy data
+*each variable forms a column
+*each observation forms a row
+*each table/file stores data about 1 kind of observation
+```{r}
+#START WITH RESHAPING
+
+library(reshape2)
+head(mtcars)
+```
+MELTING DATA FRAMES
+```{r}
+mtcars$carname<-rownames(mtcars)
+carMelt<-melt(mtcars,id=c("carname", "gear", "cyl"), measure.vars = c("mpg", "hp"))
+head(carMelt, n=3)
+
+tail(carMelt, n=3)
+
+```
+CASTING DATA FRAMES
+```{r}
+#reformat the data into different sort of shapes
+#we want to see cylinders broken down by different variables
+cylData<-dcast(carMelt, cyl ~ variable)
+cylData
+
+```
+json files
+```{r}
+library(jsonlite)
+data <- fromJSON("https://data.baltimorecity.gov/resource/aqgr-xx9h.json")
+
+#error in file/json files are difficult to work with
+raw.data <- readLines(fileUrl, warn = "F")
+    rd <- fromJSON(raw.data)
+
+```
+
+Fixing character vectors
+#load camera data into global envir
+```{r}
+names(cameraData)
+
+#to lowercase
+tolower(names(cameraData))
+toupper(names(cameraData))
+
+```
+You might want to seperate out values that are separated by periods.
+Fixing character vectors strsplit()
+*good for automatically splitting variable names
+*important parameters: x, split
+```{r}
+splitNames=strsplit(names(cameraData),"\\.")
+
+#nothing happened here when looking at the 5th element since there was no period.
+splitNames[[5]]
+splitNames[[6]]
+
+names(cameraData)
+```
+Quick aside-lists
+*go through and subset out and take the part of the variable name without the dot
+```{r}
+mylist<-list(letters=c("A", "b", "c"), numbers =1:3, matrix (1:25, ncol=5))
+head(mylist)
+mylist[1]
+$letters
+mylist$letters
+mylist[[1]]
+```
+FIXING CHARACTER VECTORS-sapply()
+*applies a function to each element in a vector or list
+*important parameters: X, FUN
+```{r}
+splitNames[[6]][1]
+
+firstElement<-function(x){x[1]}
+sapply(splitNames,firstElement)
+```
+Peer Review Data
+
+```{r}
+fileUrl<-"https://dl.dropboxusercontent.com/u/7710864/data/reviews-apr29.csv"
+fileUrl<-"https://dl.dropboxusercontent.com/u/7710864/data/solutions-apr29.csv"
+download.file(fileUrl, destfile = "./data/reviews.csv", method="curl")
+download.file(fileUrl, destfile = "./data/solutions.csv", method="curl")
+reviews<-read.csv("./data/reviews.csv"); solutions<-read.csv("./data/solutions.csv");
+head(reviews,2)
+head(solutions,2)
+
+```
+fixing character vectors-sub()
+*important parameters: pattern, replacement, X
+```{r}
+names(reviews)
+sub("_", "", names(reviews),)
+
+```
+Fixing character vectors-gsub()
+*to replace multiple instances of a particular character
+```{r}
+testName<-"this_is_a_test"
+sub("_", "",testName)
+
+gsub("_", "",testName)
+```
+Finding Values-grep(),grepl()
+```{r}
+grep("Alameda",cameraData$intersection)
+
+table(grepl("Alameda",cameraData$intersection))
+
+#include all of the intersections that include Alameda
+cameraData2<-cameraData[!grepl("Alameda",cameraData$intersection),]
+```
+More on grep()
+```{r}
+#this returns the values where Alameda appears
+grep("Alameda",cameraData$intersection, value=TRUE)
+
+#look for values that do not appear in data set
+grep("JeffStreet", cameraData$intersection)
+
+#the length of the value that doesn't appear/a way of checking
+length(grep("JeffStreet", cameraData$intersection))
+```
+More useful string functions
+```{r}
+#tells you the num of characters that appear
+library(stringr)
+nchar("Jeffrey Leek")
+
+#read through the string and find the 1st to the 7th letters
+substr("Jeffrey Leek",1,7)
+
+#pasting 2 strings together
+#you can actually set the separation with the sep argument
+paste("Jeffrey","Leek")
+```
+More useful string functions
+```{r}
+#pasting things together with no space in between
+paste0("Jeffrey","Leek")
+
+#trims off excess space at the beginning or end
+str_trim("Jeff     ")
+```
+IMPORTANT POINTS ABOUT TEXT IN DATA
+*names of variables should be
+-all lowercase when possible
+-descriptive (Diagnosis versus Dx)
+-not duplicated
+-not having underscores or dots or white spaces
+*variables with character values
+-should usually be made into factor variables (depends on application)
+-should be descriptive(use True/False instead of 0/1 and Male/Female verses 0/1 or M/F)
+```{r}
+```
+REGULAR EXPRESSIONS
+*searching for a specific bit of text
+*regular expressions can be thought of as a combo of literals and metacharacters
+*to draw an analogy with natural language, think of literal text forming the words of the language and the metachracters defining its grammar
+*regular expressions hae a rich set of metacharacters
+
+LITERALS
+*simplest pattern consists only of literals. The words match exactly.
+
+Regular Expressions
+ We need a way to express
+  -whitespace word boundaries
+  -sets of literals
+  -the beginning and end of a line
+  -alternatives ("war" or "peace")Metacharacters to the rescue!
+  
+ ^ the start of a line
+ $ represents the end of a line
+ 
+ 
+ Character classes with []
+ -we can list a set of characters we will accept at a given point in the match
+ 
+ ^[] you can start combining characters together
+ 
+^ [] you can specify a range of letters
+
+MORE REGULAR EXPRESSIONS
+*MORE METACHARACTERS
+
+#example
+9.11 #"." refers to any character so 9.11 will match lines with 9 followed by 11
+
+#example
+flood|fire #"|" translates to "or".  we can use it to combine 2 expressions
+
+flood|earthquake|hurricane|coldfire #we can include any number of alternatives
+
+#real expression
+^[Gg]ood|[Bb]ad #will match "good to hear...", "Good afternoon...", "Katie...guess they had bad experiences...", "my middle name is trouble, Miss Bad News"
+#good matches the beginning of the sentence, or any sentence with the word bad anywhere in the sentence
+
+#(and)
+^([Gg]ood|[Bb])# subexpressions are often contained in parentheses to constrain the alternatives
+
+# ?
+[Gg]eorge( [Ww]\.)? [Bb]ush #the period is optional
+
+#metacharacters * and + are used to indicate repetition
+#* means any number including non of the item
+#+ means at least 1 of the item
+Example: (.*) #here we are looking for something within a parentheses/any number of things or none at all
+Example2: [0-9]+(.*)[0-9]+
+
+#{and}
+#are referred to as interval qualifiers: they let us specify the min and max number of matches of an expression
+
+```{r}
+```
+Working with Dates
+```{r}
+#date function
+d1=date()
+d1
+class(d1)
+```
+Sys.Date()
+```{r}
+d2=Sys.Date()
+d2
+#this is a date variable 
+class(d2)
+```
+Formatting dates
+%d=day as number (0-31)
+%a=abbreviated weekday
+%A=unabbreviated weekday
+%m=month(00-12)
+%b=abbreviated month
+%B=unabbreviated month
+%y=2 digit year
+%Y=four digit year
+```{r}
+format(d2,"%a %b %d")
+```
+Creating Dates
+```{r}
+#not working
+x=c("1jan1960", "2jan1960", "31mar1960", "30jul1960"); z=as.Date(x, %d%b%y)
+
+z[1]-z[2]
+
+as.numeric(z[1]-z[2])
+```
+Converting to Julian
+```{r}
+weekdays(d2)
+months(d2)
+julian(d2)
+```
+Lubridate
+```{r}
+install.packages("lubridate", dependencies = TRUE)
+library(lubridate)
+ymd("20140108")
+mdy("08/04/2013")
+dmy("03-04-2013")
+```
+Dealing with times
+```{r}
+ymd_hms("2011-08-03 10:15:03")
+
+ymd_hms("2011-08-03 10:15:03", tz="Pacific/Auckland")
+
+?Sys.timezone
+```
+Some functions have slightly different sytax
+```{r}
+x=dmy(c("1jan2013", "2jan2013", "31mar2013", "30jul2013"))
+wday(x[1])
+wday(x[1],label=TRUE)
+```
+NOTES:
+-ultimately you want your dates and times as class "Date" or the classes "POSIXct", "POSIXIt".
+```{r}
+?POSIXlt
+```
+Q4Q1
+```{r}
+#add to global environment
+ss06hid <- read.csv("~/Documents/datasciencecoursera/ss06hid.csv", header=TRUE)
+names(ss06hid)
+
+splitss06hid=strsplit(names(ss06hid),"\\wgtp")
+
+splitss06hid[[123]]
+
+
+```
+Q4Q2
+```{r}
+#add to global environment
+
+GDPrank<-read.csv("./data/GDPrank.csv", header = TRUE, na.strings=" ", as.is=TRUE, stringsAsFactors = FALSE, blank.lines.skip = TRUE)
+names(GDPrank)
+GDPRank2<-as.numeric(gsub("[,]","",GDPrank$X.3))
+mean(GDPRank2, na.rm = TRUE)
+#still end up with the same answer 1453710
+
+GDPclean<-read.csv("./data/GDPclean.csv", header = TRUE, na.strings=" ", as.is=TRUE, stringsAsFactors = FALSE, blank.lines.skip = TRUE)
+
+newgdp<-as.numeric(gsub("[,]","",GDPclean$US.dollars))
+head(newgdp)
+tail(newgdp)
+mean(newgdp, na.rm=TRUE)
+#[1] 377652.4
+
+
+```
+Q4Q3
+```{r}
+
+GDPclean[grep("^United", GDPclean$Economy),]
+
+```
+Q4Q4
+```{r}
+#adds file to global environment
+GDPclean<-read.csv("./data/GDPclean.csv", header = TRUE, na.strings=" ", as.is=TRUE, stringsAsFactors = FALSE)
+
+
+#adds file to global environment
+educ<-read.csv("./data/educ.csv", header = TRUE, na.strings=" ", as.is=TRUE, stringsAsFactors = FALSE)
+
+
+#224 observations/inner join
+mergedData1 <-merge(GDPclean, educ, by="CountryCode")
+
+#merge documents *238 observations/outer join
+mergedData <-merge(GDPclean, educ, by="CountryCode", all=TRUE)
+
+#228 observations/left outer join
+mergedData2 <-merge(GDPclean, educ, by="CountryCode", all.x=TRUE)
+
+#234 observations/#right outer join
+mergedData3 <-merge(GDPclean, educ, by="CountryCode", all.y=TRUE)
+
+#nope--just lists all the data
+mergedData1[grep("June", mergedData1$Special.Notes),]
+mergedData1[grep("June?", mergedData1$Special.Notes),]
+
+#from prior question, matches the beginning of the line
+GDPclean[grep("^United", GDPclean$Economy),]
+
+#from http://biostat.mc.vanderbilt.edu/wiki/pub/Main/SvetlanaEdenRFiles/regExprTalk.pdf
+allIndices = 1:length(mergedData1)
+letOrDigIndices = grep("end: June",mergedData1)
+blankInd = setdiff(allIndices, letOrDigIndices)
+mergedData1[blankInd] = NA
+
+
+
+write.csv(mergedData, file = "mergedData.csv")
+#manually got 16 total but this is not right, it is 13
+```
+
+Q4Q5
+```{r}
+install.packages("quantmod", dependencies = TRUE)
+library(quantmod)
+amzn = getSymbols("AMZN",auto.assign=FALSE)
+sampleTimes = index(amzn) 
+
+#extracting date or time portion
+#index(amzn)
+
+#Or you can get all the observations between two dates:
+amzn["2012-01-01/2012-12-31"]
+
+#turn into data frame
+year2012<-data.frame(amzn["2012-01-01/2012-12-31"])
+
+#the number of values collected in all of 2012
+nrow(year2012)
+nrow(amzn["2012-01-01/2012-12-31"])
+endpoints(year2012, on="days")
+
+#all Mondays Example from the entire amzn xts object
+#monday<-amzn[.indexwday(amzn)==1]
+v<-year2012[.indexwday(year2012)==1]#nope
+
+#example from lecture
+x=dmy(c("1jan2013", "2jan2013", "31mar2013", "30jul2013"))
+wday(x[1])
+wday(x[1],label=TRUE)
+
+#example
+# Create an object
+bday <- dmy("23121984")
+wday(bday)  # day of the week
+wday(bday, label=T)  # day of the week, abbreviated
+yday(bday)  # day of the year
+
+#this is the answer to the 2nd part/this so works perfect!!!!
+v<-amzn["2012-01-01/2012-12-31"]
+countmondays<-wday(v, label = TRUE)
+summary(countmondays)
+
+# summing it up
+library(stringr)
+
+#Extract index values of a given xts object corresponding to the last observations given a period specified by on
+endpoints(x, on="months", k=1)
+endpoints(year2012, on="months")
+
+http://faculty.washington.edu/ezivot/econ424/Working%20with%20Time%20Series%20Data%20in%20R.pdf
+```
+Cleaning up the GDP Data
+```{r}
+GDPrank<-read.csv("./data/GDPrank.csv", header = TRUE, na.strings=" ", as.is=TRUE, stringsAsFactors = FALSE)
+
+#adding the column names
+library(data.table)
+colnames(GDPrank)
+#remove columns
+GDPrank$X.1<-NULL
+GDPrank$X.5<-NULL
+GDPrank$X.6<-NULL
+GDPrank$X.7<-NULL
+GDPrank$X.8<-NULL
+
+#renaming columns
+names(GDPrank)<-c("CountryCode", "Ranking", "Country", "GDP", "Notes")
+
+#subsetting/did not transfer all the variables
+newGDP<-subset(GDPrank, Ranking >=1 & Ranking<=190, select=c(CountryCode, Ranking, Country, GDP, Notes))
+
+#much better
+newGDP<-subset(GDPrank, Ranking >=1, select=c(CountryCode, Ranking, Country, GDP, Notes))
+
+#removings rows that have comments and are unnecessary
+newGDP1<-newGDP[-c(1),]
+newGDP2<-newGDP1[-c(191, 192, 193),]
+#have a cleaned data set
+```
+

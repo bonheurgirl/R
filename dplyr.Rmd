@@ -1,0 +1,33 @@
+---
+title: "dplyr"
+author: "Anita Owens"
+date: "December 25, 2015"
+output: html_document
+---
+```{r}
+install.packages("nycflights13")
+library(nycflights13)
+dim(flights)
+head(flights)
+
+```
+Filter rows
+```{r}
+#select all flights on Jan 1st
+filter(flights, month == 1, day == 1)
+#equivalent to
+flights[flights$month == 1 & flights$day == 1, ]
+
+```
+To select rows by position, use slice()
+```{r}
+slice(flights, 1:10)
+```
+Select colums with select
+```{r}
+# Select columns by name
+select(flights, year, month, day)
+
+```
+
+

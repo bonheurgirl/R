@@ -1,0 +1,11 @@
+#assignment_3
+
+outcome <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
+head(outcome)
+```{r}
+outcome[, 11] <- as.numeric(outcome[, 11])
+```
+```{r}
+hist(outcome[, 11])
+```
+

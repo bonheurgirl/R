@@ -1,0 +1,430 @@
+---
+title: "graphics"
+author: "Anita Owens"
+date: "January 8, 2016"
+output: html_document
+---
+```{r}
+setwd("/Users/anitaowens/Documents/datasciencecoursera")
+```
+
+You can also embed plots, for example:
+```{r, echo=FALSE}
+#swirl lesson 2, Exploratory graphs
+boxplot(pm25~region, data = pollution, col ="red")
+```
+multiple histograms
+
+```{r}
+#mar argument sets up the margins
+par(mfrow=c(2,1),mar=c(4,4,2,1))
+
+```
+subset
+```{r}
+east<-subset(pollution, region=="east" )
+```
+head
+```{r}
+head(east)
+
+```
+histogram
+```{r}
+hist(east$pm25, col="green")
+#The command par told R we were going to have one column with 2 rows, so it placed this histogram in the top position
+```
+new histogram
+```{r}
+west<-subset(pollution, region=="west" )
+hist(west$pm25, col="green")
+
+#wrong
+hist(west<-subset(pollution, region=="west"), west$pm25, col="green" )
+
+#wrong
+hist(west<-subset(pollution$pm25, region=="west" ), col="green")
+
+#wrong
+hist(subset(pollution$pm25, region=="west"), col = "green")
+
+#right answer
+hist(subset(pollution,region=="west")$pm25, col = "green")
+```
+We've seen that we can use a function call as an argument when calling another function. We'll do this again when we call plot with the arguments latitude and pm25 which are both from our data frame pollution. We'll call plot from inside the R command with which evaluates "an R expression in an environment constructed from data". We'll use pollution as the first argument to with and the call to plot as the second. This allows us to avoid typing "pollution$" before the arguents to plot, so it saves us some typing and adds to your base of R knowledge. Try this now.
+```{r}
+with(pollution, plot(latitude, pm25))
+
+```
+Note that the first argument is plotted along the x-axis and the second along the y. Now use abline to add a horizontal line at 12. Use two additional arguments, lwd equal to 2 and lty also equal to 2. See what happens.
+```{r}
+#lty=2 made the line dashed
+abline(h=12, lwd=2, lty=2)
+```
+call plot directly with 3 arguments. The first 2 are pollution$latitude and ppm. The third argument, col, we'll use to add color and more information to our plot. Set this argument (col) equal to pollution$region and see what happens.
+```{r}
+plot(pollution$latitude, ppm, col=pollution$region)
+```
+use abline to add a horizontal line at 12. Use two additional arguments, lwd equal to 2 and lty also equal to 2
+```{r}
+abline(h=12, lwd=2, lty=2)
+```
+This time, let's plot the scatterplots side by side (one row and two columns). We also need to use different margins. Type the R command par(mfrow = c(1,2), mar = c(5, 4, 2, 1)) now. Don't expect to see any new result.
+```{r}
+par(mfrow = c(1,2), mar = c(5, 4, 2, 1))
+
+```
+For the first scatterplot, on the left, we'll plot the latitudes and pm25 counts from the west. We already pulled out the information for the counties in the east. Let's now get the information for the counties from the west. Create the variable west by using the subset command with pollution as the first argument and the appropriate boolean as the second.
+```{r}
+west<-subset(pollution, region=="west" )
+
+```
+Now call plot with three arguments. These are west$latitude (x-axis), west$pm25 (y-axis), and the argument main equal to the string "West" (title). Do this now.
+```{r}
+plot(west$latitude, west$pm25, main="West")
+
+```
+"east"
+```{r}
+plot(east$latitude, east$pm25, main="East")
+```
+Swirl Lesson 3: Graphic Devices
+
+There are two basic approaches to plotting. The first, plotting to the screen, is the most common. It's simple - you call a plotting function like plot, xyplot, or qplot (which you call depends on the plotting system you favor, but that's another lesson), so that the plot appears on the screen. Then you annotate (add to) the plot if necessary.
+
+load data
+```{r}
+with(faithful, plot(eruptions, waiting))
+title(main="Old Faithful Geyser data")
+dev.cur()
+```
+The second way to create a plot is to send it to a file device
+```{r}
+pdf(file="myplot.pdf")
+```
+ Finally, when plotting to a file device, you have to close the device with the command dev.off(). This is very important! Don't do it yet, though. After closing, you'll be able to view the pdf file on your computer.
+ 
+```{r}
+dev.cur()
+dev.off()
+```
+The function dev.copy copies a plot from one device to another, and dev.copy2pdf specifically copies a plot to a PDF file.
+```{r}
+dev.copy(png, file="geyserplot.png")
+dev.off()
+```
+swirl Lesson 4: Plotting Systems
+
+The first plotting system is the Base Plotting System which comes with R. It's the oldest system which uses a simple "Artist's palette" model. What this means is that you start with a blank canvas and build your plot up from there, step by step.
+```{r}
+with(cars, plot(speed, dist))
+```
+Now we'll show you what the function text does. Run the command text with three arguments. The first two, x and y coordinates, specify the placement of the third argument, the text to be added to the plot. Let the first argument be mean(cars$speed), the second max(cars$dist), and the third the string "SWIRL rules!".
+```{r}
+
+text(mean(cars$speed), max(cars$dist),"SWIRL rules!")
+
+```
+lattice plots are created with a single function call such as xyplot or bwplot. Margins and spacing are set automatically
+because the entire plot is specified at once. The lattice system is most useful for conditioning types of plots which display how y changes with x across levels of z. The variable z might be a categorical variable of your data. This system is also good for putting many plots on a screen at once.
+```{r}
+head(state)
+```
+As you can see state holds 9 pieces of information for each of the 50 states. The last variable, region, specifies a category for each state. Run the R command table with the argument state$region to see how many categories there are and how many states are in each.
+```{r}
+table(state$region)
+```
+To do this we'll give xyplot 3 arguments. The first is the most complicated. It is this R formula, Life.Exp ~ Income | region, which indicates we're plotting life expectancy as it depends on income for each region. The second argument, data, is set equal to state. This allows us to use "Life.Exp" and "Income" in the formula instead of specifying the dataset state for each term (as in state$Income). The third argument, layout, is set equal to the two-long vector c(4,1). Run xyplot now with these three arguments.
+```{r}
+#right
+xyplot(Life.Exp ~ Income | region, data = state, layout = c(4, 1))
+
+xyplot(Life.Exp ~ Income | region, data = state, layout = c(2, 2))
+```
+Holy cow! That's a lot of information for just 38 models of cars. Run the R command table with the argument mpg$model. This will tell us how many models of cars we're dealing with.
+```{r}
+table(mpg$model)
+```
+Oh, there are 38 models. We're interested in the effect engine displacement (displ) has on highway gas mileage (hwy), so we'll use the ggplot2 command qplot to display this relationship. Run qplot now with three arguments. The first two are the variables displ and hwy we want to plot, and the third is the argument data set equal to mpg. As before, this allows us to avoid using the mpg$variable notation for the first two arguments.
+```{r}
+qplot(displ, hwy, data=mpg)
+```
+swirl Lesson 5: Base Plotting System
+```{r}
+head(airquality)
+```
+We see the dataset contains 6 columns of data. Run the command range with two arguments. The first is the ozone column of airquality, specified by airquality$Ozone, and the second is the boolean na.rm set equal to TRUE. If you don't specify this second argument, you won't get a meaningful result.
+```{r}
+range(airquality$Ozone, na.rm = TRUE)
+
+```
+So the measurements range from 1 to 168. First we'll do a simple histogram of this ozone column to show the distribution of measurements. Use the R command hist with the argument airquality$Ozone.
+```{r}
+hist(airquality$Ozone)
+```
+Next we'll do a boxplot. First, though, run the R command table with the argument airquality$Month.
+```{r}
+table(airquality$Month)
+```
+We see that the data covers 5 months, May through September. We'll want a boxplot of ozone as a function of the month in which the measurements were taken so we'll use the R formula Ozone~Month as the first argument of boxplot. Our second argument will be airquality, the dataset from which the variables of the first argument are taken.
+ 
+```{r}
+boxplot(Ozone~Month, airquality)
+```
+Let's call boxplot again to specify labels. (Use the up arrow to recover the previous command and save yourself some typing.) We'll add more arguments to the call to specify labels for the 2 axes. Set xlab equal to "Month" and ylab equal to "Ozone (ppb)". Specify col.axis equal to "blue" and col.lab equal to "red".
+```{r}
+boxplot(Ozone~Month, airquality, xlab="Month", ylab="Ozone (ppb)", col.axis="blue", col.lab="red")
+```
+Let's add a title with the R command title. Use the argument main set equal to the string "Ozone and Wind in New York City".
+```{r}
+title(main="Ozone and Wind in New York City")
+```
+Now we'll show you how to plot a simple two-dimensional scatterplot using the R function plot. We'll show the relationship between Wind (x-axis) and Ozone (y-axis). We'll use the function plot with those two arguments (Wind and Ozone, in that order). To save some typing, though, we'll call the R command with using 2 arguments. The first argument of with will be airquality, the dataset containing Wind and Ozone; the second argument will be the call to plot. Doing this allows us to avoid using the longer notation, e.g., airquality$Wind.
+#example: with(pollution, plot(latitude, pm25))
+```{r}
+with(airquality,plot(Wind, Ozone))
+```
+ Add a title now with the R command title. Use the argument main set equal to the string "Ozone and Wind in New York City".
+ 
+```{r}
+title(main="Ozone and Wind in New York City")
+```
+ The basic plotting parameters are documented in the R help page for the function par. You can use par to set parameters OR to find out what values are already set. To see just how much flexibility you have, run the R command length with the argument par() now.
+```{r}
+length(par())
+```
+So there are a boatload (72) of parameters that par() gives you access to. Run the R function names with par() as its argument to see what these parameters are.
+http://www.statmethods.net/advgraphs/layout.html
+The function par specifies graphical parameters so the answer should deal with plots. That leaves two choices. The 'in' in 'pin' specifies inches.(confidence interval)
+```{r}
+names(par())
+
+#Alternatively, you could have gotten the same result by running par("pin") or par('pin')). 
+par()$pin
+```
+ Now, run the command par("fg") or or par('fg') or par()$fg and see what you get.
+```{r}
+par("fg")
+```
+graphical parameter pch
+The plot character default is the open circle, but it "can either be a single character or an integer code for one of a set of graphics symbols." Run the command par("pch") to see the integer value of the default. When you need to, you can use R's Documentation (?pch) to find what the other values mean.
+```{r}
+par("pch")
+```
+Run the command par("lty") to see the default line type.
+
+So the default line type is solid, but it can be dashed, dotted, etc. Once again, R's ?par documentation will tell you what other line types are available. The line width is a positive integer; the default value is 1.
+```{r}
+par("lty")
+```
+The par() function is used to specify global graphics parameters that affect all plots in an R session. (Use dev.off or plot.new to reset to the defaults.) These parameters can be overridden when specified as arguments to specific plotting functions. These include las (the orientation of the axis labels on the plot), bg (background color), mar (margin size), oma (outer margin size), mfrow and mfcol (number of plots per row, column).
+
+So you can add text, title, points, and lines to an existing plot. To add lines, you give a vector of x values and a
+corresponding vector of y values (or a 2-column matrix); the function lines just connects the dots. The function text adds text labels to a plot using specified x, y coordinates.
+
+The function title adds annotations. These include x- and y- axis labels, title, subtitle, and outer margin. Two other annotating functions are mtext which adds arbitrary text to either the outer or inner margins of the plot and axis which adds axis ticks and labels. Another useful function is legend which explains to the reader what the symbols your plot uses mean.
+
+Before we close, let's test your ability to make a somewhat complicated scatterplot. First run plot with 3 arguments. airquality$Wind, airquality$Ozone, and type set equal to "n". This tells R to set up the plot but not to put the data in it.
+
+```{r}
+plot(airquality$Wind, airquality$Ozone, type = "n")
+plot(airquality$Wind, airquality$Ozone, type = "l")
+```
+Now for the test. (You might need to check R's documentation for some of these.) Add a title with the argument main set equal to the string "Wind and Ozone in NYC"
+```{r}
+title(main="Wind and Ozone in NYC")
+```
+Now create a variable called may by subsetting airquality appropriately. (Recall that the data specifies months by number and May is the fifth month of the year.)
+#Ex: east<-subset(pollution, region=="east" )
+```{r}
+may<-subset(airquality, Month==5)
+```
+Now use the R command points to plot May's wind and ozone (in that order) as solid blue triangles. You have to set the color and plot character with two separate arguments. Note we use points because we're adding to an existing plot.
+#Ex: points(short.eruptions, col="red", pch=19)
+```{r}
+points(may$Wind, may$Ozone, col="blue", pch=17)
+```
+Now create the variable notmay by subsetting airquality appropriately.
+#Ex: east<-subset(pollution, region=="east" )
+```{r}
+notmay<-subset(airquality, Month!=5)
+```
+Now use the R command points to plot these notmay's wind and ozone (in that order) as red snowflakes.
+#Ex: points(short.eruptions, col="red", pch=19)
+```{r}
+points(notmay$Wind, notmay$Ozone, col="red", pch=8)
+```
+Now we'll use the R command legend to clarify the plot and explain what it means. The function has a lot of arguments, but we'll only use 4. The first will be the string "topright" to tell R where to put the legend. The remaining 3 arguments will each be 2-long vectors created by R's concatenate function, e.g., c(). These arguments are pch, col, and legend. The first is the vector (17,8), the second ("blue","red"), and the third ("May","Other Months").
+```{r}
+legend("topright", pch = c(17,8), col = c("blue","red"), legend = c("May", "Other Months"))
+```
+Now add a vertical line at the median of airquality$Wind. Make it dashed (lty=2) with a width of 2.
+```{r}
+abline(v = median(airquality$Wind), lty=2, lwd=2)
+```
+Use par with the parameter mfrow set equal to the vector (1,2) to set up the plot window for two plots side by side. You won't see a result.
+#Ex: mar argument sets up the margins
+par(mfrow=c(2,1),mar=c(4,4,2,1))
+```{r}
+par(mfrow=c(1,2))
+```
+Now plot airquality$Wind and airquality$Ozone and use main to specify the title "Ozone and Wind".
+#Ex: plot(west$latitude, west$pm25, main="West")
+```{r}
+plot(airquality$Wind, airquality$Ozone, main = "Ozone and Wind")
+```
+Plot airquality$Ozone and airquality$Solar.R and use main to specify the title "Ozone and Solar Radiation".
+```{r}
+plot(airquality$Ozone, airquality$Solar.R, main = "Ozone and Solar Radiation")
+```
+This one with 3 plots, to illustrate inner and outer margins. First, set up the plot window by typing par(mfrow = c(1, 3), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
+
+Margins are specified as 4-long vectors of integers. Each number tells how many lines of text to leave at each side. The numbers are assigned clockwise starting at the bottom. The default for the inner margin is c(5.1, 4.1, 4.1, 2.1) so you can see we reduced each of these so we'll have room for some outer text.
+```{r}
+par(mfrow = c(1, 3), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
+```
+The first plot should be familiar. Plot airquality$Wind and airquality$Ozone with the title (argument main) as "Ozone and Wind".
+```{r}
+plot(airquality$Wind, airquality$Ozone, main = "Ozone and Wind")
+```
+plot airquality$Solar.R and airquality$Ozone with the title (argument main) as "Ozone and Solar Radiation".
+```{r}
+plot(airquality$Solar.R, airquality$Ozone, main = "Ozone and Solar Radiation")
+```
+Plot airquality$Temp and airquality$Ozone with the title (argument main) as "Ozone and Temperature".
+ 
+```{r}
+plot(airquality$Temp, airquality$Ozone, main = "Ozone and Temperature")
+```
+Since this is the main title, we specify it with the R command mtext. Call mtext with the string "Ozone and Weather in New York City" and the argument outer set equal to TRUE.
+```{r}
+mtext("Ozone and Weather in New York City", outer = TRUE)
+```
+
+We'll use this dataFrame to demonstrate an agglomerative (bottom-up) technique of hierarchical clustering and create a dendrogram. This is an abstract picture (or graph) which shows how the 12 points in our dataset cluster together. Two clusters (initially, these are points) that are close are connected with a line, We'll use Euclidean distance as our metric of closeness.
+
+Run the R command dist with the argument dataFrame to compute the distances between all pairs of these points. By default dist uses Euclidean distance as its metric, but other metrics such as Manhattan, are available. Just use the default.
+
+```{r}
+dist(dataFrame)
+```
+How does a plot get created?
+
+1) Explicityly launch a graphics device
+2) Call a plotting function to make a plot (no plot will appear on the screen if using a graphics device)
+3) Annotate plot if necessary
+4) Explicitly close grapahics device with dev.off()
+```{r}
+
+setwd("/Users/anitaowens/Documents/datasciencecoursera")
+
+#open pdf device
+pdf(file="myplot.pdf")
+
+#ceate a plot and send to a file (no plot on screen)
+with(faithful, plot(eruptions,waiting))
+title(main = "Old Faithful Geyser Data")
+
+#close the pdf file device
+dev.off()
+```
+Graphics File Devices
+
+Vector formats:
+
+pdf: useful for line-type graphics, resizes well, usually portable, not efficient if plot has many objects/points
+
+svg: XML-based scalable vector graphics: supports animation and interactivity, potentially useful web-based plots
+
+win.metafile: Windows metafile format(only on Windows)
+
+postscript: older format, alo resizes well, usually portable, can be used to create ecapsulatede, postscript files; Windows systems often don't have a postscript viewer.
+
+Bitmap formats
+
+png: bitmapped format, good for line drawings or images with solid colors, use lossless compression (like the old GIF format), most web browsers can read this format natively, good for plotting many many points, does not resize well
+
+jpeg:  good for photographs or natural senes, uses lossy compression, good for plotting many many points, does not resuze well, can be read by almost any computer and any web browser, not great for line drawings
+
+tiff: cretes bitmap files in the TIFF format; supports lossless compression
+
+bmp: a native Windows bitmapped format
+
+MULTIPLE OPEN GRAPHICS DEVICES
+-it is possible to open multiple graphics devices (screen, file, or both) for example, when viewing multiple plots at once
+-plotting can only occur on 1 graphics device at a time
+-the currently active graphics device can be found by calling dev.cur()
+-every open graphics device is assigned an integer >= 2
+-you can change the active graphics device with dev.set(<integer>) where <integer> is the number associated with the graphics device you want to switch to
+```{r}
+
+```
+COPYING PLOTS
+
+Copying a plot to another device can be useful because some plots require a lot of code and it can be a pain to type all that in again for a different device.
+
+dev.copy: copy a plot from 1 device to another
+dev.copy2pdf: specifically copy a plot to a PDF file
+#the result may not be identical to the original
+```{r}
+#create  a plot on the screen device
+with(faithful, plot(eruptions,waiting))
+
+#add main title
+title(main = "Old Faithful Geyser Data")
+
+#copy my plot to a PNG file
+dev.copy(png, file="geyserplot.png")
+
+#close png device
+dev.off()
+```
+W2 Quiz
+```{r}
+#Q2
+library(nlme)
+library(lattice)
+xyplot(weight ~ Time | Diet, data=x)
+
+```
+Q3
+Annotation of plots in any plotting system involves adding points, lines, or text to the plot, in addition to customizing axis labels or adding titles. Different plotting systems have different sets of functions for annotating plots in this way.
+
+Which of the following functions can be used to annotate the panels in a multi-panel lattice plot?
+#i don't know
+
+Q4
+```{r}
+p <- xyplot(Ozone ~ Wind | factor(Month), data = airquality)
+
+```
+Q7
+```{r}
+#ggplot
+qplot(Wind, Ozone, data = airquality)
+
+qplot(Wind, Ozone, data = airquality, facets = . ~ factor(Month))
+
+airquality = transform(airquality, Month = factor(Month))
+qplot(Wind, Ozone, data = airquality, facets = . ~ Month)
+```
+Q9
+```{r}
+g <- ggplot(movies, aes(votes, rating))
+print(g)
+#there is no plot if you run this code
+#it does not have a layer (in other words, it doesn't know how to draw it yet)
+
+```
+
+Q10
+```{r}
+#adding smoother to scatterplot
+qplot(votes, rating, data = movies)
+
+#like this
+
+g + geom_point() + geom_smooth()
+
+```
+
