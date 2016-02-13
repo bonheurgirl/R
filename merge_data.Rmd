@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r}
-setwd("/Users/anitaowens/Documents/datasciencecoursera")
+setwd("/Users/anitaowens/Documents/R")
 setwd("/Users/anitaowens/Desktop")
 getwd()
 
