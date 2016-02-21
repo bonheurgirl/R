@@ -152,7 +152,6 @@ weight
 dogweight<-dogs$Weight
 hist(dogweight)
 
-
 catweight<-cats$Weight
 hist(catweight)
 
@@ -160,5 +159,51 @@ summary(dogweight)
 summary(catweight)
 
 round(mean(catweight), digits = 1)
+round(sd(catweight), digits=2)
+```
+What is the z-score of a 13 pound adult cat? Round to one decimal point.
+```{r}
+13-mean(catweight)
+round(4.396429/sd(catweight), digits = 1)
+```
+What proportion of adult cats weigh more than 13 pounds, according to your data? Use the following code to answer this question: 1-pnorm(zcat). Replace "zcat" with your z-score for the cat. Round to three decimal places.
+```{r}
+zcat<-round(4.396429/sd(catweight), digits = 1)
+1-pnorm(zcat)
+#[1] 0.01072411
+round(1-pnorm(zcat), digits = 3)
+```
+About 95% of adult cats at the shelter weigh between?
+4.8 and 12.4lbs
+
+ ```{r}
+quantile(catweight, c(.05, .25, .5, .90, .95))
+quantile(catweight, c(.00, .05, .25, .5, .90, .95, 1.00))
+```
+What was the most common way that dogs arrived in the shelter? (as defined by the “Intake.Type” variable)
+```{r}
+table(dogs$Intake.Type)
+```
+What proportion of dogs were brought to the shelter as an owner surrender? (Round to 3 decimal places.)
+```{r}
+round(58/226, digits = 3)
+#answer 0.278
+
+sdogs<-round(zscore/sd(dogs$Intake.Type), digits = 3)
+1-pnorm(sdogs)
+
+round(1-pnorm(sdogs), digits = 3)
+
+```
+Of the dogs that were brought to the shelter as an owner surrender, how many were returned to their owner?
+```{r}
+returndogs<-dogs[ which(dogs$Intake.Type=='Owner Surrender' & dogs$Outcome.Type == "Return to Owner"),]
+nrow(returndogs)
+
+```
+Question3
+```{r}
+x<-c(2,2,3,5,6,7,9,14,15,18)
+y<-c(2,2,3,5,6,8,9,14,15,18)
 ```
 
