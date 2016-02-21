@@ -5,7 +5,7 @@ date: "January 8, 2016"
 output: html_document
 ---
 ```{r}
-setwd("/Users/anitaowens/Documents/datasciencecoursera")
+setwd("/Users/anitaowens/Documents/R")
 ```
 
 You can also embed plots, for example:
@@ -54,7 +54,6 @@ hist(subset(pollution,region=="west")$pm25, col = "green")
 We've seen that we can use a function call as an argument when calling another function. We'll do this again when we call plot with the arguments latitude and pm25 which are both from our data frame pollution. We'll call plot from inside the R command with which evaluates "an R expression in an environment constructed from data". We'll use pollution as the first argument to with and the call to plot as the second. This allows us to avoid typing "pollution$" before the arguents to plot, so it saves us some typing and adds to your base of R knowledge. Try this now.
 ```{r}
 with(pollution, plot(latitude, pm25))
-
 ```
 Note that the first argument is plotted along the x-axis and the second along the y. Now use abline to add a horizontal line at 12. Use two additional arguments, lwd equal to 2 and lty also equal to 2. See what happens.
 ```{r}

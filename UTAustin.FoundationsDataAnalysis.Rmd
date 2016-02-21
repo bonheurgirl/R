@@ -6,7 +6,7 @@ output: html_document
 ---
 UTAustinX: UT.7.10x Foundations of Data Analysis - Part 1
 ```{r}
-setwd("/Users/anitaowens/Documents/datasciencecoursera")
+setwd("/Users/anitaowens/Documents/R")
 install.packages("SDSFoundations")
 library("SDSFoundations")
 bike<-read.csv("BikeData.csv")
@@ -73,5 +73,92 @@ nrow(thirty)
 is this normal
 ```{r}
 
+```
+animal data
+```{r}
+#number of variables
+ncol(AnimalData)
+```
+how many were adopted
+```{r}
+adopt<-AnimalData[1:10,]
+sum(with(adopt, Outcome.Type=="Adoption"))
+```
+plot
+```{r}
+plot(AnimalData$Animal.Type, AnimalData$Weight, main="Test123")
+
+```
+comprehension check
+```{r}
+workers<-c(10, 2, 6, 12,   14,   15,   15,   24,   15,   25,   3,   12)
+
+mean(workers)
+round(mean(workers), digits = 1)
+round(sd(workers),digits=2)
+round(sd(workers),digits=1)
+median(workers)
+summary(workers)
+
+range(workers, na.rm = FALSE)
+IQR(workers)
+
+plot(workers)
+library(ggplot2)
+overtime<-as.data.frame(workers)
+ggplot(overtime, aes(x=workers)) + geom_histogram(binwidth = .5, color="black", fill="white") + geom_vline(aes(xintercept=mean(overtime, na.rm=T)), color="red", linetype="dashed", size=1)
+```
+AnimalData Exercises
+```{r}
+#Find the number of animals that were adopted
+table(AnimalData$Outcome.Type)
+
+#Pull out only adopted animals
+adopted <- AnimalData[AnimalData$Outcome.Type=="Adoption",]
+
+#Pull out just the days in shelter for the adopted animals
+daystoadopt <- adopted$Days.Shelter
+
+#Visualize and describe this variable
+hist(daystoadopt)
+fivenum(daystoadopt)
+mean(daystoadopt)
+sd(daystoadopt)
+which(AnimalData$Days.Shelter==max(daystoadopt))
+
+#. How would you describe the shape of the distribution of daystoadopt?
+#positively skewed-the right tail is longer (right skewed)
+
+IQR(daystoadopt)
+
+mean(adopted$Days.Shelter)
+#What was the z-score for this particular animal? Round to the nearest TWO decimal places.
+211-mean(adopted$Days.Shelter)
+round(181.7353/sd(adopted$Days.Shelter), digits = 2)
+#The middle 50% of the distribution were adopted between 8 and 38 days
+```
+Univariate Descriptive Statistics
+```{r}
+#subsetting dogs
+dogs<-AnimalData[ which(AnimalData$Animal.Type=='Dog' & AnimalData$Age.Intake >= 1),]
+nrow(dogs)
+
+#subsetting dats
+cats<-AnimalData[ which(AnimalData$Animal.Type=='Cat' & AnimalData$Age.Intake >= 1),]
+nrow(cats)
+```
+weight
+```{r}
+dogweight<-dogs$Weight
+hist(dogweight)
+
+
+catweight<-cats$Weight
+hist(catweight)
+
+summary(dogweight)
+summary(catweight)
+
+round(mean(catweight), digits = 1)
 ```
 
