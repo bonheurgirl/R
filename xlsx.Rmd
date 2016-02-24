@@ -36,10 +36,18 @@ sex survey data
 ```{r}
 read.xlsx("sex_survey.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
 
-#creating a data frame    
+#creating a data frame #this took hours to do
 sex<-read.xlsx("sex_survey.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
 
 read.xlsx2(file, sheetIndex, header=TRUE, colClasses="character")
+
+#save a data object
+save(sex, file = "saveddf.RData")
+
+#write file
+write.csv(sex, file = "savedsexfile.csv")
+#clean up mess
+unlink("savedsexfile.csv")
 ```
 sd data
 ```{r}
@@ -55,4 +63,4 @@ create a new workbook
 # possible values for type are : "xls" and "xlsx"
 wb<-createWorkbook(type="xlsx")
 ```
-
+https://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/
