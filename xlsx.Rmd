@@ -1,0 +1,58 @@
+---
+title: "xlsx package"
+author: "Anita Owens"
+date: "February 24, 2016"
+output: html_document
+---
+https://www.datacamp.com/community/tutorials/r-tutorial-read-excel-into-r
+
+load package
+```{r}
+library(xlsx)
+
+```
+example of reading xlsx sheets
+
+file : the path to the file to read
+sheetIndex : a number indicating the index of the sheet to read; e.g : use sheetIndex=1 to read the first sheet
+header : a logical value. If TRUE, the first row is used as the names of the variables
+colClasses : a character vector that represents the class of each column
+```{r}
+ file <- system.file("tests", "test_import.xlsx", package = "xlsx")
+    res <- read.xlsx(file, 2)  # read the second sheet
+```
+example of writing xlsx sheets
+
+write.xlsx(x, file, sheetName="Sheet1", 
+  col.names=TRUE, row.names=TRUE, append=FALSE)
+
+write.xlsx2(x, file, sheetName="Sheet1",
+  col.names=TRUE, row.names=TRUE, append=FALSE)
+```{r}
+file <- paste(tempfile(), "xlsx", sep=".")
+    write.xlsx(USArrests, file=file)
+```
+sex survey data
+```{r}
+read.xlsx("sex_survey.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+
+#creating a data frame    
+sex<-read.xlsx("sex_survey.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+
+read.xlsx2(file, sheetIndex, header=TRUE, colClasses="character")
+```
+sd data
+```{r}
+#reading xlsx file into a dataframe
+df<-read.xlsx("sd.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+
+#2nd option
+read.xlsx2(file, sheetIndex, header=TRUE, colClasses="character")
+```
+create a new workbook
+```{r}
+# create a new workbook for outputs
+# possible values for type are : "xls" and "xlsx"
+wb<-createWorkbook(type="xlsx")
+```
+
