@@ -5,6 +5,7 @@ date: "February 9, 2016"
 output: html_document
 ---
 UTAustinX: UT.7.10x Foundations of Data Analysis - Part 1
+Subsetting: http://www.statmethods.net/management/subset.html
 ```{r}
 setwd("/Users/anitaowens/Documents/R")
 install.packages("SDSFoundations")
@@ -205,5 +206,60 @@ Question3
 ```{r}
 x<-c(2,2,3,5,6,7,9,14,15,18)
 y<-c(2,2,3,5,6,8,9,14,15,18)
+```
+Week 3 Bivariate Data
+```{r}
+#import data
+BullRiders<-read.csv("BullRiders.csv")
+```
+Info about the dataset
+```{r}
+nrow(BullRiders)
+```
+How many of the first 10 riders in the dataset have been pro for 10 years or more?
+```{r}
+head(BullRiders)
+pro<-BullRiders[1:10,]
+plus10<-pro[ which(pro$YearsPro >= 10),]
+nrow(plus10)
+```
+Of the top 15 riders so far in 2015, how many rides were completed by the rider with the fewest buck-outs in 2014?
+```{r}
+names(BullRiders)
+top15<-BullRiders[1:15,]
+buck2014<-subset(top15, select=c(Rider, Rank15, BuckOuts14, Rides14))
+#sort from lowest to highest
+```
+Breakdown of Analysis
+```{r}
+#import data
+Bull<-read.csv("BullRiders.csv")
+#Subset for riders that participated in at least one event in 2013
+new_bull <- bull[bull$Events13  > 0 ,]
+
+# Visualize and describe the first variable of interest
+hist(new_bull$Rides13)
+fivenum(new_bull$Rides13)
+mean(new_bull$Rides13)
+sd(new_bull$Rides13)
+
+# Visualize and describe the second variable of interest
+hist(new_bull$Top10_13)
+fivenum(new_bull$Top10_13)
+mean(new_bull$Top10_13)
+sd(new_bull$Top10_13)
+
+# Create a scatterplot
+plot(new_bull$Rides13,new_bull$Top10_13)
+
+# Add line of best fit
+abline(lm(new_bull$Top10_13~new_bull$Rides13))
+
+# Calculate the correlation coefficient
+cor(new_bull$Rides13,new_bull$Top10_13)
+
+# Create a correlation matrix 
+vars <- c("Top10_13", "Rides13")
+cor(new_bull[,vars])
 ```
 
