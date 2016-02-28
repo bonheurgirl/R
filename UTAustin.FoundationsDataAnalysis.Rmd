@@ -397,3 +397,134 @@ outlier - This answer is correct. outlier in both relationships—a rider who ha
 0.893 - This answer is correct. 0.893 .   
 Cup Points - This answer is correct. Cup Points still had the higher relationship to Earnings. Visual examination showed a  
 good linear relationship - This answer is correct. good linear relationship for both Ride Percentage and Cup Points, indicating the correct use of the correlation coefficient.
+
+PROBLEM SET
+Subset the dataset for riders that had at least 1 ride in the 2014 season. Call this dataset new_bull.
+```{r}
+new_bull<-BullRiders[ which(BullRiders$Rides14 >= 1),]
+```
+Create a new variable
+```{r}
+RidesPerEvent14 <- new_bull$Rides14/new_bull$Events14
+```
+Make a histogram of your "rides per event" variable and find the five-number summary for your "rides per event" variable.
+```{r}
+hist(RidesPerEvent14)
+round(fivenum(RidesPerEvent14), digits = 2)
+```
+Create a scatterplot of "rides per event" and yearly ranking (defined by the "Rank14" variable) and add a line of best fit. Which of the following best describes the relationship between these two variables?
+```{r}
+plot(RidesPerEvent14, new_bull$Rank14)
+abline(lm(new_bull$Rank14~RidesPerEvent14), col="red")
+```
+What is the correlation coefficient for rides per event and yearly ranking? (Report to 3 decimal places)
+```{r}
+#adding the RidersPerEvent14 column to dataframe
+test<-cbind(new_bull, RidesPerEvent14)
+
+#correlation matrix
+vars <-c("RidesPerEvent14", "Rank14")
+round(cor(test[,vars]), digits = 3)
+```
+Suppose that college GPA and graduate school GPA have a correlation coefficient of 0.75. Based on this, what proportion of variation in graduate school GPA is left unexplained after taking college GPA into account? (Report to 4 decimal places)?
+
+If |r| is between 0.5 and 0.85, there is a moderate correlation
+```{r}
+.75*.75
+1-.5625
+#56% of graduate school GPA can be attributed to college GPA
+#Answer: .4375
+```
+Using the dataset below, find the correlation coefficient between time spent studying and exam grade.
+```{r}
+#import data
+study <- read.csv("~/Documents/R/study.csv")
+
+#correlation matrix
+vars <-c("Minutes", "Grade")
+round(cor(study[,vars]), digits = 3)
+```
+Approximately what percentage of the variation in exam scores can be explained by the amount of time that each student studied? (Round to whole number without a % sign.)
+```{r}
+.597*.597
+0.356409
+round(0.356409*100, digits = 0)
+```
+Create a scatterplot of the data (exam grades and time spent studying). What is the value of the outlier (the student that got a high grade but didn't study very long)?
+```{r}
+#plot(study$Grade, study$Minutes)
+plot(study$Minutes, study$Grade)
+```
+When the outlier is removed, what is the new value of r? (Round to 3 decimal places.)
+```{r}
+#remove outlier
+nooutlier<-study[ which(study$Grade !=92),]
+nrow(nooutlier)
+
+#correlation matrix
+vars <-c("Minutes", "Grade")
+round(cor(nooutlier[,vars]), digits = 3)
+```
+Z-score: If an adult has a z-score of -1.5, how many hours of sleep does this person get per night? (Report to 2 decimal places.)
+```{r}
+
+round(4.59-6.7/1.1, digits = 2)
+
+#solved for x by hand
+#hours of sleep=5.05 - 6.7 / 1.1 = -1.5 z-score
+
+```
+What proportion of adults sleep longer than 4.5 hours per night? (Report to 3 decimal places.)
+answer: 0.977
+```{r}
+1-pnorm(zscore)
+round(1-pnorm(zscore), digits = 3)
+
+#z-score
+zscore<- (4.5 - 6.7)/1.1
+round(1-pnorm(zscore), digits = 3)
+#answer:  0.977
+```
+What proportion of adults sleep between 5.38 and 8.79 hours of sleep? (Report to 3 decimal places.)
+answer:.856
+```{r}
+zscore2<-(5.38-6.7) / 1.1
+round(1-pnorm(zscore2), digits = 3)
+#.885
+
+#What is the probability that a value with a z-score of -0.7109091 will occur in a normal distribution?
+
+#solution:
+#Scroll up to the table above and find “ -0.7” on the left or right side. Now move across the table to “0.01” on the top or bottom, and record the value in the cell: 0.2389. That tells us that 23.89% of values in the set are at or below a z -score of -0.7109091. 
+
+
+zscore3<-(8.79-6.7)/ 1.1
+round(1-pnorm(zscore3), digits = 3)
+#0.029
+#What is the probability that a value with a z-score of 2.699091 will occur in a normal distribution?
+
+#solution:
+#Scroll up to the table above and find “ 2.6” on the left or right side. Now move across the table to “0.09” on the top or bottom, and record the value in the cell: 0.9964. That tells us that 99.64% of values in the set are at or below a z -score of 2.699091.
+
+answer<-0.885-0.029
+```
+
+Probability Example
+
+Example B
+What is the probability that a value with a z-score greater than 1.53 will occur in a normal distribution? 
+Solution
+Scroll up to the table of z-score probabilities again and find the intersection between 1.5 on the left or right and 3 on the top or bottom, record the value in the cell: 0.937 .
+
+That decimal lets us know that 93.7% of values in the set are below the z-score of 1.53. 
+
+To find the percentage that is above that value, we subtract 0.937 from 1.0 (or 93.7% from 100%), to get 0.063 or 6.3%.
+```{r}
+
+```
+What is the z-score of the price of a pair of skis that cost $247, if the mean ski price is $279, with a standard deviation of $16?
+```{r}
+zscoreski<-(247-279)/16
+#zscore=-2
+```
+
