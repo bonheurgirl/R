@@ -1,0 +1,22 @@
+AnimalData              Data animals in the Austin Town Lake animal
+                        shelter
+AustinCityLimits        Data from Austin City Limits music show on PBS
+BikeData                Data on bicycle commuters in Austin Texas
+BullRiders              Data from the 2012 National standings for PBR
+FilmData                Data on top grossing films.
+PostSurvey              End of semester survey from a freshman
+                        statistics course at UT.
+StudentSurvey           Data collected from a freshman statistics
+                        course at UT.
+WorldBankData           Data from the World Bank data repository.
+WorldRecords            Data from World Record standings.
+expFit                  Exponential Fit and plot of data
+expFitPred              Exponential Fit and plot of data with a
+                        predicted value
+linFit                  Linear Fit and plot of data
+linFitPred              Linear Fit and plot of data with a predicted
+                        value
+logisticFit             Logistic Growth Fit and plot of data
+logisticFitPred         Logistic Fit and plot of data with a predicted
+                        value
+tripleFit               Fit three models at once

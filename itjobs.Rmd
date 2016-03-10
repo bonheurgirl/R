@@ -1,0 +1,27 @@
+---
+title: "itjobs"
+author: "Anita Owens"
+date: "March 10, 2016"
+output: html_document
+---
+
+This is an R Markdown document.
+```{r}
+setwd("/Users/anitaowens/Documents/R")
+itjobs<-read.csv("itjobs.csv")
+```
+description of variables
+```{r}
+# Visualize and describe variable of interest
+table(itjobs$profession)
+gtab<-table(itjobs$profession)
+```
+more stats
+```{r}
+gtab2<-table(itjobs$profession,itjobs$perc.male)
+
+
+
+```
+
+

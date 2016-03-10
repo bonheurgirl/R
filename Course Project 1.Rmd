@@ -68,7 +68,6 @@ dev.off()
 ```
 Plot #2
  
-
 combining date and time
 ```{r}
 library(lubridate)
@@ -78,6 +77,7 @@ hpc_data$date_time=dmy_hms(paste(hpc_data$Date, hpc_data$Time))
 
 hpc_data$Date<-as.Date(hpc_data$Date, format="%d/%m/%Y")
 str(hpc_data)
+
 #subsetting
 hpc<-hpc_data[ which(hpc_data$Date>="2007-02-01" & hpc_data$Date<="2007-02-02"),]
 str(hpc)

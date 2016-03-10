@@ -1,0 +1,60 @@
+---
+title: "Challenge2"
+author: "Anita Owens"
+date: "February 28, 2016"
+output: html_document
+---
+set working directory
+```{r}
+setwd("/Users/anitaowens/Documents/Challenge2-AnitaOwens/challenge2")
+
+setwd("/Users/anitaowens/Documents/R")
+```
+import dataset
+```{r}
+total_watt<-read.csv("total_watt.csv", header = FALSE)
+head(total_watt)
+```
+rename variable
+```{r}
+colnames(total_watt)<-c("DayTime","EnergyConsumption")
+```
+formatting variables
+http://www.statmethods.net/input/dates.html
+```{r}
+#create a time object
+newtime<-as.POSIXlt(total_watt$DayTime)
+
+#add new time object as a new column and created a new dataframe
+watt<-cbind(total_watt, newtime)
+
+```
+plot -rbase
+```{r}
+plot(watt$newtime, watt$EnergyConsumption, type="l", ylab="Household Energy Consumption", xlab="Date", col="34", lwd=1, font=2, main = "Challenge 2", col.main="34", col.lab="green")
+```
+ggplot
+```{r}
+library(ggplot2)
+library(scales)
+ggplot(watt, aes(newtime)) + geom_line() + scale_x_date(breaks = "1 month", minor_breaks = "1 week") + xlab("") + ylab("Household Energy Consumption")
+```
+
+#saving png file
+```{r}
+dev.copy(png, file="challenge2.png",width=480,height=480)
+dev.off()
+```
+subsetting
+#visualizing the empty data points
+```{r}
+test<-watt[ which(watt$newtime > "2011-05-03 00:00:00" & watt$newtime < "2011-05-08 00:00:00"),]
+
+plot(test$newtime, test$EnergyConsumption, type="l", ylab="Household Energy Consumption", xlab="Date", col="darkblue", lwd=1)
+
+```
+X-Axis Labels on a 45-Degree Angle using R
+```{r}
+
+```
+

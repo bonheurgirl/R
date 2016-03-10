@@ -1,0 +1,17 @@
+---
+title: "Week4.BivariateDist.Categ.Data"
+author: "Anita Owens"
+date: "March 10, 2016"
+output: html_document
+---
+Week 4: Bivariate Distributions (Categorical Data)
+```{r}
+setwd("/Users/anitaowens/Documents/R")
+```
+table
+```{r}
+table(musicfestivals$acl)
+gtab<-table(musicfestivals$acl)
+
+#proportion in the 0 and 1 categories
+prop.table(gtab)

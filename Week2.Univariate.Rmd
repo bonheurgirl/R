@@ -1,0 +1,124 @@
+---
+title: 'Week2: Univariate Descriptive Stats Animal Data'
+author: "Anita Owens"
+date: "March 10, 2016"
+output: html_document
+---
+
+is this normal
+```{r}
+AnimalData<-read.csv("AnimalData.csv")
+```
+animal data
+```{r}
+#number of variables
+ncol(AnimalData)
+```
+how many were adopted
+```{r}
+adopt<-AnimalData[1:10,]
+sum(with(adopt, Outcome.Type=="Adoption"))
+```
+plot
+```{r}
+plot(AnimalData$Animal.Type, AnimalData$Weight, main="Test123")
+
+```
+AnimalData Exercises
+```{r}
+#Find the number of animals that were adopted
+table(AnimalData$Outcome.Type)
+
+#Pull out only adopted animals
+adopted <- AnimalData[AnimalData$Outcome.Type=="Adoption",]
+
+#Pull out just the days in shelter for the adopted animals
+daystoadopt <- adopted$Days.Shelter
+
+#Visualize and describe this variable
+hist(daystoadopt)
+fivenum(daystoadopt)
+mean(daystoadopt)
+sd(daystoadopt)
+which(AnimalData$Days.Shelter==max(daystoadopt))
+
+#. How would you describe the shape of the distribution of daystoadopt?
+#positively skewed-the right tail is longer (right skewed)
+
+IQR(daystoadopt)
+
+mean(adopted$Days.Shelter)
+#What was the z-score for this particular animal? Round to the nearest TWO decimal places.
+211-mean(adopted$Days.Shelter)
+round(181.7353/sd(adopted$Days.Shelter), digits = 2)
+#The middle 50% of the distribution were adopted between 8 and 38 days
+```
+Univariate Descriptive Statistics
+```{r}
+#subsetting dogs
+dogs<-AnimalData[ which(AnimalData$Animal.Type=='Dog' & AnimalData$Age.Intake >= 1),]
+nrow(dogs)
+
+#subsetting dats
+cats<-AnimalData[ which(AnimalData$Animal.Type=='Cat' & AnimalData$Age.Intake >= 1),]
+nrow(cats)
+```
+weight
+```{r}
+dogweight<-dogs$Weight
+hist(dogweight)
+
+catweight<-cats$Weight
+hist(catweight)
+
+summary(dogweight)
+summary(catweight)
+
+round(mean(catweight), digits = 1)
+round(sd(catweight), digits=2)
+```
+What is the z-score of a 13 pound adult cat? Round to one decimal point.
+```{r}
+13-mean(catweight)
+round(4.396429/sd(catweight), digits = 1)
+```
+What proportion of adult cats weigh more than 13 pounds, according to your data? Use the following code to answer this question: 1-pnorm(zcat). Replace "zcat" with your z-score for the cat. Round to three decimal places.
+```{r}
+zcat<-round(4.396429/sd(catweight), digits = 1)
+1-pnorm(zcat)
+#[1] 0.01072411
+round(1-pnorm(zcat), digits = 3)
+```
+About 95% of adult cats at the shelter weigh between?
+4.8 and 12.4lbs
+
+ ```{r}
+quantile(catweight, c(.05, .25, .5, .90, .95))
+quantile(catweight, c(.00, .05, .25, .5, .90, .95, 1.00))
+```
+What was the most common way that dogs arrived in the shelter? (as defined by the “Intake.Type” variable)
+```{r}
+table(dogs$Intake.Type)
+```
+What proportion of dogs were brought to the shelter as an owner surrender? (Round to 3 decimal places.)
+```{r}
+round(58/226, digits = 3)
+#answer 0.278
+
+sdogs<-round(zscore/sd(dogs$Intake.Type), digits = 3)
+1-pnorm(sdogs)
+
+round(1-pnorm(sdogs), digits = 3)
+
+```
+Of the dogs that were brought to the shelter as an owner surrender, how many were returned to their owner?
+```{r}
+returndogs<-dogs[ which(dogs$Intake.Type=='Owner Surrender' & dogs$Outcome.Type == "Return to Owner"),]
+nrow(returndogs)
+
+```
+Question3
+```{r}
+x<-c(2,2,3,5,6,7,9,14,15,18)
+y<-c(2,2,3,5,6,8,9,14,15,18)
+```
