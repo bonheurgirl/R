@@ -1,1 +1,67 @@
-load("/Users/anitaowens/Documents/R/env.RData")
+available.packages()
+install.packages(c("slidify","ggplot2","devtools"))
+library(ggplot2)
+search()
+library(devtools)
+search()
+install.packages("KernSmooth")
+library(KernSmooth)
+x <-1
+print (x)
+x
+msg<-"hello"
+x <- ##incomplete expression
+x
+x<-5
+x
+print (x)
+x<-1:20
+x
+print (x)
+library(httr)
+oauth_endpoints("github")
+myapp<-oauth_app("github",  key = "3aebf8287d62d381f39a", secret = "fa76549cc15540ed26e316b2a207a3a06ec393ef")
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+gtoken <- config(token = github_token)#
+req <- GET("https://api.github.com/rate_limit", gtoken)#
+stop_for_status(req)#
+content(req)
+labels <- month.name[1:12]#
+mp <- barplot(1:12, axes = FALSE, axisnames = FALSE)#
+text(mp, par(“usr”)[3], labels = labels, srt = 45, adj = c(1.1,1.1), xpd = TRUE, cex=.9)#
+axis(2)
+# Example data#
+tmin <- as.Date("2000-01-01")#
+tmax <- as.Date("2001-01-01")#
+tlab <- seq(tmin, tmax, by="month")#
+lab <- format(tlab,format="%Y-%b")#
+set.seed(111)#
+x <- seq(tmin, tmax, , 100)#
+y <- cumsum(rnorm(100))#
+# Plot#
+png("plot_w_rotated_axis_labels.png", height=3, width=6, units="in", res=400)#
+op <- par(mar=c(6,4,1,1))#
+plot(x, y, t="l", xaxt="n", xlab="")#
+axis(1, at=tlab, labels=FALSE)#
+text(x=tlab, y=par()$usr[3]-0.1*(par()$usr[4]-par()$usr[3]),#
+labels=lab, srt=45, adj=1, xpd=TRUE)#
+par(op)#
+dev.off()
+setwd("/Users/anitaowens/Documents/R")
+acl<-read.csv("AustinCityLimits.csv")
+over30<- acl[ which(acl$Age >=30), ]
+genre<-table(over30$Genre)#
+genre#
+#
+gender<-table(over30$Gender)#
+gender
+twoway <- table(over30$Gender,over30$Genre)#
+twoway
+barplot(twoway, legend=T, beside=T, col = c( "pink", "blue"), main = "Austin City Limits Music Genre by Gender")
+barplot(twoway, legend=T, beside=T, col = c( "pink", "blue"), main = "Austin City Limits Music Genre by Gender")
+dev.copy(png, file="plot1.png",width=480,height=480)#
+dev.off()
+getwd()
+dev.copy(png, file="plotacl.png",width=480,height=480)#
+dev.off()
+barplot(twoway, legend=T, beside=T, col = c( "pink", "blue"), main = "Austin City Limits Music Genre by Gender")

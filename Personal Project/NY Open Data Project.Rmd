@@ -5,7 +5,8 @@ date: "December 31, 2015"
 output: html_document
 ---
 ```{r}
-setwd("/Users/anitaowens/Documents/datasciencecoursera")
+setwd("/Users/anitaowens/Documents/R")
+setwd("/Users/anitaowens/Documents/R/Personal Project")
 
 ```
 load library
@@ -34,9 +35,11 @@ pairs(~mpg+disp+drat+wt,data=mtcars,
    main="Can they understand this?")
 ```
 NYC Data
+import and get to know your data set
 ```{r}
-nyc<-data.frame(New_York_City_Leading_Causes_of_Death)
-qplot(nyc$Sex, geom="histogram")
-
+nyc<-read.csv("New_York_City_Leading_Causes_of_Death.csv")
+names(nyc)
+nrow(nyc)
+summary(nyc)
 ```
 

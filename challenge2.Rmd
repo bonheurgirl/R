@@ -31,7 +31,10 @@ watt<-cbind(total_watt, newtime)
 ```
 plot -rbase
 ```{r}
-plot(watt$newtime, watt$EnergyConsumption, type="l", ylab="Household Energy Consumption", xlab="Date", col="34", lwd=1, font=2, main = "Challenge 2", col.main="34", col.lab="green")
+plot(watt$newtime, watt$EnergyConsumption, type="l", ylab="Household Energy Consumption", xlab="Date", col="34", lwd=1, font=2, main = "Challenge 2", col.main="black", col.lab="blue")
+
+#add legend
+legend('topright',  lty = 1, col="red", legend = c("Energy"))
 ```
 ggplot
 ```{r}
@@ -57,4 +60,5 @@ X-Axis Labels on a 45-Degree Angle using R
 ```{r}
 
 ```
-
+legend example
+legend("topright", pch = c(17,8), col = c("blue","red"), legend = c("May", "Other Months"))

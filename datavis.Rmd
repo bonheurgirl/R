@@ -1,0 +1,20 @@
+---
+title: "dataviz"
+author: "Anita Owens"
+date: "March 12, 2016"
+output: html_document
+---
+datasets
+```{r}
+setwd("/Users/anitaowens/Documents/R")
+library(help = "datasets")
+```
+variables
+```{r}
+names(USArrests)
+```
+If we want to gather the standard deviation for a matrix we can use the apply() function to apply the sd() function,
+```{r}
+apply(USArrests, sd)
+```
+

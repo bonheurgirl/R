@@ -14,7 +14,12 @@ description of variables
 ```{r}
 # Visualize and describe variable of interest
 table(itjobs$profession)
-gtab<-table(itjobs$profession)
+jtab<-table(itjobs$profession)
+
+mtab<-table(itjobs$perc.male)
+
+#cross-tab
+jobmoney<-table(itjobs$profession, itjobs$gd.median.salary)
 ```
 more stats
 ```{r}

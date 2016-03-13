@@ -5,13 +5,199 @@ date: "March 10, 2016"
 output: html_document
 ---
 Week 4: Bivariate Distributions (Categorical Data)
+
+For artists age 30 or older, do female artists play different kinds of music on Austin City Limits than male artists?
 ```{r}
 setwd("/Users/anitaowens/Documents/R")
 ```
-table
+read csv
 ```{r}
-table(musicfestivals$acl)
-gtab<-table(musicfestivals$acl)
+acl<-read.csv("AustinCityLimits.csv")
+names(acl)
+```
+Create a subset of the data for artists age 30 or older.
+```{r}
+over30<- acl[ which(acl$Age >=30), ]
 
-#proportion in the 0 and 1 categories
-prop.table(gtab)
+older <-acl[acl$Age>=30,]
+```
+Create a table to show the marginal distribution for each variable. 
+```{r}
+genre<-table(over30$Genre)
+genre
+
+gender<-table(over30$Gender)
+gender
+```
+# Create contingency table 
+```{r}
+twoway <- table(over30$Gender,over30$Genre)
+twoway
+addmargins(twoway)
+```
+# Visualize the counts
+```{r}
+#side by side
+barplot(twoway, legend=T, beside=T, col = c( "pink", "blue"), main = "Austin City Limits Music Genre by Gender")
+
+#stacked
+barplot(twoway, legend=TRUE, col = c( "pink", "blue"), main = "Austin City Limits Music Genre by Gender")
+
+```
+# Calculate P(A): the probability of each genre being played
+```{r}
+prop.table(genre)
+```
+# Calculate P(A|B): the probability of each genre being played, given the artist’s gender
+```{r}
+prop.table(twoway,1)
+prop.table(twoway)
+```
+How many male artists are in the 30+ year old artist subset of the Austin City Limits dataset?
+```{r}
+install.packages('plyr')
+library(plyr)
+count(over30, "Gender")
+
+#or
+gender
+```
+To determine the proportion of jazz performers that were male, you would ...
+```{r}
+twoway
+#divide 7 by 11
+round(7/11, digits = 3)
+```
+To determine the proportion of males that performed jazz, you would divide 
+```{r}
+round(7/77, digits = 3)
+```
+Which of these lines of code provides the probability that a randomly selected artist from the dataset performed rock/folk/indie music?
+```{r}
+prop.table(genre)
+```
+What is the probability that a randomly selected artist from the dataset performed rock/folk/indie music?
+```{r}
+round(61/102, digits = 3)
+
+#you can also access the probability with the genre table
+prop.table(genre)
+```
+Which of these lines of code provides the probability that a randomly selected female artist performed rock/folk/indie music?
+```{r}
+#the 1 tells R to compare the sexes in the rows.
+prop.table(twoway, 1)
+```
+What is the probability that a randomly selected female artist performed rock/folk/indie music?
+```{r}
+?round(25/61, digits = 4)
+#.320
+```
+Lab Questions
+1. Subset the data (males only).
+```{r}
+males<-acl[ which(acl$Gender=="M"), ]
+```
+2. Create a table to show the marginal distributions for Genre and Grammy.
+```{r}
+grammy<-table(males$Grammy)
+grammy
+
+genre<-table(males$Genre)
+genre
+```
+3. Create a contingency table to show the conditional distribution for Genre and Grammy.
+```{r}
+gg<-table(males$Grammy, males$Genre)
+gg
+```
+4. Make a bar chart to better visualize how many artists in each Genre received a Grammy.
+```{r}
+barplot(gg, legend=T, beside=T, main = "How many artists in each genre won grammys", col = c("red", "blue"))
+```
+5. Calculate P(A):  the probability of winning a Grammy.
+```{r}
+prop.table(grammy)
+
+#43%
+```
+6. Calculate P(A|B): the probability of winning Grammy, given the artist's Genre.
+```{r}
+prop.table(gg)
+```
+7. Interpret what these probabilities tell us about the relationship between Genre and winning a Grammy.
+```{r}
+
+```
+1) How many male artists won a Grammy?
+2) How many male artists did not win a Grammy?
+```{r}
+grammy
+#35
+#46
+```
+3) Which genre had the greatest number of Grammy wins?
+```{r}
+genre
+#Rock/Folk/Indie 56
+```
+4) What is the probability that a randomly selected artist was a Grammy winner? (Report as a proportion rounded to three decimal places)
+```{r}
+prop.table(grammy)
+#or
+round(35/81, digits = 3)
+```
+5) To determine the probability of winning a Grammy if the artist was a singer-songwriter, you would divide _______ by ________. (Enter numerical values.)
+```{r}
+addmargins(grammy)
+addmargins(gg)
+
+round(2/7, digits = 3)
+#[1] [1] 0.286
+```
+6) To determine the probability that a randomly-selected Grammy winner was a singer-songwriter, you would divide ________ by ________. (Enter numerical values.)
+```{r}
+prop.table(gg, 1)
+#answer:  0.05714286
+2/35
+
+#num of grammy winners in songwriting category divided
+#by the total number of grammy winners
+round(2/35, digits = 3)
+
+```
+Conditional Probabilities
+
+What is the probability that a randomly selected male artist from each of the following genres won a Grammy? (Report as proportions rounded to three decimal places.)
+
+```{r}
+#Country
+round(7/11, digits = 3)
+
+#jazz
+round(4/7, digits = 3)
+
+#rock
+round(22/56, digits = 3)
+
+#singer/songwriter
+round(2/7, digits = 3)
+
+#7e. Our conclusion should be that winning a Grammy _______ independent of Genre.
+#Answer: is not
+```
+Problem Set
+#1 1.  Generate a table to show the number of artists that are "popular" and those that are not.
+```{r}
+pop<-table(acl$Facebook.100k)
+pop
+
+1=pop
+0=not popular
+```
+Generate a table to show the number of "popular" artists within each age group.
+```{r}
+age<-table(acl$Facebook.100k, acl$Age.Group)
+age
+```
+
