@@ -248,9 +248,11 @@ round(cor(study[,vars]), digits = 3)
 ```
 Approximately what percentage of the variation in exam scores can be explained by the amount of time that each student studied? (Round to whole number without a % sign.)
 ```{r}
+#r squared
 .597*.597
 0.356409
 round(0.356409*100, digits = 0)
+#36%
 ```
 Create a scatterplot of the data (exam grades and time spent studying). What is the value of the outlier (the student that got a high grade but didn't study very long)?
 ```{r}
