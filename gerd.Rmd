@@ -1,0 +1,27 @@
+---
+title: "gerd"
+author: "Anita Owens"
+date: "March 23, 2016"
+output: html_document
+---
+read.csv
+```{r}
+library(zoo)
+gerd <- read.csv("gerd.csv", header = TRUE, stringsAsFactors = FALSE, as.is = TRUE )
+
+#turns dates into NA's
+gerd$Date<-strptime(gerd$Date, format = "%d-%m-%Y")
+
+str(gerd)
+View(gerd)
+```
+create a new date object
+```{r}
+#create a date object
+newdate<-as.Date(gerd$Date)
+newtime2<-as.POSIXlt(gerd$newdate)
+
+#add new date object as a new column and created a new dataframe
+newgerd<-cbind(newdate, Revenue)
+```
+

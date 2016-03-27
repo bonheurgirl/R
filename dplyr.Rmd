@@ -29,5 +29,40 @@ Select colums with select
 select(flights, year, month, day)
 
 ```
+Filter rows with filter()
+Equivalent to: flights[flights$month == 1 & flights$day == 1, ]
+```{r}
+filter(flights, month == 1, day == 1)
+```
+Single table verbs
+
+Dplyr aims to provide a function for each basic verb of data manipulation:
+
+filter() (and slice())
+arrange()
+select() (and rename())
+distinct()
+mutate() (and transmute())
+summarise()
+sample_n() and sample_frac()
+```{r}
+```
+To select rows by position, use slice():
+```{r}
+slice(flights, 1:10)
+```
+Extract distinct (unique) rows
+
+A common use of select() is to find the values of a set of variables. This is particularly useful in conjunction with the distinct() verb which only returns the unique values in a table.
+```{r}
+distinct(select(flights, tailnum))
+distinct(select(flights, origin, dest))
+```
+Summarise values with summarise()
+
+The last verb is summarise(). It collapses a data frame to a single row (this is exactly equivalent to plyr::summarise()):
+```{r}
+summarise(flights,delay = mean(dep_delay, na.rm= TRUE))
+```
 
 
