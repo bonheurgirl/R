@@ -26,6 +26,9 @@ nrow(morethan5)
 happystud<-filter(survey, happy < 40 )
 slice(happystud, 1)
 
+#comprehension check
+zscore2<-(77-74)/13
+round(1-pnorm(zscore2), digits = 3)
 
 #Primary Research Question
 
@@ -288,5 +291,40 @@ Normal - This answer is correct.  as sample size increased."""
 
 #Problem Set: Question 1
 #1a. Create a histogram of the "austin" variable for the entire population of students that took the survey. Which best describes the shape of the distribution?
+hist(survey$austin)
+
+#1b. What is the population mean for the "austin" variable? (Round to 2 decimal places.)
+round(mean(survey$austin), digits = 2)
+
+#1c. What is the population standard deviation for the "austin" variable? (Report to 2 decimal places.)
+round(sd(survey$austin), digits = 2)
+
+#1d. Use the Central Limit Theorem to predict the mean and standard deviation of the sampling distribution of means for samples of size n=10 drawn from this population: 
+austin10 <-rep(NA, 1000)
+for (i in 1:1000)
+{x <-sample(survey$austin, size =10)
+austin10[i] <-  mean(x)}
+
+# Graph the histogram of 1,000 sample means.
+hist(austin10)
+
+# Calculate the mean and sd of the sampling distribution.
+mean(austin10)
+sd(austin10)
 
 
+#What is the expected standard deviation? (Round to 2 decimal places.)
+# Compare to the std dev predicted by the CTL.
+round(sd(survey$austin/sqrt(10)), digits = 2)
+
+#What is the expected mean? (Round to 2 decimal places.)
+round(mean(survey$austin), digits = 2)
+
+
+#Question 2
+#A population of sunflower plants is described as having a monthly growth rate that follows a normal distribution with μ = 3.08 in and σ = 0.40 in.
+
+#2a. What is the probability that a randomly chosen sunflower plant grows more than 3.2 inches in a month? (Round to 3 decimal places.)
+answer: 0.382
+zscore<-(3.2-3.08)/.40
+round(1-pnorm(zscore), digits = 3)

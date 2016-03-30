@@ -1,4 +1,3 @@
----
 title: 'Week2: Univariate Descriptive Stats Animal Data'
 author: "Anita Owens"
 date: "March 10, 2016"
