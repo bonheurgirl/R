@@ -6,15 +6,13 @@ devtools::install_github("Tatvic/RGoogleAnalytics")
 
 require(RGoogleAnalytics)
 
-Client ID: 55306401030-06fn296mdemh7n0327htojsesklktd3j.apps.googleusercontent.com
-Client Secret: 2VBin819ZVVtjOkDXUTGX8o6
+client.id<-"55306401030-06fn296mdemh7n0327htojsesklktd3j.apps.googleusercontent.com"
+client.secret<-"2VBin819ZVVtjOkDXUTGX8o6"
 
 # Authorize the Google Analytics account
 # This need not be executed in every session once the token object is created 
 # and saved
 token <- Auth(client.id,client.secret)
-
-token <- Auth("55306401030-06fn296mdemh7n0327htojsesklktd3j.apps.googleusercontent.com","2VBin819ZVVtjOkDXUTGX8o6")
 
 
 # Save the token object for future sessions
