@@ -13,10 +13,14 @@ head(flights)
 ```
 Filter rows
 ```{r}
+library(dplyr)
 #select all flights on Jan 1st
 filter(flights, month == 1, day == 1)
 #equivalent to
 flights[flights$month == 1 & flights$day == 1, ]
+
+#put subsetted data into a new data frame
+june<-filter(flights, month==6, day==20)
 
 ```
 To select rows by position, use slice()
@@ -28,6 +32,8 @@ Select colums with select
 # Select columns by name
 select(flights, year, month, day)
 
+#put selected column into a new dataframe
+orig<-select(flights, origin)
 ```
 Filter rows with filter()
 Equivalent to: flights[flights$month == 1 & flights$day == 1, ]

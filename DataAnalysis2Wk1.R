@@ -328,3 +328,5 @@ round(mean(survey$austin), digits = 2)
 answer: 0.382
 zscore<-(3.2-3.08)/.40
 round(1-pnorm(zscore), digits = 3)
+
+

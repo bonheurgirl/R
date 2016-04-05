@@ -64,3 +64,42 @@ create a new workbook
 wb<-createWorkbook(type="xlsx")
 ```
 https://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/
+
+read workbook into a dataframe
+```{r}
+library(xlsx)
+test<-read.xlsx("test.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+```
+FILTER SOME STUFF OR SUBSET THE DATA YOU WANT
+```{r}
+library(dplyr)
+
+#put subset data into a new dataframe
+test1<-filter(test, v2 == 1)
+test2<-filter(test, v2 > 2)
+```
+add column
+```{r}
+test$v4<-c("spring", "summer", "fall", "winter", "happy", "joy", "sad")
+```
+to determine type
+```{r}
+class(test$v3)
+```
+converting column to a vector
+```{r}
+newvector<-test[["v3"]]
+class(newvector)
+
+testvector<-test[["v2"]]
+class(testvector)
+mean(testvector)
+```
+The way to get the text values converted to numbers is to first convert it to a character, then a numeric vector.
+```{r}
+#factor to numeric
+vector1<-test[["v1"]]
+class(vector1)
+as.numeric(vector1)
+```
+
