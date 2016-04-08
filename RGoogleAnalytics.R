@@ -12,6 +12,7 @@ client.secret <- "2VBin819ZVVtjOkDXUTGX8o6"
 # Authorize the Google Analytics account
 # This need not be executed in every session once the token object is created 
 # and saved
+# check function---can't get it to work, the library package won't install....
 token <- Auth(client.id,client.secret)
 
 
