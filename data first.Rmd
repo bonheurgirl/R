@@ -1,0 +1,62 @@
+---
+title: "data first"
+author: "Anita Owens"
+date: "April 8, 2016"
+output: ioslides_presentation
+---
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Code and Output
+
+```{r}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+read file
+```{r}
+employees <- read.csv("http://www.headfirstlabs.com/books/hfda/hfda_ch09_employees.csv",header=TRUE)
+```
+
+## I want to look at this data set's structure
+
+```{r}
+str(employees)
+```
+##Histogram of employees who received a raise
+```{r}
+hist(employees$received, main = "Frequency of Percentage of Raises")
+```
+##with groupings
+```{r}
+hist(employees$received, breaks=50, main = "Frequency of Percentage of Raises")
+```
+##Explore further
+```{r}
+dim(employees)
+sd(employees$received)
+summary(employees$received)
+summary.data.frame(employees)
+```
+##2007
+```{r}
+hist(employees$received[employees$year==2007], breaks=50)
+hist(employees$received[employees$gender=="F"], breaks=50, main = "Female Employees")
+```
+

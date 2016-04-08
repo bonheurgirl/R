@@ -70,5 +70,18 @@ The last verb is summarise(). It collapses a data frame to a single row (this is
 ```{r}
 summarise(flights,delay = mean(dep_delay, na.rm= TRUE))
 ```
+MANIPULATING DATA
+
+You want to find duplicate entries from a vector or data frame.
+```{r}
+duplicated(gender)
+```
+# Ways to add a column
+```{r}
+gender$salary<-c(132000, 128250, 127500, 120000, 120000, 120000, 116920, 115000, 113000, 106000, 106000)
+
+# Ways to remove the column
+gender$salary<- NULL
+```
 
 
