@@ -1,0 +1,55 @@
+---
+title: 'Correlation: Bivariate Data'
+author: "Anita Owens"
+date: "April 9, 2016"
+output: html_document
+---
+google analytics data
+```{r}
+gerd<-read.xlsx("gerd.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+```
+correlation analysis
+```{r}
+str(gerd)
+library(ggplot2)
+
+qplot(data=gerd, x=pages.session, y=convert.rate, geom="point")
+
+ggplot(data=gerd, aes(y=convert.rate,x=pages.session))+ geom_point(shape=1) +    # Use hollow circles
+    geom_smooth(method=lm)# Add linear regression line 
+#  (by default includes 95% confidence region)
+```
+corrrelation coefficient
+```{r}
+cor(gerd$pages.session,gerd$convert.rate)
+#If |r| is between 0.85 and 1, there is a strong correlation.
+#good linear, strong relationship
+```
+coefficient of determination
+```{r}
+#linear model
+convertlm<-lm(pages.session ~ convert.rate, data=gerd)
+summary(convertlm)$r.squared 
+#91% of the conversion rate can be explained by time on page
+```
+correlation matrix
+```{r}
+vars<-c("pages.session", "convert.rate")
+round(cor(gerd[,vars]), digits = 3)
+```
+average session duration
+```{r}
+ggplot(data=gerd, aes(x=avg.sess.dur,y=convert.rate)) + geom_point(shape=1) + geom_smooth(method=lm) + scale_fill_gradient( low = "red",high = "yellow")
+
+ggplot(data=gerd, aes(x=avg.sess.dur,y=convert.rate, colour=avg.sess.dur))+ geom_point(shape=1) + geom_smooth(method=lm) + scale_colour_gradientn(colours=rainbow(2)) + ggtitle("The Relationship Between Average\nSession Duration and Conversion Rate") + theme(legend.title = element_text(colour="blue", size=16, face="bold"))
+
+cor(gerd$avg.sess.dur,gerd$convert.rate)
+# If |r| is between 0.5 and 0.85, there is a moderate correlation. 
+
+#linear model
+convertlm<-lm(avg.sess.dur ~ convert.rate, data=gerd)
+summary(convertlm)$r.squared 
+#58% of the conversion rate can be explained by average session duration
+
+```
+
