@@ -62,3 +62,20 @@ X-Axis Labels on a 45-Degree Angle using R
 ```
 legend example
 legend("topright", pch = c(17,8), col = c("blue","red"), legend = c("May", "Other Months"))
+
+line graph in ggvis
+```{r}
+library(ggvis)
+#pressure %>% ggvis(~temperature, ~pressure) %>% layer_lines()
+
+watt %>% ggvis(~newtime, ~EnergyConsumption) %>% layer_lines(stroke := "red") %>%
+       add_axis("x", title="Month") %>%
+        add_axis("y", title= "Watts")
+
+
+```
+sample code
+```{r}
+
+```
+
