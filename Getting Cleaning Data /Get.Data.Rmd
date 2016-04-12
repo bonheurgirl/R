@@ -4,7 +4,7 @@ output: html_document
 ---
 
 ```{r}
-setwd("/Users/anitaowens/Documents/datasciencecoursera")
+setwd("/Users/anitaowens/Documents/R")
 ```
 Checking for and creating directories
 
@@ -21,7 +21,7 @@ if (!file.exists("data")) {
 ```
 Loading the data
 ```{r}
-ss06hid <- read.csv("~/Documents/datasciencecoursera/ss06hid.csv", header=TRUE)
+ss06hid <- read.csv("~/Documents/R/ss06hid.csv", header=TRUE)
  
  View(ss06hid)
 ```
@@ -462,7 +462,7 @@ print(object.size(fakeData),units="Mb")
 ```
 CREATING NEW VARIABLES
 Why create new variables?
-*often the raw data won't have a value you are lookign for
+*often the raw data won't have a value you are looking for
 *you will need to transform the data to get the values you would like
 *usually you will add those values to the data frames you are working with (this is common if you want a variable you will use as a predictor)
 *common variables to create: 1. missingness indicators 2. cutting up quantitative variables 3. applying tansforms
