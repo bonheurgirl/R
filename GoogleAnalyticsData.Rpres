@@ -1,0 +1,50 @@
+Are visitors more likely to convert when they engage by viewing more pages within our site?
+========================================================
+author: Anita Owens
+date: April 2016
+
+Let's access our data in Google Analytics and export it as a spreadsheet.
+========================================================
+
+
+E-commerce data exported from Google Analytics
+========================================================
+
+```{r}
+library(xlsx)
+library(ggplot2)
+gd<-read.xlsx("gd.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+str(gd)
+```
+
+Conversion rate based on the number of pages per session with 95% confidence interval.
+========================================================
+
+```{r}
+ggplot(data=gd, aes(y=convert.rate,x=pages.session))+ geom_point(shape=1) +    # Use hollow circles
+    geom_smooth(method=lm)# Add linear regression line 
+#  (by default includes 95% confidence region)
+```
+
+What is the strength of the relationship between number of pages viewed per session and conversion rate? (correlation coefficient)
+========================================================
+```{r}
+cor(gd$pages.session,gd$convert.rate)
+#If |r| is between 0.85 and 1, there is a strong correlation.
+#There is a linear & strong relationship between pages viewed per session and the conversion rate.
+```
+How much of the conversion rate can be explained by number of pages viewed per session? (coefficient of determination)
+========================================================
+```{r}
+#linear model
+convertlm<-lm(pages.session ~ convert.rate, data=gd)
+summary(convertlm)$r.squared 
+#91% of the conversion rate can be explained by the number of pages viewed per session.
+```
+Insights & Recommendations
+========================================================
+- There is a strong relationship between pages viewed per session and the conversion rate.
+
+- We need to focus on ensuring high-quality relevant content on our blog (more "how to" videos and promotions of our new products)
+
+- Encourage our customers to leave reviews for products they have purchased before. (this can be automated with drip emails)

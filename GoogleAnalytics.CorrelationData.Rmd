@@ -7,51 +7,57 @@ output: html_document
 google analytics data
 ```{r}
 library(xlsx)
-gerd<-read.xlsx("gerd.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+gd<-read.xlsx("gd.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
 ```
 correlation analysis
 ```{r}
-str(gerd)
+str(gd)
 library(ggplot2)
 
-qplot(data=gerd, x=pages.session, y=convert.rate, geom="point")
+#qplot(data=gd, x=pages.session, y=convert.rate, geom="point")
 
-ggplot(data=gerd, aes(y=convert.rate,x=pages.session))+ geom_point(shape=1) +    # Use hollow circles
+ggplot(data=gd, aes(y=convert.rate,x=pages.session))+ geom_point(shape=16) +    # Use round circles
     geom_smooth(method=lm)# Add linear regression line 
 #  (by default includes 95% confidence region)
+
+library(ggvis)
+gd %>%
+        ggvis(~pages.session, ~convert.rate) %>%
+        layer_points() %>%
+        layer_model_predictions(model = "lm", se = TRUE)
 ```
-corrrelation coefficient
+correlation coefficient
 ```{r}
-cor(gerd$pages.session,gerd$convert.rate)
+cor(gd$pages.session,gd$convert.rate)
+cor.test(gd$pages.session, gd$convert.rate)
 #If |r| is between 0.85 and 1, there is a strong correlation.
 #good linear, strong relationship
 ```
 coefficient of determination
 ```{r}
 #linear model
-convertlm<-lm(pages.session ~ convert.rate, data=gerd)
+convertlm<-lm(pages.session ~ convert.rate, data=gd)
 summary(convertlm)$r.squared 
-#91% of the conversion rate can be explained by time on page
+#91% of the conversion rate can be explained by the number of pages viewed per session.
 ```
 correlation matrix
 ```{r}
 vars<-c("pages.session", "convert.rate")
-round(cor(gerd[,vars]), digits = 3)
+round(cor(gd[,vars]), digits = 3)
 ```
 average session duration
 ```{r}
-ggplot(data=gerd, aes(x=avg.sess.dur,y=convert.rate)) + geom_point(shape=1) + geom_smooth(method=lm) + scale_fill_gradient( low = "red",high = "yellow")
+ggplot(data=gd, aes(x=avg.sess.dur,y=convert.rate)) + geom_point(shape=1) + geom_smooth(method=lm) + scale_fill_gradient( low = "red",high = "yellow")
 
-ggplot(data=gerd, aes(x=avg.sess.dur,y=convert.rate, colour=avg.sess.dur))+ geom_point(shape=1) + geom_smooth(method=lm) + scale_colour_gradientn(colours=rainbow(2)) + ggtitle("The Relationship Between Average\nSession Duration and Conversion Rate") + theme(legend.title = element_text(colour="blue", size=16, face="bold"))
+ggplot(data=gd, aes(x=avg.sess.dur,y=convert.rate, colour=avg.sess.dur))+ geom_point(shape=1) + geom_smooth(method=lm) + scale_colour_gradientn(colours=rainbow(2)) + ggtitle("The Relationship Between Average\nSession Duration and Conversion Rate") + theme(legend.title = element_text(colour="blue", size=16, face="bold"))
 
-cor(gerd$avg.sess.dur,gerd$convert.rate)
+cor(gd$avg.sess.dur,gd$convert.rate)
 # If |r| is between 0.5 and 0.85, there is a moderate correlation. 
 
 #linear model
-convertlm<-lm(avg.sess.dur ~ convert.rate, data=gerd)
+convertlm<-lm(avg.sess.dur ~ convert.rate, data=gd)
 summary(convertlm)$r.squared 
-#58% of the conversion rate can be explained by average session duration
-
+#58% of the conversion rate can be explained by average session duration.  This is not a very strong correlation.  We need to investigate further and look at other variables.
 ```
 
 ```{r}

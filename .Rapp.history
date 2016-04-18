@@ -58,7 +58,6 @@ gender
 twoway <- table(over30$Gender,over30$Genre)#
 twoway
 barplot(twoway, legend=T, beside=T, col = c( "pink", "blue"), main = "Austin City Limits Music Genre by Gender")
-barplot(twoway, legend=T, beside=T, col = c( "pink", "blue"), main = "Austin City Limits Music Genre by Gender")
 dev.copy(png, file="plot1.png",width=480,height=480)#
 dev.off()
 getwd()
