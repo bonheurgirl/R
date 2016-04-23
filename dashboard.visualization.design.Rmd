@@ -1,0 +1,94 @@
+---
+title: "visualization dashboard design"
+author: "Anita Owens"
+date: "April 22, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+converting excel files to csv files
+```{r}
+setwd("/Users/anitaowens/Documents/R/colors")
+getwd()
+library(xlsx)
+black<-read.xlsx("black.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+#write file
+write.csv(black, file = "black.csv")
+
+blue<-read.xlsx("blue.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+#write file
+write.csv(blue, file = "blue.csv")
+
+green<-read.xlsx("green.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+#write file
+write.csv(green, file = "green.csv")
+
+pink<-read.xlsx("pink.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+#write file
+write.csv(pink, file = "pink.csv")
+
+yellow<-read.xlsx("yellow.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+#write file
+write.csv(yellow, file = "yellow.csv")
+```
+open combined file.making observations
+```{r}
+library(plyr)
+```
+How many pants are there?
+```{r}
+dim(colors)
+count(colors, "Category")
+library(ggplot2)
+ggplot(colors, aes(Category)) + geom_bar()
+```
+cleaning up a spreadsheet
+```{r}
+ToBeCleanedUp <- read.csv("~/Documents/R/ToBeCleanedUp.csv", header=FALSE)
+```
+rename columns
+```{r}
+library(plyr)
+cleaned<-rename(ToBeCleanedUp, c("V1"="store", "V2"="brand", "V3"="type", "V4"="gender", "V5"="size", "V6"="color", "V7"="category", "V8"="salesprice", "V9"="date", "V10"="time", "V11"="loyalty", "V12"="loyalty2" ))
+
+#excluding the first row
+newlycleaned<-cleaned[2:6807,]
+```
+How many items from the New York branch can you find in the spreadsheet?
+```{r}
+count(cleaned, "store")
+```
+How many items can be worn by both men and women?
+```{r}
+count(newlycleaned, "gender")
+```
+How much money was earned from selling shoes?
+```{r}
+shoes<-newlycleaned[ which(newlycleaned$category=="Shoe"),]
+count(shoes, "category")
+
+```
+

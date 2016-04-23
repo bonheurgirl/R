@@ -1,0 +1,416 @@
+"","Store","Brand","Type","Gender","Size","Color","Category","Sales.Price","Date","Time","Loyalty","Month","NA."
+"1","Tokyo","Asics","WB1820","Female","37","Pink","Pants",89,2015-07-15,1899-12-30 07:52:20,"---",7,29
+"2","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","38-40","Pink","Socks",21,2015-07-15,1899-12-30 10:45:08,"47251",7,29
+"3","Tokyo","Nike","Pro Fierce","Female","70F","Pink","Bra",149,2015-07-15,1899-12-30 11:51:22,"43760",7,29
+"4","Tokyo","Nike","Pro Hero","Female","80A","Pink","Bra",99,2015-07-15,1899-12-30 17:24:00,"---",7,29
+"5","Tokyo","Asics","WB1820","Female","38","Pink","Pants",89,2015-07-15,1899-12-30 19:36:29,"---",7,29
+"6","Tokyo","Nike","Dri-Fit No-Show","Unisex","40-42","Pink","Socks",20,2015-07-15,1899-12-30 19:43:41,"43933",7,29
+"7","Tokyo","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-15,1899-12-30 20:13:56,"45694",7,29
+"8","Tokyo","Asics","Cummulus 17","Male","38","Pink","Shoe",159,2015-07-15,1899-12-30 20:55:41,"40637",7,29
+"9","Tokyo","Nike","Pro Indy","Female","80E","Pink","Bra",123,2015-07-15,1899-12-30 11:38:44,"37578",7,29
+"10","Tokyo","Nike","Hyper Elite Crew","Unisex","44-46","Pink","Socks",20,2015-07-15,1899-12-30 12:01:39,"32619",7,29
+"11","Tokyo","Asics","WB1820","Female","38","Pink","Pants",89,2015-07-15,1899-12-30 12:40:55,"31846",7,29
+"12","Tokyo","Asics","WB1820","Female","39","Pink","Pants",89,2015-07-15,1899-12-30 13:05:28,"35385",7,29
+"13","Tokyo","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-15,1899-12-30 13:16:55,"30735",7,29
+"14","Tokyo","Asics","Kayano Single Tab","Unisex","44-46","Pink","Socks",24.99,2015-07-15,1899-12-30 14:32:11,"---",7,29
+"15","Tokyo","Asics","Hera Deux Single Tab","Female","38-40","Pink","Socks",12.99,2015-07-15,1899-12-30 15:21:17,"33486",7,29
+"16","Tokyo","Asics","Quick Light Cushion","Unisex","42-44","Pink","Socks",19,2015-07-15,1899-12-30 16:38:11,"35752",7,29
+"17","Tokyo","Asics","WB1820","Female","37","Pink","Pants",89,2015-07-15,1899-12-30 08:38:24,"56455",7,29
+"18","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","38-40","Pink","Socks",21,2015-07-15,1899-12-30 11:09:36,"55346",7,29
+"19","Tokyo","Nike","Pro Hero","Female","75D","Pink","Bra",99,2015-07-15,1899-12-30 12:43:12,"56005",7,29
+"20","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-15,1899-12-30 13:03:22,"---",7,29
+"21","Tokyo","Nike","Free 5.0","Female","46","Pink","Shoe",239,2015-07-15,1899-12-30 14:41:17,"59547",7,29
+"22","Tokyo","Asics","WB1820","Female","36","Pink","Pants",89,2015-07-15,1899-12-30 14:48:29,"---",7,29
+"23","Tokyo","Nike","Dri-Fit No-Show","Unisex","44-46","Pink","Socks",20,2015-07-15,1899-12-30 17:55:41,"---",7,29
+"24","Tokyo","Nike","Pro Fierce","Female","90E","Pink","Bra",149,2015-07-15,1899-12-30 18:41:46,"53491",7,29
+"25","Tokyo","Nike","Pro Indy","Female","85D","Pink","Bra",123,2015-07-15,1899-12-30 20:26:53,"52134",7,29
+"26","Tokyo","Adidas","Rocket Boost","Female","46","Pink","Shoe",100,2015-07-15,1899-12-30 11:38:44,"---",7,29
+"27","Tokyo","Nike","Hyper Elite Crew","Unisex","36-38","Pink","Socks",20,2015-07-16,1899-12-30 14:19:41,"---",7,29
+"28","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","36-38","Pink","Socks",21,2015-07-16,1899-12-30 16:35:03,"44147",7,29
+"29","Tokyo","Nike","Hyper Elite Crew","Unisex","40-42","Pink","Socks",20,2015-07-16,1899-12-30 18:10:05,"---",7,29
+"30","Tokyo","Asics","WB1820","Female","40","Pink","Pants",89,2015-07-16,1899-12-30 19:52:20,"---",7,29
+"31","Tokyo","Asics","Quick Light Cushion","Unisex","46-48","Pink","Socks",19,2015-07-16,1899-12-30 20:57:08,"48837",7,29
+"32","Tokyo","Nike","Dri-Fit No-Show","Unisex","46-48","Pink","Socks",20,2015-07-16,1899-12-30 23:39:51,"---",7,29
+"33","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","44-46","Pink","Socks",21,2015-07-16,1899-12-30 23:49:56,"47235",7,29
+"34","Tokyo","Nike","Free 5.0","Female","38","Pink","Shoe",239,2015-07-16,1899-12-30 09:49:06,"---",7,29
+"35","Tokyo","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-16,1899-12-30 09:50:44,"30978",7,29
+"36","Tokyo","Asics","WB1820","Female","40","Pink","Pants",89,2015-07-16,1899-12-30 10:07:06,"37877",7,29
+"37","Tokyo","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-16,1899-12-30 10:23:28,"37644",7,29
+"38","Tokyo","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-16,1899-12-30 12:04:55,"32861",7,29
+"39","Tokyo","Nike","Pro Fierce","Female","75A","Pink","Bra",149,2015-07-16,1899-12-30 13:15:17,"---",7,29
+"40","Tokyo","Asics","WB1820","Female","37","Pink","Pants",89,2015-07-16,1899-12-30 14:02:44,"30161",7,29
+"41","Tokyo","Asics","WB1820","Female","44","Pink","Pants",89,2015-07-16,1899-12-30 14:56:44,"38527",7,29
+"42","Tokyo","Asics","WB1820","Female","42","Pink","Pants",89,2015-07-16,1899-12-30 15:03:17,"---",7,29
+"43","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","40-42","Pink","Socks",21,2015-07-16,1899-12-30 15:29:28,"30390",7,29
+"44","Tokyo","Nike","Dri-Fit No-Show","Unisex","46-48","Pink","Socks",20,2015-07-16,1899-12-30 15:45:50,"30339",7,29
+"45","Tokyo","Nike","Free 5.0","Female","45","Pink","Shoe",239,2015-07-16,1899-12-30 15:52:22,"37439",7,29
+"46","Tokyo","Asics","WB1820","Female","44","Pink","Pants",89,2015-07-16,1899-12-30 16:31:39,"33556",7,29
+"47","Tokyo","Asics","Quick Light Cushion","Unisex","46-48","Pink","Socks",19,2015-07-16,1899-12-30 16:56:11,"---",7,29
+"48","Tokyo","Asics","Quick Light Cushion","Unisex","36-38","Pink","Socks",19,2015-07-16,1899-12-30 08:57:08,"57785",7,29
+"49","Tokyo","Nike","Hyper Elite Crew","Unisex","38-40","Pink","Socks",20,2015-07-16,1899-12-30 10:45:08,"53198",7,29
+"50","Tokyo","Asics","WB1820","Female","42","Pink","Pants",89,2015-07-16,1899-12-30 10:46:34,"---",7,29
+"51","Tokyo","Nike","Pro Fierce","Female","75E","Pink","Bra",149,2015-07-16,1899-12-30 11:26:53,"---",7,29
+"52","Tokyo","Asics","Hera Deux Single Tab","Female","36-38","Pink","Socks",12.99,2015-07-16,1899-12-30 15:20:10,"---",7,29
+"53","Tokyo","Nike","Dri-Fit No-Show","Unisex","44-46","Pink","Socks",20,2015-07-16,1899-12-30 16:29:17,"---",7,29
+"54","Tokyo","Asics","WB1820","Female","44","Pink","Pants",89,2015-07-16,1899-12-30 17:08:10,"56745",7,29
+"55","Tokyo","Nike","Hyper Elite Crew","Unisex","46-48","Pink","Socks",20,2015-07-16,1899-12-30 18:10:05,"---",7,29
+"56","Tokyo","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-16,1899-12-30 19:35:03,"52531",7,29
+"57","Tokyo","Adidas","Rocket Boost","Male","45","Pink","Shoe",110,2015-07-16,1899-12-30 11:10:55,"58757",7,29
+"58","Tokyo","Asics","Quick Light Cushion","Unisex","36-38","Pink","Socks",19,2015-07-17,1899-12-30 10:58:05,"---",7,29
+"59","Tokyo","Asics","WB1820","Female","46","Pink","Pants",89,2015-07-17,1899-12-30 12:07:12,"45254",7,29
+"60","Tokyo","Asics","Hera Deux Single Tab","Female","42-44","Pink","Socks",12.99,2015-07-17,1899-12-30 12:38:53,"44766",7,29
+"61","Tokyo","Nike","Dri-Fit No-Show","Unisex","36-38","Pink","Socks",20,2015-07-17,1899-12-30 14:11:03,"---",7,29
+"62","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","38-40","Pink","Socks",21,2015-07-17,1899-12-30 14:28:20,"43588",7,29
+"63","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","38-40","Pink","Socks",21,2015-07-17,1899-12-30 19:53:46,"---",7,29
+"64","Tokyo","Nike","Pro Fierce","Female","90F","Pink","Bra",149,2015-07-17,1899-12-30 21:15:51,"---",7,29
+"65","Tokyo","Asics","Hera Deux Single Tab","Female","46-48","Pink","Socks",12.99,2015-07-17,1899-12-30 21:21:36,"46751",7,29
+"66","Tokyo","Asics","Quick Light Cushion","Unisex","44-46","Pink","Socks",19,2015-07-17,1899-12-30 21:43:12,"46911",7,29
+"67","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","44-46","Pink","Socks",21,2015-07-17,1899-12-30 23:15:22,"---",7,29
+"68","Tokyo","Nike","Air Zoom","Male","42","Pink","Shoe",230,2015-07-17,1899-12-30 23:31:12,"---",7,29
+"69","Tokyo","Asics","WB1820","Female","42","Pink","Pants",89,2015-07-17,1899-12-30 09:54:00,"---",7,29
+"70","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","40-42","Pink","Socks",21,2015-07-17,1899-12-30 10:31:39,"---",7,29
+"71","Tokyo","Asics","Kayano Single Tab","Unisex","40-42","Pink","Socks",24.99,2015-07-17,1899-12-30 10:33:17,"30794",7,29
+"72","Tokyo","Asics","Kayano Single Tab","Unisex","44-46","Pink","Socks",24.99,2015-07-17,1899-12-30 12:04:55,"31162",7,29
+"73","Tokyo","Nike","Air Zoom","Male","38","Pink","Shoe",220,2015-07-17,1899-12-30 12:39:17,"---",7,29
+"74","Tokyo","Asics","Quick Light Cushion","Unisex","36-38","Pink","Socks",19,2015-07-17,1899-12-30 12:42:33,"---",7,29
+"75","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-17,1899-12-30 13:49:39,"33791",7,29
+"76","Tokyo","Nike","Free 5.0","Female","45","Pink","Shoe",239,2015-07-17,1899-12-30 15:13:06,"---",7,29
+"77","Tokyo","Asics","Hera Deux Single Tab","Female","46-48","Pink","Socks",12.99,2015-07-17,1899-12-30 16:05:28,"---",7,29
+"78","Tokyo","Nike","Dri-Fit No-Show","Unisex","40-42","Pink","Socks",20,2015-07-17,1899-12-30 16:43:06,"33552",7,29
+"79","Tokyo","Nike","Pro Fierce","Female","75F","Pink","Bra",149,2015-07-17,1899-12-30 13:06:15,"---",7,29
+"80","Tokyo","Nike","Dri-Fit No-Show","Unisex","40-42","Pink","Socks",20,2015-07-17,1899-12-30 15:01:27,"55209",7,29
+"81","Tokyo","Nike","Dri-Fit No-Show","Unisex","38-40","Pink","Socks",20,2015-07-17,1899-12-30 15:10:05,"56331",7,29
+"82","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-17,1899-12-30 15:51:51,"---",7,29
+"83","Tokyo","Nike","Hyper Elite Crew","Unisex","40-42","Pink","Socks",20,2015-07-17,1899-12-30 19:52:20,"53849",7,29
+"84","Tokyo","Nike","Hyper Elite Crew","Unisex","46-48","Pink","Socks",20,2015-07-17,1899-12-30 23:13:56,"---",7,29
+"85","Tokyo","Adidas","Boston 5","Male","39","Pink","Shoe",125,2015-07-17,1899-12-30 11:38:44,"55863",7,29
+"86","Tokyo","Asics","Kayano Single Tab","Unisex","40-42","Pink","Socks",24.99,2015-07-18,1899-12-30 08:54:15,"42612",7,29
+"87","Tokyo","Asics","WB1820","Female","38","Pink","Pants",89,2015-07-18,1899-12-30 11:49:56,"49639",7,29
+"88","Tokyo","Asics","Hera Deux Single Tab","Female","44-46","Pink","Socks",12.99,2015-07-18,1899-12-30 13:14:53,"48205",7,29
+"89","Tokyo","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-18,1899-12-30 13:53:46,"42599",7,29
+"90","Tokyo","Nike","Air Zoom","Male","42","Pink","Shoe",230,2015-07-18,1899-12-30 21:01:27,"45665",7,29
+"91","Tokyo","Nike","Hyper Elite Crew","Unisex","46-48","Pink","Socks",20,2015-07-18,1899-12-30 21:10:05,"48628",7,29
+"92","Tokyo","Asics","Hera Deux Single Tab","Female","42-44","Pink","Socks",12.99,2015-07-18,1899-12-30 21:56:10,"---",7,29
+"93","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-18,1899-12-30 22:32:10,"---",7,29
+"94","Tokyo","Nike","Dri-Fit No-Show","Unisex","40-42","Pink","Socks",20,2015-07-18,1899-12-30 23:13:56,"49249",7,29
+"95","Tokyo","Nike","Dri-Fit No-Show","Unisex","46-48","Pink","Socks",20,2015-07-18,1899-12-30 09:32:44,"30778",7,29
+"96","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-18,1899-12-30 10:07:06,"33522",7,29
+"97","Tokyo","Asics","Hera Deux Single Tab","Female","46-48","Pink","Socks",12.99,2015-07-18,1899-12-30 10:12:00,"---",7,29
+"98","Tokyo","Asics","Kayano Single Tab","Unisex","36-38","Pink","Socks",24.99,2015-07-18,1899-12-30 10:26:44,"31220",7,29
+"99","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-18,1899-12-30 12:18:00,"36278",7,29
+"100","Rotterdam","Nike","Hyper Elite Crew","Unisex","46-48","Pink","Socks",20,2015-07-18,1899-12-30 12:29:28,"39490",7,29
+"101","Tokyo","Asics","Hera Deux Single Tab","Female","46-48","Pink","Socks",12.99,2015-07-18,1899-12-30 13:43:06,"37714",7,29
+"102","Tokyo","Asics","Cummulus 17","Male","44","Pink","Shoe",159,2015-07-18,1899-12-30 15:22:55,"37054",7,29
+"103","Tokyo","Asics","WB1820","Female","38","Pink","Pants",89,2015-07-18,1899-12-30 16:52:55,"34776",7,29
+"104","Rotterdam","Nike","Pro Classic","Female","75D","Pink","Bra",100,2015-07-18,1899-12-30 17:38:44,"---",7,29
+"105","Tokyo","Asics","WB1820","Female","38","Pink","Pants",89,2015-07-18,1899-12-30 09:12:58,"51195",7,29
+"106","Tokyo","Nike","Pro Indy","Female","70A","Pink","Bra",123,2015-07-18,1899-12-30 10:14:53,"---",7,29
+"107","Tokyo","Nike","Pro Fierce","Female","80B","Pink","Bra",149,2015-07-18,1899-12-30 14:11:03,"---",7,29
+"108","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-18,1899-12-30 17:25:27,"---",7,29
+"109","Tokyo","Asics","Cummulus 17","Male","42","Pink","Shoe",159,2015-07-18,1899-12-30 21:15:51,"56609",7,29
+"110","Tokyo","Nike","Dri-Fit No-Show","Unisex","44-46","Pink","Socks",20,2015-07-18,1899-12-30 22:49:27,"53398",7,29
+"111","Tokyo","Adidas","Boston 5","Male","44","Pink","Shoe",125,2015-07-18,1899-12-30 14:09:17,"43438",7,29
+"112","Tokyo","Adidas","Boston 5","Male","40","Pink","Shoe",125,2015-07-18,1899-12-30 14:20:44,"---",7,29
+"113","Tokyo","Adidas","Boston 5","Female","44","Pink","Shoe",120,2015-07-18,1899-12-30 17:19:06,"53785",7,29
+"114","Tokyo","Nike","Dri-Fit No-Show","Unisex","44-46","Pink","Socks",20,2015-07-19,1899-12-30 12:34:34,"---",7,30
+"115","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","40-42","Pink","Socks",21,2015-07-19,1899-12-30 17:11:03,"48049",7,30
+"116","Tokyo","Asics","WB1820","Female","39","Pink","Pants",89,2015-07-19,1899-12-30 17:19:41,"48569",7,30
+"117","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-19,1899-12-30 09:54:00,"39253",7,30
+"118","Tokyo","Asics","Hera Deux Single Tab","Female","38-40","Pink","Socks",12.99,2015-07-19,1899-12-30 09:57:17,"34489",7,30
+"119","Tokyo","Asics","Kayano Single Tab","Unisex","36-38","Pink","Socks",24.99,2015-07-19,1899-12-30 10:02:11,"30099",7,30
+"120","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-19,1899-12-30 10:48:00,"34589",7,30
+"121","Rotterdam","Nike","Dri-Fit No-Show","Unisex","44-46","Pink","Socks",20,2015-07-19,1899-12-30 12:01:39,"---",7,30
+"122","Rotterdam","Nike","Air Zoom","Male","38","Pink","Shoe",220,2015-07-19,1899-12-30 12:22:55,"35655",7,30
+"123","Rotterdam","Nike","Pro Classic","Female","85D","Pink","Bra",100,2015-07-19,1899-12-30 13:21:50,"33303",7,30
+"124","Tokyo","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-19,1899-12-30 17:22:22,"31013",7,30
+"125","Tokyo","Nike","Hyper Elite Crew","Unisex","46-48","Pink","Socks",20,2015-07-19,1899-12-30 09:51:51,"50217",7,30
+"126","Tokyo","Nike","Elite Compression","Unisex","40-42","Pink","Socks",23.99,2015-07-19,1899-12-30 16:36:29,"56675",7,30
+"127","Tokyo","Asics","Kayano Single Tab","Unisex","44-46","Pink","Socks",24.99,2015-07-19,1899-12-30 16:56:39,"54610",7,30
+"128","Tokyo","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-19,1899-12-30 17:15:22,"---",7,30
+"129","Tokyo","Nike","Pro Fierce","Female","65D","Pink","Bra",149,2015-07-19,1899-12-30 19:16:20,"51420",7,30
+"130","Tokyo","Asics","WB1820","Female","42","Pink","Pants",89,2015-07-19,1899-12-30 20:02:24,"---",7,30
+"131","Tokyo","Nike","Free 5.0","Female","44","Pink","Shoe",239,2015-07-19,1899-12-30 20:11:03,"58515",7,30
+"132","Tokyo","Adidas","Boston 5","Male","44","Pink","Shoe",125,2015-07-19,1899-12-30 12:09:50,"---",7,30
+"133","Tokyo","Adidas","Rocket Boost","Male","40","Pink","Shoe",110,2015-07-19,1899-12-30 16:51:17,"---",7,30
+"134","Tokyo","Nike","Pro Hero","Female","75C","Pink","Bra",99,2015-07-20,1899-12-30 09:18:44,"41327",7,30
+"135","Tokyo","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-20,1899-12-30 13:30:44,"---",7,30
+"136","Tokyo","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-20,1899-12-30 14:03:51,"41434",7,30
+"137","Tokyo","Asics","Hera Deux Single Tab","Female","46-48","Pink","Socks",12.99,2015-07-20,1899-12-30 14:25:27,"---",7,30
+"138","Tokyo","Asics","Quick Light Cushion","Unisex","36-38","Pink","Socks",19,2015-07-20,1899-12-30 16:22:05,"---",7,30
+"139","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-20,1899-12-30 10:34:55,"38628",7,30
+"140","Tokyo","Asics","WB1820","Female","39","Pink","Pants",89,2015-07-20,1899-12-30 12:27:50,"34395",7,30
+"141","Rotterdam","Nike","Hyper Elite Crew","Unisex","42-44","Pink","Socks",20,2015-07-20,1899-12-30 14:06:00,"---",7,30
+"142","Tokyo","Asics","Cummulus 17","Male","36","Pink","Shoe",159,2015-07-20,1899-12-30 14:24:00,"34262",7,30
+"143","Tokyo","Asics","WB1820","Female","42","Pink","Pants",89,2015-07-20,1899-12-30 14:46:55,"---",7,30
+"144","Tokyo","Asics","Hera Deux Single Tab","Female","44-46","Pink","Socks",12.99,2015-07-20,1899-12-30 15:57:17,"33242",7,30
+"145","Tokyo","Asics","Quick Light Cushion","Unisex","46-48","Pink","Socks",19,2015-07-20,1899-12-30 08:55:41,"58914",7,30
+"146","Tokyo","Asics","Hera Deux Single Tab","Female","40-42","Pink","Socks",12.99,2015-07-20,1899-12-30 09:37:27,"---",7,30
+"147","Tokyo","Nike","Pro Indy","Female","85D","Pink","Bra",123,2015-07-20,1899-12-30 11:57:08,"50838",7,30
+"148","Tokyo","Asics","Cummulus 17","Male","44","Pink","Shoe",159,2015-07-20,1899-12-30 12:23:03,"---",7,30
+"149","Tokyo","Nike","Pro Classic","Female","75B","Pink","Bra",100,2015-07-20,1899-12-30 14:39:51,"54894",7,30
+"150","Tokyo","Asics","Hera Deux Single Tab","Female","36-38","Pink","Socks",12.99,2015-07-20,1899-12-30 20:03:51,"---",7,30
+"151","Tokyo","Adidas","Ultra Boost","Female","44","Pink","Shoe",139,2015-07-20,1899-12-30 15:27:50,"---",7,30
+"152","Tokyo","Nike","Dri-Fit No-Show","Unisex","44-46","Pink","Socks",20,2015-07-21,1899-12-30 08:16:48,"---",7,30
+"153","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-21,1899-12-30 10:39:22,"---",7,30
+"154","Tokyo","Asics","WB1820","Female","40","Pink","Pants",89,2015-07-21,1899-12-30 13:13:27,"---",7,30
+"155","Tokyo","Asics","Hera Deux Single Tab","Female","36-38","Pink","Socks",12.99,2015-07-21,1899-12-30 16:04:48,"---",7,30
+"156","Tokyo","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-21,1899-12-30 17:49:56,"---",7,30
+"157","Tokyo","Asics","WB1820","Female","37","Pink","Pants",89,2015-07-21,1899-12-30 22:14:53,"---",7,30
+"158","Tokyo","Asics","Quick Light Cushion","Unisex","40-42","Pink","Socks",19,2015-07-21,1899-12-30 09:42:33,"---",7,30
+"159","Tokyo","Asics","Quick Light Cushion","Unisex","40-42","Pink","Socks",19,2015-07-21,1899-12-30 11:04:22,"37390",7,30
+"160","Tokyo","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-21,1899-12-30 11:14:11,"32912",7,30
+"161","Tokyo","Asics","Kayano Single Tab","Unisex","44-46","Pink","Socks",24.99,2015-07-21,1899-12-30 14:56:44,"---",7,30
+"162","Rotterdam","Nike","Pro Fierce","Female","85F","Pink","Bra",149,2015-07-21,1899-12-30 16:13:39,"---",7,30
+"163","Rotterdam","Nike","Pro Hero","Female","80D","Pink","Bra",99,2015-07-21,1899-12-30 17:12:33,"39351",7,30
+"164","Rotterdam","Nike","Free 5.0","Female","40","Pink","Shoe",239,2015-07-21,1899-12-30 17:32:11,"32196",7,30
+"165","Tokyo","Nike","Pro Indy","Female","65B","Pink","Bra",123,2015-07-21,1899-12-30 13:13:27,"---",7,30
+"166","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","40-42","Pink","Socks",21,2015-07-21,1899-12-30 13:50:53,"50035",7,30
+"167","Tokyo","Asics","Kayano Single Tab","Unisex","46-48","Pink","Socks",24.99,2015-07-21,1899-12-30 14:42:44,"---",7,30
+"168","Tokyo","Asics","Quick Light Cushion","Unisex","44-46","Pink","Socks",19,2015-07-21,1899-12-30 15:34:34,"51999",7,30
+"169","Tokyo","Nike","Pro Fierce","Female","90B","Pink","Bra",149,2015-07-21,1899-12-30 16:10:34,"55654",7,30
+"170","Tokyo","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-21,1899-12-30 16:37:56,"56829",7,30
+"171","Tokyo","Adidas","Boston 5","Male","45","Pink","Shoe",125,2015-07-21,1899-12-30 12:08:11,"52814",7,30
+"172","Tokyo","Adidas","Ultra Boost","Male","37","Pink","Shoe",139,2015-07-21,1899-12-30 10:41:28,"---",7,30
+"173","Tokyo","Asics","WB1820","Female","36","Pink","Pants",89,2015-07-22,1899-12-30 07:49:27,"47331",7,30
+"174","Tokyo","Asics","WB1820","Female","42","Pink","Pants",89,2015-07-22,1899-12-30 11:44:10,"---",7,30
+"175","Tokyo","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-22,1899-12-30 12:02:53,"47432",7,30
+"176","Tokyo","Asics","Hera Deux Single Tab","Female","42-44","Pink","Socks",12.99,2015-07-22,1899-12-30 15:24:29,"43855",7,30
+"177","Tokyo","Nike","Dri-Fit No-Show","Unisex","38-40","Pink","Socks",20,2015-07-22,1899-12-30 17:41:17,"---",7,30
+"178","Tokyo","Asics","WB1820","Female","43","Pink","Pants",89,2015-07-22,1899-12-30 22:40:48,"47519",7,30
+"179","Tokyo","Asics","WB1820","Female","43","Pink","Pants",89,2015-07-22,1899-12-30 23:06:44,"44052",7,30
+"180","Tokyo","Asics","Kayano Single Tab","Unisex","46-48","Pink","Socks",24.99,2015-07-22,1899-12-30 11:02:44,"37863",7,30
+"181","Tokyo","Asics","Cummulus 17","Male","42","Pink","Shoe",159,2015-07-22,1899-12-30 11:15:50,"35614",7,30
+"182","Rotterdam","Nike","Dri-Fit No-Show","Unisex","38-40","Pink","Socks",20,2015-07-22,1899-12-30 11:19:06,"---",7,30
+"183","Rotterdam","Asics","Hera Deux Single Tab","Female","44-46","Pink","Socks",12.99,2015-07-22,1899-12-30 14:04:22,"---",7,30
+"184","Rotterdam","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-22,1899-12-30 16:33:17,"---",7,30
+"185","Rotterdam","Nike","Pro Hero","Female","80B","Pink","Bra",99,2015-07-22,1899-12-30 16:43:06,"32368",7,30
+"186","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-22,1899-12-30 15:18:44,"52211",7,30
+"187","Tokyo","Asics","Hera Deux Single Tab","Female","46-48","Pink","Socks",12.99,2015-07-22,1899-12-30 17:45:36,"---",7,30
+"188","Tokyo","Nike","Pro Fierce","Female","70C","Pink","Bra",149,2015-07-22,1899-12-30 18:04:20,"---",7,30
+"189","Tokyo","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-22,1899-12-30 19:01:56,"52282",7,30
+"190","Tokyo","Asics","Quick Light Cushion","Unisex","46-48","Pink","Socks",19,2015-07-22,1899-12-30 21:56:10,"54365",7,30
+"191","Tokyo","Adidas","Rocket Boost","Male","36","Pink","Shoe",110,2015-07-22,1899-12-30 13:00:33,"---",7,30
+"192","Tokyo","Adidas","Ultra Boost","Male","45","Pink","Shoe",139,2015-07-22,1899-12-30 14:25:39,"41777",7,30
+"193","Tokyo","Adidas","Rocket Boost","Female","45","Pink","Shoe",100,2015-07-22,1899-12-30 15:34:22,"55038",7,30
+"194","Tokyo","Adidas","Rocket Boost","Female","37","Pink","Shoe",100,2015-07-22,1899-12-30 13:08:44,"47113",7,30
+"195","Tokyo","Nike","Dri-Fit No-Show","Unisex","40-42","Pink","Socks",20,2015-07-23,1899-12-30 07:58:05,"49975",7,30
+"196","Tokyo","Asics","Quick Light Cushion","Unisex","42-44","Pink","Socks",19,2015-07-23,1899-12-30 08:22:34,"40064",7,30
+"197","Tokyo","Asics","Kayano Single Tab","Unisex","46-48","Pink","Socks",24.99,2015-07-23,1899-12-30 08:34:05,"---",7,30
+"198","Tokyo","Asics","Kayano Single Tab","Unisex","38-40","Pink","Socks",24.99,2015-07-23,1899-12-30 11:02:24,"48470",7,30
+"199","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-23,1899-12-30 11:49:56,"46849",7,30
+"200","Tokyo","Asics","Kayano Single Tab","Unisex","38-40","Pink","Socks",24.99,2015-07-23,1899-12-30 12:30:15,"44302",7,30
+"201","Tokyo","Asics","Hera Deux Single Tab","Female","44-46","Pink","Socks",12.99,2015-07-23,1899-12-30 13:12:00,"---",7,30
+"202","Tokyo","Nike","Dri-Fit No-Show","Unisex","38-40","Pink","Socks",20,2015-07-23,1899-12-30 13:46:34,"44606",7,30
+"203","Tokyo","Asics","Kayano Single Tab","Unisex","44-46","Pink","Socks",24.99,2015-07-23,1899-12-30 15:47:32,"---",7,30
+"204","Tokyo","Asics","WB1820","Female","43","Pink","Pants",89,2015-07-23,1899-12-30 21:25:56,"42787",7,30
+"205","Tokyo","Asics","Kayano Single Tab","Unisex","42-44","Pink","Socks",24.99,2015-07-23,1899-12-30 21:28:48,"---",7,30
+"206","Tokyo","Nike","Pro Classic","Female","70D","Pink","Bra",100,2015-07-23,1899-12-30 21:33:08,"---",7,30
+"207","Rotterdam","Nike","Pro Indy","Female","70F","Pink","Bra",123,2015-07-23,1899-12-30 11:27:17,"---",7,30
+"208","Rotterdam","Asics","Quick Light Cushion","Unisex","44-46","Pink","Socks",19,2015-07-23,1899-12-30 15:08:11,"---",7,30
+"209","Rotterdam","Asics","Hera Deux Single Tab","Female","44-46","Pink","Socks",12.99,2015-07-23,1899-12-30 16:21:50,"32925",7,30
+"210","Rotterdam","Asics","Kayano Single Tab","Unisex","44-46","Pink","Socks",24.99,2015-07-23,1899-12-30 16:34:55,"31708",7,30
+"211","Tokyo","Nike","Elite Compression","Unisex","38-40","Pink","Socks",23.99,2015-07-23,1899-12-30 13:56:39,"---",7,30
+"212","Tokyo","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-23,1899-12-30 16:40:48,"52032",7,30
+"213","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-23,1899-12-30 16:55:12,"50271",7,30
+"214","Tokyo","Asics","Quick Light Cushion","Unisex","44-46","Pink","Socks",19,2015-07-23,1899-12-30 17:35:32,"51568",7,30
+"215","Tokyo","Asics","Hera Deux Single Tab","Female","40-42","Pink","Socks",12.99,2015-07-23,1899-12-30 19:12:00,"---",7,30
+"216","Tokyo","Adidas","Ultra Boost","Female","43","Pink","Shoe",139,2015-07-23,1899-12-30 22:39:22,"50504",7,30
+"217","Tokyo","Nike","Hyper Elite Crew","Unisex","46-48","Pink","Socks",20,2015-07-23,1899-12-30 23:02:24,"59333",7,30
+"218","Tokyo","Nike","Hyper Elite Crew","Unisex","46-48","Pink","Socks",20,2015-07-23,1899-12-30 23:06:44,"50120",7,30
+"219","Tokyo","Adidas","Rocket Boost","Female","38","Pink","Shoe",100,2015-07-23,1899-12-30 14:01:06,"---",7,30
+"220","Tokyo","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-24,1899-12-30 07:12:00,"---",7,30
+"221","Tokyo","Nike","Dri-Fit No-Show","Unisex","36-38","Pink","Socks",20,2015-07-24,1899-12-30 07:19:12,"43251",7,30
+"222","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-24,1899-12-30 10:56:39,"47109",7,30
+"223","Tokyo","Nike","Air Zoom","Male","38","Pink","Shoe",220,2015-07-24,1899-12-30 14:22:34,"44467",7,30
+"224","Tokyo","Nike","Hyper Elite Crew","Unisex","36-38","Pink","Socks",20,2015-07-24,1899-12-30 16:10:34,"40073",7,30
+"225","Tokyo","Asics","Hera Deux Single Tab","Female","42-44","Pink","Socks",12.99,2015-07-24,1899-12-30 18:21:36,"41005",7,30
+"226","Tokyo","Nike","Hyper Elite Crew","Unisex","46-48","Pink","Socks",20,2015-07-24,1899-12-30 20:36:58,"---",7,30
+"227","Rotterdam","Asics","WB1820","Female","37","Pink","Pants",89,2015-07-24,1899-12-30 10:26:44,"---",7,30
+"228","Rotterdam","Nike","Dri-Fit No-Show","Unisex","40-42","Pink","Socks",20,2015-07-24,1899-12-30 10:54:33,"31779",7,30
+"229","Rotterdam","Asics","Kayano Single Tab","Unisex","46-48","Pink","Socks",24.99,2015-07-24,1899-12-30 11:32:11,"36678",7,30
+"230","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-24,1899-12-30 15:52:22,"31219",7,30
+"231","Tokyo","Asics","WB1820","Female","42","Pink","Pants",89,2015-07-24,1899-12-30 09:38:53,"---",7,30
+"232","Tokyo","Asics","WB1820","Female","39","Pink","Pants",89,2015-07-24,1899-12-30 13:24:58,"51910",7,30
+"233","Tokyo","Nike","Pro Hero","Female","80F","Pink","Bra",99,2015-07-24,1899-12-30 16:04:48,"---",7,30
+"234","Tokyo","Asics","Kayano Single Tab","Unisex","38-40","Pink","Socks",24.99,2015-07-24,1899-12-30 17:25:27,"58862",7,30
+"235","Tokyo","Nike","Air Zoom","Male","39","Pink","Shoe",220,2015-07-24,1899-12-30 21:00:00,"55010",7,30
+"236","Tokyo","Adidas","Rocket Boost","Female","46","Pink","Shoe",100,2015-07-24,1899-12-30 17:20:44,"57098",7,30
+"237","Tokyo","Adidas","Ultra Boost","Male","39","Pink","Shoe",139,2015-07-24,1899-12-30 16:36:33,"50111",7,30
+"238","Tokyo","Adidas","Rocket Boost","Female","46","Pink","Shoe",100,2015-07-24,1899-12-30 16:16:55,"---",7,30
+"239","Tokyo","Adidas","Boston 5","Female","43","Pink","Shoe",120,2015-07-24,1899-12-30 12:31:06,"---",7,30
+"240","Tokyo","Asics","WB1820","Female","40","Pink","Pants",89,2015-07-25,1899-12-30 09:23:03,"---",7,30
+"241","Tokyo","Asics","Quick Light Cushion","Unisex","40-42","Pink","Socks",19,2015-07-25,1899-12-30 13:48:00,"46589",7,30
+"242","Tokyo","Asics","Kayano Single Tab","Unisex","40-42","Pink","Socks",24.99,2015-07-25,1899-12-30 15:18:44,"44571",7,30
+"243","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","40-42","Pink","Socks",21,2015-07-25,1899-12-30 18:10:05,"---",7,30
+"244","Tokyo","Nike","Dri-Fit No-Show","Unisex","40-42","Pink","Socks",20,2015-07-25,1899-12-30 20:22:34,"45496",7,30
+"245","Rotterdam","Nike","Pro Fierce","Female","75C","Pink","Bra",149,2015-07-25,1899-12-30 10:28:22,"31398",7,30
+"246","Rotterdam","Asics","WB1820","Female","45","Pink","Pants",89,2015-07-25,1899-12-30 10:49:39,"38574",7,30
+"247","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-25,1899-12-30 12:04:55,"---",7,30
+"248","Rotterdam","Asics","WB1820","Female","36","Pink","Pants",89,2015-07-25,1899-12-30 12:11:28,"35220",7,30
+"249","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-25,1899-12-30 12:26:11,"36232",7,30
+"250","Rotterdam","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-25,1899-12-30 13:07:06,"35576",7,30
+"251","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","38-40","Pink","Socks",21,2015-07-25,1899-12-30 15:03:17,"---",7,30
+"252","Rotterdam","Nike","Pro Classic","Female","90B","Pink","Bra",100,2015-07-25,1899-12-30 15:08:11,"34975",7,30
+"253","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","44-46","Pink","Socks",21,2015-07-25,1899-12-30 15:37:39,"37423",7,30
+"254","Rotterdam","Asics","Hera Deux Single Tab","Female","36-38","Pink","Socks",12.99,2015-07-25,1899-12-30 16:02:11,"38082",7,30
+"255","Rotterdam","Asics","Quick Light Cushion","Unisex","38-40","Pink","Socks",19,2015-07-25,1899-12-30 16:56:11,"33961",7,30
+"256","Rotterdam","Nike","Pro Fierce","Female","85C","Pink","Bra",149,2015-07-25,1899-12-30 17:37:06,"30402",7,30
+"257","Tokyo","Nike","Pro Fierce","Female","90D","Pink","Bra",149,2015-07-25,1899-12-30 11:47:03,"55703",7,30
+"258","Tokyo","Nike","Pro Fierce","Female","65C","Pink","Bra",149,2015-07-25,1899-12-30 19:43:41,"53613",7,30
+"259","Tokyo","Asics","Quick Light Cushion","Unisex","40-42","Pink","Socks",19,2015-07-25,1899-12-30 20:24:00,"58009",7,30
+"260","Tokyo","Adidas","Boston 5","Male","37","Pink","Shoe",125,2015-07-25,1899-12-30 14:25:39,"---",7,30
+"261","Tokyo","Adidas","Boston 5","Female","39","Pink","Shoe",120,2015-07-25,1899-12-30 15:36:00,"52716",7,30
+"262","Tokyo","Adidas","Boston 5","Male","45","Pink","Shoe",125,2015-07-25,1899-12-30 10:59:28,"---",7,30
+"263","Tokyo","Adidas","Rocket Boost","Female","38","Pink","Shoe",100,2015-07-25,1899-12-30 13:30:00,"---",7,30
+"264","Tokyo","Asics","Quick Light Cushion","Unisex","42-44","Pink","Socks",19,2015-07-26,1899-12-30 12:34:34,"---",7,31
+"265","Tokyo","Adidas","Ultra Boost","Male","38","Pink","Shoe",139,2015-07-26,1899-12-30 18:02:53,"46526",7,31
+"266","Tokyo","Asics","Hera Deux Single Tab","Female","36-38","Pink","Socks",12.99,2015-07-26,1899-12-30 20:08:10,"---",7,31
+"267","Tokyo","Nike","Air Zoom","Male","44","Pink","Shoe",220,2015-07-26,1899-12-30 20:28:20,"---",7,31
+"268","Rotterdam","Nike","Dri-Fit No-Show","Unisex","38-40","Pink","Socks",20,2015-07-26,1899-12-30 10:46:22,"---",7,31
+"269","Rotterdam","Nike","Pro Classic","Female","70B","Pink","Bra",100,2015-07-26,1899-12-30 11:24:00,"30102",7,31
+"270","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-26,1899-12-30 11:28:55,"32488",7,31
+"271","Rotterdam","Asics","WB1820","Female","42","Pink","Pants",89,2015-07-26,1899-12-30 13:26:44,"37390",7,31
+"272","Rotterdam","Nike","Dri-Fit No-Show","Unisex","40-42","Pink","Socks",20,2015-07-26,1899-12-30 13:48:00,"34653",7,31
+"273","Rotterdam","Asics","WB1820","Female","36","Pink","Pants",89,2015-07-26,1899-12-30 16:20:11,"35795",7,31
+"274","Rotterdam","Asics","Kayano Single Tab","Unisex","44-46","Pink","Socks",24.99,2015-07-26,1899-12-30 17:22:22,"36450",7,31
+"275","Rotterdam","Nike","Pro Indy","Female","65E","Pink","Bra",123,2015-07-26,1899-12-30 17:40:22,"30573",7,31
+"276","Tokyo","Asics","WB1820","Female","39","Pink","Pants",89,2015-07-26,1899-12-30 15:37:27,"51454",7,31
+"277","Tokyo","Asics","WB1820","Female","40","Pink","Pants",89,2015-07-26,1899-12-30 16:46:34,"---",7,31
+"278","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","38-40","Pink","Socks",21,2015-07-26,1899-12-30 19:01:56,"---",7,31
+"279","Tokyo","Nike","Pro Fierce","Female","90B","Pink","Bra",149,2015-07-26,1899-12-30 21:36:00,"57863",7,31
+"280","Tokyo","Adidas","Ultra Boost","Male","37","Pink","Shoe",139,2015-07-26,1899-12-30 13:13:39,"57704",7,31
+"281","Tokyo","Adidas","Ultra Boost","Female","46","Pink","Shoe",139,2015-07-26,1899-12-30 10:07:06,"53199",7,31
+"282","Tokyo","Adidas","Rocket Boost","Female","46","Pink","Shoe",100,2015-07-26,1899-12-30 13:15:17,"57978",7,31
+"283","Tokyo","Adidas","Boston 5","Female","45","Pink","Shoe",120,2015-07-26,1899-12-30 14:22:22,"---",7,31
+"284","Tokyo","Asics","Cummulus 17","Male","41","Pink","Shoe",159,2015-07-27,1899-12-30 09:01:27,"43513",7,31
+"285","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","38-40","Pink","Socks",21,2015-07-27,1899-12-30 12:20:10,"43653",7,31
+"286","Tokyo","Asics","Hera Deux Single Tab","Female","42-44","Pink","Socks",12.99,2015-07-27,1899-12-30 12:33:08,"46283",7,31
+"287","Tokyo","Asics","WB1820","Female","43","Pink","Pants",89,2015-07-27,1899-12-30 16:19:12,"41465",7,31
+"288","Tokyo","Asics","Gel Quantics ","Male","41","Pink","Shoe",120,2015-07-27,1899-12-30 16:53:46,"47206",7,31
+"289","Tokyo","Asics","WB1820","Female","40","Pink","Pants",89,2015-07-27,1899-12-30 18:01:27,"---",7,31
+"290","Tokyo","Nike","Pro Fierce","Female","65D","Pink","Bra",149,2015-07-27,1899-12-30 19:06:15,"---",7,31
+"291","Tokyo","Asics","WB1820","Female","42","Pink","Pants",89,2015-07-27,1899-12-30 20:42:44,"40334",7,31
+"292","Rotterdam","Nike","Hyper Elite Crew","Unisex","36-38","Pink","Socks",20,2015-07-27,1899-12-30 09:36:00,"---",7,31
+"293","Rotterdam","Nike","Pro Classic","Female","75D","Pink","Bra",100,2015-07-27,1899-12-30 10:56:11,"---",7,31
+"294","Rotterdam","Nike","Free 5.0","Female","45","Pink","Shoe",239,2015-07-27,1899-12-30 11:14:11,"34534",7,31
+"295","Rotterdam","Nike","Pro Classic","Female","85F","Pink","Bra",100,2015-07-27,1899-12-30 11:35:28,"---",7,31
+"296","Rotterdam","Asics","Quick Light Cushion","Unisex","42-44","Pink","Socks",19,2015-07-27,1899-12-30 12:26:11,"---",7,31
+"297","Rotterdam","Nike","Hyper Elite Crew","Unisex","42-44","Pink","Socks",20,2015-07-27,1899-12-30 12:49:06,"36525",7,31
+"298","Rotterdam","Asics","Kayano Single Tab","Unisex","40-42","Pink","Socks",24.99,2015-07-27,1899-12-30 14:24:00,"---",7,31
+"299","Rotterdam","Nike","Pro Classic","Female","85A","Pink","Bra",100,2015-07-27,1899-12-30 14:35:28,"31620",7,31
+"300","Rotterdam","Asics","Hera Deux Single Tab","Female","44-46","Pink","Socks",12.99,2015-07-27,1899-12-30 14:37:06,"37463",7,31
+"301","Rotterdam","Asics","WB1820","Female","46","Pink","Pants",89,2015-07-27,1899-12-30 14:40:22,"33256",7,31
+"302","Rotterdam","Nike","Hyper Elite Crew","Unisex","46-48","Pink","Socks",20,2015-07-27,1899-12-30 14:43:39,"---",7,31
+"303","Rotterdam","Asics","WB1820","Female","39","Pink","Pants",89,2015-07-27,1899-12-30 15:14:44,"---",7,31
+"304","Rotterdam","Asics","WB1820","Female","45","Pink","Pants",89,2015-07-27,1899-12-30 15:40:55,"30631",7,31
+"305","Tokyo","Nike","Pro Fierce","Female","80E","Pink","Bra",149,2015-07-27,1899-12-30 08:26:53,"59467",7,31
+"306","Tokyo","Nike","Pro Hero","Female","85D","Pink","Bra",99,2015-07-27,1899-12-30 09:08:39,"56004",7,31
+"307","Tokyo","Nike","Hyper Elite Crew","Unisex","46-48","Pink","Socks",20,2015-07-27,1899-12-30 10:45:08,"---",7,31
+"308","Tokyo","Nike","Hyper Elite Crew","Unisex","42-44","Pink","Socks",20,2015-07-27,1899-12-30 11:06:44,"---",7,31
+"309","Tokyo","Asics","Quick Light Cushion","Unisex","36-38","Pink","Socks",19,2015-07-27,1899-12-30 11:45:36,"55804",7,31
+"310","Tokyo","Nike","Hyper Elite Crew","Unisex","38-40","Pink","Socks",20,2015-07-27,1899-12-30 13:10:34,"---",7,31
+"311","Tokyo","Asics","Kayano Single Tab","Unisex","46-48","Pink","Socks",24.99,2015-07-27,1899-12-30 13:59:32,"56567",7,31
+"312","Tokyo","Nike","Dri-Fit No-Show","Unisex","38-40","Pink","Socks",20,2015-07-27,1899-12-30 18:04:20,"---",7,31
+"313","Tokyo","Asics","Hera Deux Single Tab","Female","44-46","Pink","Socks",12.99,2015-07-27,1899-12-30 19:53:46,"56522",7,31
+"314","Tokyo","Nike","Air Zoom","Male","41","Pink","Shoe",220,2015-07-27,1899-12-30 20:16:48,"56215",7,31
+"315","Tokyo","Asics","WB1820","Female","46","Pink","Pants",89,2015-07-27,1899-12-30 20:44:10,"58391",7,31
+"316","Tokyo","Adidas","Ultra Boost","Male","37","Pink","Shoe",139,2015-07-27,1899-12-30 12:03:17,"59612",7,31
+"317","Tokyo","Adidas","Boston 5","Male","41","Pink","Shoe",125,2015-07-27,1899-12-30 11:58:22,"55273",7,31
+"318","Tokyo","Adidas","Ultra Boost","Female","44","Pink","Shoe",139,2015-07-27,1899-12-30 15:19:39,"---",7,31
+"319","Tokyo","Adidas","Boston 5","Male","41","Pink","Shoe",125,2015-07-27,1899-12-30 11:42:00,"---",7,31
+"320","Tokyo","Asics","Cummulus 17","Male","46","Pink","Shoe",159,2015-07-28,1899-12-30 08:35:32,"---",7,31
+"321","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-28,1899-12-30 08:48:29,"---",7,31
+"322","Tokyo","Nike","Hyper Elite Crew","Unisex","36-38","Pink","Socks",20,2015-07-28,1899-12-30 09:11:32,"---",7,31
+"323","Tokyo","Adidas","Rocket Boost","Male","46","Pink","Shoe",100,2015-07-28,1899-12-30 13:59:32,"49994",7,31
+"324","Tokyo","Asics","Hera Deux Single Tab","Female","46-48","Pink","Socks",12.99,2015-07-28,1899-12-30 15:21:36,"41918",7,31
+"325","Tokyo","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-28,1899-12-30 19:43:41,"---",7,31
+"326","Tokyo","Asics","WB1820","Female","39","Pink","Pants",89,2015-07-28,1899-12-30 19:48:00,"41472",7,31
+"327","Tokyo","Asics","Kayano Single Tab","Unisex","44-46","Pink","Socks",24.99,2015-07-28,1899-12-30 20:54:15,"43643",7,31
+"328","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","40-42","Pink","Socks",21,2015-07-28,1899-12-30 09:36:00,"31990",7,31
+"329","Rotterdam","Asics","WB1820","Female","44","Pink","Pants",89,2015-07-28,1899-12-30 11:40:22,"---",7,31
+"330","Rotterdam","Nike","Hyper Elite Crew","Unisex","38-40","Pink","Socks",20,2015-07-28,1899-12-30 11:51:50,"34641",7,31
+"331","Rotterdam","Asics","WB1820","Female","45","Pink","Pants",89,2015-07-28,1899-12-30 12:29:28,"34038",7,31
+"332","Rotterdam","Nike","Dri-Fit No-Show","Unisex","36-38","Pink","Socks",20,2015-07-28,1899-12-30 12:37:39,"---",7,31
+"333","Rotterdam","Nike","Air Zoom","Female","36","Pink","Shoe",230,2015-07-28,1899-12-30 13:57:50,"---",7,31
+"334","Rotterdam","Asics","Kayano Single Tab","Unisex","40-42","Pink","Socks",24.99,2015-07-28,1899-12-30 14:37:06,"37514",7,31
+"335","Rotterdam","Asics","Kayano Single Tab","Unisex","46-48","Pink","Socks",24.99,2015-07-28,1899-12-30 15:14:44,"38526",7,31
+"336","Rotterdam","Nike","Hyper Elite Crew","Unisex","40-42","Pink","Socks",20,2015-07-28,1899-12-30 15:36:00,"35372",7,31
+"337","Rotterdam","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-28,1899-12-30 17:10:55,"33205",7,31
+"338","Rotterdam","Nike","Dri-Fit No-Show","Unisex","40-42","Pink","Socks",20,2015-07-28,1899-12-30 17:14:11,"31627",7,31
+"339","Tokyo","Asics","Quick Light Cushion","Unisex","46-48","Pink","Socks",19,2015-07-28,1899-12-30 10:48:00,"---",7,31
+"340","Tokyo","Nike","Dri-Fit No-Show","Unisex","46-48","Pink","Socks",20,2015-07-28,1899-12-30 11:28:20,"59321",7,31
+"341","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","42-44","Pink","Socks",21,2015-07-28,1899-12-30 11:57:08,"---",7,31
+"342","Tokyo","Asics","WB1820","Female","43","Pink","Pants",89,2015-07-28,1899-12-30 15:14:24,"---",7,31
+"343","Tokyo","Asics","WB1820","Female","44","Pink","Pants",89,2015-07-28,1899-12-30 15:54:44,"---",7,31
+"344","Tokyo","Nike","Hyper Elite Crew","Unisex","40-42","Pink","Socks",20,2015-07-28,1899-12-30 19:36:29,"54811",7,31
+"345","Tokyo","Adidas","Rocket Boost","Male","42","Pink","Shoe",110,2015-07-28,1899-12-30 12:57:17,"---",7,31
+"346","Tokyo","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-29,1899-12-30 08:48:29,"44160",7,31
+"347","Tokyo","Asics","WB1820","Female","46","Pink","Pants",89,2015-07-29,1899-12-30 10:29:17,"---",7,31
+"348","Tokyo","Asics","Nimbus 17","Male","40","Pink","Shoe",128,2015-07-29,1899-12-30 10:43:41,"43967",7,31
+"349","Tokyo","Asics","WB1820","Female","45","Pink","Pants",89,2015-07-29,1899-12-30 11:48:29,"47307",7,31
+"350","Tokyo","Nike","Hyper Elite Crew","Unisex","38-40","Pink","Socks",20,2015-07-29,1899-12-30 13:12:00,"49017",7,31
+"351","Tokyo","Asics","Quick Light Cushion","Unisex","40-42","Pink","Socks",19,2015-07-29,1899-12-30 13:14:53,"45974",7,31
+"352","Tokyo","Asics","Hera Deux Single Tab","Female","46-48","Pink","Socks",12.99,2015-07-29,1899-12-30 13:52:20,"---",7,31
+"353","Tokyo","Asics","Kayano Single Tab","Unisex","38-40","Pink","Socks",24.99,2015-07-29,1899-12-30 15:18:44,"46862",7,31
+"354","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-29,1899-12-30 17:08:10,"---",7,31
+"355","Tokyo","Asics","Hera Deux Single Tab","Female","44-46","Pink","Socks",12.99,2015-07-29,1899-12-30 22:36:29,"41851",7,31
+"356","Tokyo","Adidas","Ultra Boost","Male","42","Pink","Shoe",139,2015-07-29,1899-12-30 22:55:12,"49808",7,31
+"357","Rotterdam","Nike","Dri-Fit No-Show","Unisex","40-42","Pink","Socks",20,2015-07-29,1899-12-30 09:55:39,"---",7,31
+"358","Rotterdam","Asics","WB1820","Female","44","Pink","Pants",89,2015-07-29,1899-12-30 12:13:06,"33688",7,31
+"359","Rotterdam","Asics","WB1820","Female","39","Pink","Pants",89,2015-07-29,1899-12-30 12:22:55,"31573",7,31
+"360","Rotterdam","Asics","Quick Light Cushion","Unisex","40-42","Pink","Socks",19,2015-07-29,1899-12-30 13:08:44,"38553",7,31
+"361","Rotterdam","Nike","Hyper Elite Crew","Unisex","36-38","Pink","Socks",20,2015-07-29,1899-12-30 13:15:17,"39498",7,31
+"362","Tokyo","Nike","Hyper Elite Crew","Unisex","36-38","Pink","Socks",20,2015-07-29,1899-12-30 11:18:15,"50117",7,31
+"363","Tokyo","Asics","Hera Deux Single Tab","Female","46-48","Pink","Socks",12.99,2015-07-29,1899-12-30 13:12:00,"---",7,31
+"364","Tokyo","Asics","Kayano Single Tab","Unisex","46-48","Pink","Socks",24.99,2015-07-29,1899-12-30 14:21:08,"---",7,31
+"365","Tokyo","Nike","Hyper Elite Crew","Unisex","40-42","Pink","Socks",20,2015-07-29,1899-12-30 15:37:27,"---",7,31
+"366","Tokyo","Asics","Hera Deux Single Tab","Female","44-46","Pink","Socks",12.99,2015-07-29,1899-12-30 19:35:03,"57526",7,31
+"367","Tokyo","Asics","Gel Quantics ","Male","40","Pink","Shoe",120,2015-07-29,1899-12-30 20:26:53,"---",7,31
+"368","Tokyo","Asics","WB1820","Female","36","Pink","Pants",89,2015-07-29,1899-12-30 20:51:22,"56857",7,31
+"369","Tokyo","Adidas","Boston 5","Female","40","Pink","Shoe",120,2015-07-29,1899-12-30 14:12:33,"59780",7,31
+"370","Tokyo","Adidas","Boston 5","Female","44","Pink","Shoe",120,2015-07-29,1899-12-30 12:31:06,"58664",7,31
+"371","Tokyo","Asics","Nimbus 17","Male","42","Pink","Shoe",128,2015-07-30,1899-12-30 10:16:20,"49214",7,31
+"372","Tokyo","Asics","Gel Quantics ","Male","37","Pink","Shoe",120,2015-07-30,1899-12-30 10:45:08,"40901",7,31
+"373","Tokyo","Nike","Hyper Elite Crew","Unisex","40-42","Pink","Socks",20,2015-07-30,1899-12-30 10:48:00,"40173",7,31
+"374","Tokyo","Asics","WB1820","Female","45","Pink","Pants",89,2015-07-30,1899-12-30 11:21:08,"47052",7,31
+"375","Tokyo","Nike","Hyper Elite Crew","Unisex","42-44","Pink","Socks",20,2015-07-30,1899-12-30 13:00:29,"48236",7,31
+"376","Tokyo","Asics","WB1820","Female","39","Pink","Pants",89,2015-07-30,1899-12-30 13:23:32,"---",7,31
+"377","Tokyo","Nike","Air Zoom","Male","46","Pink","Shoe",220,2015-07-30,1899-12-30 14:38:24,"---",7,31
+"378","Tokyo","Asics","Quick Light Cushion","Unisex","38-40","Pink","Socks",19,2015-07-30,1899-12-30 14:48:29,"49403",7,31
+"379","Tokyo","Nike","Dri-Fit No-Show","Unisex","44-46","Pink","Socks",20,2015-07-30,1899-12-30 15:41:46,"---",7,31
+"380","Tokyo","Asics","Quick Light Cushion","Unisex","42-44","Pink","Socks",19,2015-07-30,1899-12-30 16:17:46,"49361",7,31
+"381","Tokyo","Nike","Hyper Elite Crew","Unisex","46-48","Pink","Socks",20,2015-07-30,1899-12-30 19:35:03,"---",7,31
+"382","Tokyo","Nike","Pro Hero","Female","70A","Pink","Bra",99,2015-07-30,1899-12-30 20:26:53,"---",7,31
+"383","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","40-42","Pink","Socks",21,2015-07-30,1899-12-30 22:06:15,"---",7,31
+"384","Rotterdam","Nike","Dri-Fit No-Show","Unisex","44-46","Pink","Socks",20,2015-07-30,1899-12-30 12:01:39,"---",7,31
+"385","Rotterdam","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-30,1899-12-30 13:56:11,"35711",7,31
+"386","Rotterdam","Nike","Dri-Fit No-Show","Unisex","42-44","Pink","Socks",20,2015-07-30,1899-12-30 15:08:11,"---",7,31
+"387","Rotterdam","Asics","Kayano Single Tab","Unisex","42-44","Pink","Socks",24.99,2015-07-30,1899-12-30 15:11:28,"---",7,31
+"388","Rotterdam","Asics","WB1820","Female","43","Pink","Pants",89,2015-07-30,1899-12-30 15:55:39,"---",7,31
+"389","Rotterdam","Asics","Nimbus 17","Male","42","Pink","Shoe",128,2015-07-30,1899-12-30 16:41:28,"30604",7,31
+"390","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","38-40","Pink","Socks",21,2015-07-30,1899-12-30 17:28:55,"34099",7,31
+"391","Rotterdam","Asics","WB1820","Female","41","Pink","Pants",89,2015-07-30,1899-12-30 17:42:00,"33667",7,31
+"392","Tokyo","Asics","Quick Light Cushion","Unisex","36-38","Pink","Socks",19,2015-07-30,1899-12-30 12:51:51,"---",7,31
+"393","Tokyo","Adidas","Boston 5","Male","45","Pink","Shoe",125,2015-07-30,1899-12-30 14:51:50,"---",7,31
+"394","Tokyo","Adidas","Boston 5","Male","40","Pink","Shoe",125,2015-07-30,1899-12-30 16:43:06,"50351",7,31
+"395","Tokyo","Adidas","Rocket Boost","Male","38","Pink","Shoe",110,2015-07-30,1899-12-30 09:58:55,"47383",7,31
+"396","Tokyo","Adidas","Ultra Boost","Male","41","Pink","Shoe",139,2015-07-30,1899-12-30 12:01:39,"59360",7,31
+"397","Tokyo","Nike","Dri-Fit No-Show","Unisex","46-48","Pink","Socks",20,2015-07-31,1899-12-30 07:56:39,"40666",7,31
+"398","Tokyo","Asics","Kayano Single Tab","Unisex","44-46","Pink","Socks",24.99,2015-07-31,1899-12-30 08:32:39,"40524",7,31
+"399","Tokyo","Nike","Pro Fierce","Female","70C","Pink","Bra",149,2015-07-31,1899-12-30 19:07:41,"---",7,31
+"400","Rotterdam","Nike","Hyper Elite Crew","Unisex","38-40","Pink","Socks",20,2015-07-31,1899-12-30 11:24:00,"31052",7,31
+"401","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","36-38","Pink","Socks",21,2015-07-31,1899-12-30 11:53:28,"39728",7,31
+"402","Rotterdam","Asics","WB1820","Female","45","Pink","Pants",89,2015-07-31,1899-12-30 12:22:55,"---",7,31
+"403","Rotterdam","Asics","WB1820","Female","42","Pink","Pants",89,2015-07-31,1899-12-30 13:41:28,"---",7,31
+"404","Rotterdam","Nike","Pro Fierce","Female","85E","Pink","Bra",149,2015-07-31,1899-12-30 13:49:39,"30549",7,31
+"405","Rotterdam","Asics","WB1820","Female","42","Pink","Pants",89,2015-07-31,1899-12-30 13:56:11,"30554",7,31
+"406","Rotterdam","Asics","Hera Deux Single Tab","Female","40-42","Pink","Socks",12.99,2015-07-31,1899-12-30 14:50:11,"36654",7,31
+"407","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-31,1899-12-30 16:07:06,"---",7,31
+"408","Rotterdam","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","46-48","Pink","Socks",21,2015-07-31,1899-12-30 17:14:11,"32264",7,31
+"409","Tokyo","Asics","WB1820","Female","45","Pink","Pants",89,2015-07-31,1899-12-30 13:07:41,"---",7,31
+"410","Tokyo","Nike","Hyper Elite Crew","Unisex","40-42","Pink","Socks",20,2015-07-31,1899-12-30 16:46:34,"51523",7,31
+"411","Tokyo","Nike","Nike Elite Match Fit Mercurial Crew","Unisex","36-38","Pink","Socks",21,2015-07-31,1899-12-30 19:59:32,"54793",7,31
+"412","Tokyo","Asics","Quick Light Cushion","Unisex","46-48","Pink","Socks",19,2015-07-31,1899-12-30 22:30:44,"56321",7,31
+"413","Tokyo","Adidas","Ultra Boost","Male","41","Pink","Shoe",139,2015-07-31,1899-12-30 15:32:44,"58028",7,31
+"414","Tokyo","Adidas","Boston 5","Male","41","Pink","Shoe",125,2015-07-31,1899-12-30 13:18:33,"57074",7,31
+"415","Tokyo","Adidas","Boston 5","Male","41","Pink","Shoe",125,2015-07-31,1899-12-30 13:48:00,"47630",7,31

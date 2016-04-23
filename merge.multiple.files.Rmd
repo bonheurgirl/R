@@ -7,34 +7,26 @@ output: html_document
 
 ```{r}
 setwd("/Users/anitaowens/Documents/R")
-setwd("/Users/anitaowens/Desktop")
 getwd()
-
 ```
 merge multiple files
 ```{r}
-
  ##function
-
 multmerge = function(mypath){
 filenames=list.files(path="/Users/anitaowens/Desktop/sd", full.names=TRUE)
 datalist = lapply(filenames, function(x){read.csv(file=x,header=T)})
 Reduce(function(x,y) {merge(x,y)}, datalist)}
-
-
-
 ```
 merging data
 ```{r}
 mymergeddata = multmerge("/Users/anitaowens/Desktop/sd")
 ```
-try another way
+try another way-merging just 2 csv files only
 ```{r}
 mydata1 = read.csv(path1, header=T)
 mydata2 = read.csv(path2, header=T)
 
 #Then, merge
-
 myfulldata = merge(mydata1, mydata2)
 
 ```
@@ -125,5 +117,17 @@ importing data--csv file
 
 mydata <- read.table("c:/mydata.csv", header=TRUE, 
   	sep=",", row.names="id")
+```
+merging multiple csv files
+```{r}
+setwd("/Users/anitaowens/Documents/R/csv.files")
+getwd()
+csv.files<-list.files("/Users/anitaowens/Documents/R/csv.files", full.names = TRUE)
+mergedcsvfiles<-function(csv.files, id=1:5){
+        dat <- data.frame()
+        for (i in id){
+                dat <-rbind(dat, read.csv(csv.files[i]))
+        }
+}
 ```
 

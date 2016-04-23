@@ -9,7 +9,6 @@ https://www.datacamp.com/community/tutorials/r-tutorial-read-excel-into-r
 load package
 ```{r}
 library(xlsx)
-
 ```
 example of reading xlsx sheets
 
@@ -101,5 +100,29 @@ The way to get the text values converted to numbers is to first convert it to a 
 vector1<-test[["v1"]]
 class(vector1)
 as.numeric(vector1)
+```
+converting excel files to csv files
+```{r}
+setwd("/Users/anitaowens/Documents/R/colors")
+getwd()
+black<-read.xlsx("black.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+#write file
+write.csv(black, file = "black.csv")
+
+blue<-read.xlsx("blue.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+#write file
+write.csv(blue, file = "blue.csv")
+
+green<-read.xlsx("green.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+#write file
+write.csv(green, file = "green.csv")
+
+pink<-read.xlsx("pink.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+#write file
+write.csv(pink, file = "pink.csv")
+
+yellow<-read.xlsx("yellow.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
+#write file
+write.csv(yellow, file = "yellow.csv")
 ```
 
