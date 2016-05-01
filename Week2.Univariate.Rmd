@@ -100,9 +100,16 @@ What was the most common way that dogs arrived in the shelter? (as defined by th
 table(dogs$Intake.Type)
 ```
 What proportion of dogs were brought to the shelter as an owner surrender? (Round to 3 decimal places.)
+http://www.statmethods.net/stats/frequencies.html
 ```{r}
+#create a frequency table
+mytable<-table(dogs$Intake.Type)
+
+#create a proportion table
+prop.table(mytable)
+
 round(58/226, digits = 3)
-#answer 0.278
+#actual answer 0.278 ?????really
 
 sdogs<-round(zscore/sd(dogs$Intake.Type), digits = 3)
 1-pnorm(sdogs)
