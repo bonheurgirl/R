@@ -114,7 +114,6 @@ Of the dogs that were brought to the shelter as an owner surrender, how many wer
 ```{r}
 returndogs<-dogs[ which(dogs$Intake.Type=='Owner Surrender' & dogs$Outcome.Type == "Return to Owner"),]
 nrow(returndogs)
-
 ```
 Question3
 ```{r}

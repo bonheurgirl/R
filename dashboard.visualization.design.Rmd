@@ -89,6 +89,5 @@ How much money was earned from selling shoes?
 ```{r}
 shoes<-newlycleaned[ which(newlycleaned$category=="Shoe"),]
 count(shoes, "category")
-
 ```
 
