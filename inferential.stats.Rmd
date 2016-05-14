@@ -40,6 +40,8 @@ mean and standard deviation
 mean(Kloutscores1$V1)
 var(Kloutscores1$V1)
 sd(Kloutscores1$V1)
+standarddev<-sd(Kloutscores1$V1)
+standarddev
 ```
 plot
 ```{r}
@@ -50,6 +52,7 @@ http://msemac.redwoods.edu/~darnold/math15/spring2013/R/Activities/DistributionO
 http://www.r-bloggers.com/normal-distribution-functions/
 ```{r}
 x<-rnorm(35, 37.71905, 16.04431)
+x
 mean(x)
 hist(x,probability = TRUE)
 sd(x)
@@ -60,5 +63,58 @@ sqrt(35)
 16.04431/5.91608
 sdpopmean<-sd(Kloutscores1$V1)/sqrt(35)
 sdpopmean
+```
+What's the zscore for a mean of 40?
+z= x−μ/σ 
+z=score-mean(pronounced mu)/ standard deviation (pronounced sigma)
+
+Sample size of 35. Distribution of sample means (Sample Distribution) m=37.72 
+
+σ/n=2.71
+
+```{r}
+zscore<-(40-37.72)/2.71
+#or
+zscore<-(40-mean(Kloutscores1$V1))/sdpopmean
+round(zscore, digits = 3)
+```
+https://onlinecourses.science.psu.edu/stat200/node/148
+
+Probability of drawing a sample with the mean of 40?
+
+distsamplemean<-standarddev/sqrt(35)
+z<-(40-mean(Kloutscores1$V1))/distsamplemean
+```{r}
+distsamplemean<-standarddev/sqrt(35)
+z<-(40-mean(Kloutscores1$V1))/distsamplemean
+z
+#zscore: 0.8410634
+#or
+z<-(40-37.71905)/(16.04431/sqrt(35))
+z
+ztable-.7996
+#answer: 1-.7996
+[1] 0.2004
+d<-density(Kloutscores1$V1)
+plot(d)
+```
+increasing the sample size
+
+1st find the standard error
+SE=σ /sqrt(n)
+```{r}
+se<-standarddev/sqrt(250)
+se
+distsamplemean<-standarddev/sqrt(250)
+distsamplemean
+zscore<-(40-mean(Kloutscores1$V1))/distsamplemean
+zscore
+#[1] 2.247831
+ztable probability: 0.9875
+
+```
+Probability of randomly selecting a sample of 250 with a mean of at least 40?
+```{r}
+1-0.9875
 ```
 
