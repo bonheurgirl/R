@@ -43,10 +43,37 @@ sd(Kloutscores1$V1)
 standarddev<-sd(Kloutscores1$V1)
 standarddev
 ```
-plot
+plot histogram
 ```{r}
-hist(Kloutscores1$V1)
+hist(Kloutscores1$V1, col="lightblue")
+abline(v=mean(Kloutscores1$V1), col="red", lwd=3, lty=2)
 ```
+histogram with density plot
+```{r}
+hist(Kloutscores1$V1, col="lightblue")
+abline(v=mean(Kloutscores1$V1), col="red", lwd=3, lty=2)
+lines(density(Kloutscores1$V1, na.rm = TRUE), col="blue")
+
+#turn data frame column values into a vector for line density plot
+avector<-as.vector(Kloutscores1[,1])
+class(avector)
+
+library(ggplot2)
+
+# Histogram overlaid with kernel density curve
+meantitle<-paste("Mean of Sample Distribution =", round(mean(avector), digits = 3))
+
+ggplot(Kloutscores1, aes(x=avector)) +
+        geom_histogram(aes(y=..density..),
+                       binwidth = 5,
+                       colour="black", fill="white") +
+        geom_density(alpha=.2, fill="#FF6666") + # Overlay with transparent density plot
+        geom_vline(aes(xintercept=mean(avector, na.rm=T)),# Ignore NA values for mean
+               color="red", linetype="dashed", size=1) +
+        ggtitle(paste0(meantitle))
+        
+```
+
 sample mean
 http://msemac.redwoods.edu/~darnold/math15/spring2013/R/Activities/DistributionOfSampleMeans.html
 http://www.r-bloggers.com/normal-distribution-functions/
@@ -97,6 +124,7 @@ ztable-.7996
 [1] 0.2004
 d<-density(Kloutscores1$V1)
 plot(d)
+abline(v=40, col="red")
 ```
 increasing the sample size
 
