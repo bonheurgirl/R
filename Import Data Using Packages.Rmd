@@ -1,0 +1,77 @@
+---
+title: "Import Data Using Packages"
+author: "Anita Owens"
+date: "August 27, 2016"
+output: html_document
+---
+```{r}
+#install once
+install.packages("devtools")
+
+#install weather data from github
+devtools::install_github("ozagordi/weatherData")
+devtools::install_github("repositoryName/packageName")```
+```{r}
+```
+install from CRAN option
+```{r}
+install.packages('weatherData')
+library(weatherData)
+```
+sample weather data
+```{r}
+weatherdata <- getWeatherForDate("BOS", "2016-08-01", end_date="2016-08-15")
+```
+Quickstart Example 1. Start by getting the temperature data for a Location of interest for a particular date.
+```{r}
+ getWeatherForDate("SEA", "2014-05-05")
+```
+ If you want detailed data for a range of dates instead of for a single date, just specify a start date and end date:
+ 
+```{r}
+ getWeatherForDate("SEA", "2014-04-01", end_date="2014-04-30")
+ #This will fetch a dataframe of temperature data for the month of April.
+```
+Just get me everything for a whole year for a Location of interest.
+```{r}
+ dfw_wx <- getWeatherForYear("DFW", 2013)
+```
+Find the station id for the location(s) that you are interested in. If you know the airport code (3 letters) you can try that. Once you have the station_id and the date ranges, it is a simple matter to fetch the data.
+```{r}
+ jax_wx <- getWeatherForYear("JAX", 2016)
+```
+First, we get two data frames, with one year's worth of temperature data in each. (365 rows each.) Note that getWeatherForYear is a function in the weatherData package.
+```{r}
+city1 <- "ORD"
+city2 <- "SFO"
+df1 <- getWeatherForYear(city1, 2013)
+df2 <- getWeatherForYear(city2, 2013)
+```
+Given two dataframes that contain daily temperatures (mean, min and max), we are simply taking the vectorized differences and creating another data frame.
+```{r}
+getDailyDifferences <- function(df1, df2){
+  Delta_Means <- df1$Mean_TemperatureF - df2$Mean_TemperatureF
+  Delta_Max <- df1$Max_TemperatureF - df2$Max_TemperatureF
+  Delta_Min <- df1$Min_TemperatureF - df2$Min_TemperatureF
+
+  diff_df <- data.frame(Date=df1$Date, Delta_Means, Delta_Max, Delta_Min)
+  return(diff_df)
+}
+```
+Next, let's write a small function using ggplot to plot the daily differences. We will use 3 facets, one each for Mean, Max and Min difference.
+```{r}
+plotDifferences <- function (differences, city1, city2) {
+  library(reshape2)
+  m.diff <- melt(differences, id.vars=c("Date"))
+  p <- ggplot(m.diff, aes(x=Date, y=value)) + geom_point(aes(color=variable)) +  
+    facet_grid(variable ~ .) +geom_hline(yintercept=0)
+  p <- p + labs(title=paste0("Daily Temperature Differences: ", city1, " minus ",city2))
+  print(p)
+}
+```
+plot
+```{r}
+differences<- getDailyDifferences(df1, df2)
+plotDifferences(differences, city1, city2)
+```
+
