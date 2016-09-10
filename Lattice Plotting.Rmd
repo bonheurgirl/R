@@ -200,3 +200,10 @@ library(scatterplot3d)
 attach(piq)
 scatterplot3d(PIQ,Brain,Height,Weight, main="3D Scatterplot")
 ```
+# Spinning 3d Scatterplot
+plot3d(wt, disp, mpg, col="red", size=3)
+```{r}
+library(rgl)
+plot3d(PIQ,Brain,Height,Weight)
+```
+
