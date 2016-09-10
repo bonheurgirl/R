@@ -10,7 +10,9 @@ data$days_since       = as.numeric(difftime(time1 = "2016-01-01",
                                             time2 = data$date_of_purchase,
                                             units = "days"))
 library(sqldf)
+library(dplyr)
 
+distinct(data)
 # Compute recency, frequency, and average purchase amount
 customers = sqldf("SELECT customer_id,
                   MIN(days_since) AS 'recency',

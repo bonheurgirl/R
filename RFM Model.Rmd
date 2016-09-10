@@ -1,0 +1,19 @@
+---
+title: "Foundation of Marketing Analytics"
+author: "Anita Owens"
+date: "August 17, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+Import CSV files
+```{r}
+setwd("/Users/anitaowens/Documents/R")
+
+```
+

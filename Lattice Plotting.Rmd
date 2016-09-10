@@ -178,4 +178,25 @@ plot3d(wt, disp, mpg, col="red", size=3)
 dev.copy(png, file="3dscatter.png",width=480,height=480)
 dev.off()
 ```
+# Multiple Linear Regression Example 
+fit <- lm(y ~ x1 + x2 + x3, data=mydata)
+summary(fit) # show results
+```{r}
+fit <- lm(PIQ ~ Brain + Height + Weight, data=piq)
+summary(fit) # show results
+```
+Equation:
+PIQ =  111.35361 + 2.06037 * Brain - 2.73193 * Height + 0.00056 * Weight 
 
+Scatterplot Matrix
+```{r}
+library(lattice)
+pairs(~PIQ+Brain+Height+Weight,data=piq, 
+   main=" Scatterplot Matrix")
+```
+# 3D Scatterplot
+```{r}
+library(scatterplot3d)
+attach(piq)
+scatterplot3d(PIQ,Brain,Height,Weight, main="3D Scatterplot")
+```

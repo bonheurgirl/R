@@ -1,0 +1,125 @@
+---
+title: "RFM Sonetel: Statistical Segmentation"
+author: "Anita Owens"
+date: "September 2, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+read excel file
+```{r}
+install.packages("xlsx")
+library("xlsx")
+sont<-read.xlsx("cleanedRFMData.xlsx", sheetIndex = 1,header = TRUE)
+```
+read data
+```{r}
+
+```
+read csv file
+```{r}
+sont<-read.csv("SontData.csv")
+str(sont)
+```
+# Add headers and interpret the last column as a date, extract year of purchase
+
+```{r}
+sont$last_payment_date = as.Date(sont$last_payment_date, "%Y-%m-%d")
+sont$days_since= as.numeric(difftime(time1 = "2016-09-01",
+                time2 = sont$last_payment_date, units                         = "days"))
+str(sont)
+```
+# Compute key marketing indicators using SQL language
+```{r}
+library(sqldf)
+```
+# Compute recency, frequency, and average purchase amount
+```{r}
+customers = sqldf("SELECT accountID,
+                          MIN(days_since) AS 'recency',
+                          num_of_pymt AS 'frequency',
+                          avg_pymt_amount AS 'amount'
+                   FROM sont GROUP BY 1")
+```
+Statistical Segmentation
+Explore Data
+```{r}
+# Explore the data
+head(customers)
+summary(customers)
+hist(customers$recency)
+hist(customers$frequency)
+hist(customers$amount)
+hist(customers$amount, breaks = 100)
+hist(customers$amount, breaks = 200)
+```
+# --- PREPARING AND TRANSFORMING DATA ----------------------
+# Copy customer data into new data frame/carbon copy
+```{r}
+new_data = customers
+```
+# Remove customer id as a variable, store it as row names
+```{r}
+head(new_data)
+row.names(new_data) = new_data$accountID
+new_data$accountID = NULL
+head(new_data)
+```
+# Take the log-transform of the amount, and plot
+```{r}
+new_data$amount = log(new_data$amount)
+hist(new_data$amount)
+```
+# Standardize variables
+```{r}
+new_data = scale(new_data)
+head(new_data)
+```
+# Compute distance metrics on standardized data
+# This will likely generate an error on most machines
+```{r}
+# d = dist(new_data)
+```
+no sampling needed
+# Take a 10% sample
+```{r}
+sample = seq(1, 18417, by = 10)
+head(sample)
+customers_sample = customers[sample, ]
+new_data_sample  = new_data[sample, ]
+```
+# Compute distance metrics on standardized data
+```{r}
+d = dist(new_data)
+```
+# Perform hierarchical clustering on distance metrics
+```{r}
+c = hclust(d, method="ward.D2")
+```
+# Plot de dendogram
+```{r}
+plot(c)
+```
+# Cut at 9 segments
+```{r}
+members = cutree(c, k = 9)
+```
+# Show 30 first customers, frequency table
+```{r}
+members[1:30]
+table(members)
+```
+# Show profile of each segment
+#need to fix
+```{r}
+aggregate(new_data[, 2:4], by = list(members), mean)
+
+aggData<-aggregate(customers_sample[c("recency","frequency","amount")], by=list(members), FUN=mean)
+```
+
+
+
+

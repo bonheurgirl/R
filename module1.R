@@ -120,5 +120,5 @@ table(members)
 # Show profile of each segment
 aggregate(customers_sample[, 2:4], by = list(members), mean)
 
-
+aggData<-aggregate(customers_sample[c("recency","frequency","amount")], by=list(members), FUN=mean)
 
