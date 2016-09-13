@@ -207,3 +207,39 @@ library(rgl)
 plot3d(PIQ,Brain,Height,Weight)
 ```
 
+bloodpressures example
+```{r}
+bloodpress <- read.delim("~/Documents/R/bloodpress.txt")
+View(bloodpress)
+```
+cor(x, y = NULL, use = "everything",
+    method = c("pearson", "kendall", "spearman"))
+ 
+ correlation matrix
+```{r}
+bloodpress$Pt = NULL
+cor(bloodpress)
+```
+scatterplot
+```{r}
+str(bloodpress)
+attach(bloodpress)
+library(scatterplot3d)
+scatterplot3d(BP,Age,Weight,Stress, main="Bloodpressure")
+```
+linear regression
+```{r}
+fit <- lm(BP ~ Age + Weight + Stress, data=bloodpress)
+summary(fit) # show results
+```
+scatterplot matrix
+```{r}
+library(lattice)
+pairs(~BP+Age+Weight+Weight,Stress=bloodpress, 
+   main=" Scatterplot Matrix BP")
+
+hist(bloodpress$Weight)
+mean(bloodpress$Weight)
+sd(bloodpress$Weight)
+```
+
