@@ -20,7 +20,7 @@ sum(with(adopt, Outcome.Type=="Adoption"))
 ```
 plot
 ```{r}
-plot(AnimalData$Animal.Type, AnimalData$Weight, main="Test123")
+plot(AnimalData$Animal.Type, AnimalData$Weight, main="Animal Data Plot")
 
 ```
 AnimalData Exercises

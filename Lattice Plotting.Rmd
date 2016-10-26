@@ -6,7 +6,7 @@ output: html_document
 ---
 #set directory
 ```{r}
-setwd("/Users/anitaowens/Documents/datasciencecoursera")
+setwd("/Users/anitaowens/Documents/R")
 getwd()
 ```
 #load library
