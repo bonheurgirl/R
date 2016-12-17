@@ -32,3 +32,10 @@ prop.table(mytable) # cell percentages
 prop.table(mytable, 1) # row percentages 
 prop.table(mytable, 2) # column percentages
 
+#Titanic Data Set
+titanic<-as.data.frame(Titanic)
+sapply(titanic,function(x) sum(is.na(x)))
+sapply(titanic, function(x) length(unique(x)))
+
+survivors <- titanic[ which(titanic$Survived=='Yes'),]
+nonsurvivors <- titanic[ which(titanic$Survived=='No'),]

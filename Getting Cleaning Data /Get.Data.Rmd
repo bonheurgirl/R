@@ -350,6 +350,10 @@ newdata1[!complete.cases(newdata1),]
 Getting the data from the web
 
 ```{r}
+#use this code for data in the new folder
+setwd("/Users/anitaowens/Documents/R/data")
+restData<-read.csv("/Users/anitaowens/Documents/R/data/restaurants.csv")
+
 library(curl)
 if(!file.exists("./data")){dir.create("/.data")}
 fileUrl<-"https://data.baltimorecity.gov/api/views/k5ry-ef3g/rows.csv?accessType=DOWNLOAD"
@@ -378,6 +382,7 @@ Make a table
 #look at specific variables and make a table
 #if any means if there are any missing values, they'll be an added column
 table(restData$zipCode,useNA = "ifany")
+table1=table(restData$zipCode,useNA = "ifany")
 
 ```
 2 dimensional tables
@@ -631,9 +636,35 @@ json files
 library(jsonlite)
 data <- fromJSON("https://data.baltimorecity.gov/resource/aqgr-xx9h.json")
 
+#ignore
+flatten(data,recursive = TRUE)
+
+library(RJSONIO)
+starwars<-fromJSON("https://public.tableau.com/s/sites/default/files/media/starwarscharacterdata.json")
+
+#2 functions that will create a data frame from json list
+do.call(rbind, lapply(starwars, data.frame, stringsAsFactors=FALSE))
+str(do.call(rbind, lapply(starwars, data.frame, stringsAsFactors=FALSE)))
+
+
 #error in file/json files are difficult to work with
 raw.data <- readLines(fileUrl, warn = "F")
     rd <- fromJSON(raw.data)
+#write CSV file
+write.csv(data, file="MyData.csv")
+
+#clean up mess
+unlink("MyData.csv")
+
+
+write.table(data, file = 'data.txt', sep='/t')
+
+library(xlsx)
+file<-paste(tempfile(), "xlsx", sep = ".")
+write.xlsx(data, file = data)
+
+
+
 
 ```
 
@@ -647,7 +678,7 @@ tolower(names(cameraData))
 toupper(names(cameraData))
 
 ```
-You might want to seperate out values that are separated by periods.
+You might want to separate out values that are separated by periods.
 Fixing character vectors strsplit()
 *good for automatically splitting variable names
 *important parameters: x, split

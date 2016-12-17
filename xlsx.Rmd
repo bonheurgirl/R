@@ -125,4 +125,14 @@ yellow<-read.xlsx("yellow.xlsx", sheetIndex=1, header=TRUE, colClasses=NA)
 #write file
 write.csv(yellow, file = "yellow.csv")
 ```
+write file from data frame
+```{r}
+write.xlsx(data, file, sheetName="Sheet1", 
+  col.names=TRUE, row.names=TRUE, append=FALSE)
+```{r}
+
+```
+
+
+```
 
