@@ -48,6 +48,8 @@ test2<-function(x){
 	sum(x + y) * (x*y) * z
 }
 
+stuff2(1,1,3)
+
 ```
 
 ```{r}
@@ -98,9 +100,22 @@ priceCalculator <- function(hours, pph=40){
     round(net.price)
 }
 
+priceCalculator(2)
+```
+
+```{r Loop}
+for (i in 1:100){print(i)}
+
 ```
 
 ```{r}
+x <- c(0,1,2,3,4)
+addNum <- function(x){
+  for (i in x){print(sum(i + x))}
+}
+addNum(x)
+
+
 
 ```
 
